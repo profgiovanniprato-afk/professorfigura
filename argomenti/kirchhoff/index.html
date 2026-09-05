@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I principi di Kirchhoff: le regole del traffico elettrico | professorfigura.it</title>
+<meta name="description" content="Il primo principio di Kirchhoff spiegato con uno schema interattivo: in ogni nodo di un circuito, la corrente che entra è sempre uguale a quella che esce. Per le classi terze.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/kirchhoff/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I principi di Kirchhoff: le regole del traffico elettrico">
+<meta property="og:description" content="La corrente che entra in un nodo è sempre uguale a quella che esce, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/kirchhoff/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"I principi di Kirchhoff: le regole del traffico elettrico","description":"Il primo e il secondo principio di Kirchhoff spiegati con parole semplici e uno schema interattivo su un nodo di circuito.","url":"https://www.professorfigura.it/argomenti/kirchhoff/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe terza","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Principi di Kirchhoff"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi terze","item":"https://www.professorfigura.it/classi/terze/"},{"@type":"ListItem","position":3,"name":"I principi di Kirchhoff","item":"https://www.professorfigura.it/argomenti/kirchhoff/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;animation:flowDash 1s linear infinite;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--grey-700);}
+  .amp-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;fill:var(--orange-dark);}
+  .balance{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;}
+  .balance.ok{fill:var(--green-dark);}
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/terze/">Classi terze</a> / I principi di Kirchhoff</p>
+  <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>I principi di Kirchhoff: le regole del traffico elettrico</h1>
+  <p class="lead">In un incrocio stradale, tutte le auto che entrano devono anche uscire da qualche parte. In un circuito elettrico succede esattamente la stessa cosa — muovi lo slider e verifica tu stesso che il bilancio torni sempre.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 220" id="circuitSvg">
+      <path class="wire" d="M20,110 H90" /><path class="flow" d="M20,110 H90" />
+      <text x="12" y="100" class="amp-label" id="iInLabel">I = 6A</text>
+
+      <circle class="node" cx="100" cy="110" r="6"/>
+
+      <path class="wire" d="M110,110 H230 V60 H280" /><path class="flow" d="M110,110 H230 V60 H280" />
+      <rect class="resistor" x="230" y="48" width="50" height="22"/>
+      <text x="290" y="45" class="amp-label" id="i1Label">I1 = 4A</text>
+
+      <path class="wire" d="M110,110 H230 V160 H280" /><path class="flow" d="M110,110 H230 V160 H280" />
+      <rect class="resistor" x="230" y="148" width="50" height="22"/>
+      <text x="290" y="175" class="amp-label" id="i2Label">I2 = 2A</text>
+
+      <text x="100" y="145" text-anchor="middle" class="balance ok" id="balanceText">6 = 4 + 2 ✓</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <div class="control-row"><label for="i1Slider">Corrente nel ramo 1 (I1)</label><span class="val" id="i1Val">4 A</span></div>
+    <input type="range" id="i1Slider" min="0" max="6" value="4" step="1">
+  </div>
+
+  <article>
+    <p>In un circuito con più percorsi, come fai a sapere esattamente quanta corrente scorre in ogni ramo? Ci pensa il <strong>primo principio di Kirchhoff</strong> (o principio dei nodi): in ogni punto di incrocio del circuito — chiamato <strong>nodo</strong> — tutta la corrente che entra deve essere uguale a tutta quella che esce. Niente si crea e niente si distrugge, esattamente come le auto in un incrocio stradale: quelle che entrano devono anche uscire da qualche parte.</p>
+
+    <p>Muovi lo slider sopra: sposta corrente dal primo ramo al secondo, e osserva che la somma resta sempre identica al totale in ingresso — perché quella somma <em>deve</em> restare identica, non è una coincidenza. Se provassi a impostare valori che non tornano, staresti violando una legge fisica, non solo una regola scolastica.</p>
+
+    <h2>Il secondo principio: le tensioni</h2>
+
+    <p>Il <strong>secondo principio di Kirchhoff</strong> (o principio delle maglie) riguarda invece le tensioni: percorrendo un intero anello chiuso del circuito e tornando al punto di partenza, la somma di tutte le "spinte" e di tutte le "cadute" di tensione deve essere zero. È come fare un giro completo su una collina e ritrovarti esattamente alla stessa altezza da cui sei partito — per quanto tu salga e scenda lungo il percorso, il bilancio finale è sempre pari a zero.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Gustav Kirchhoff formulò questi due principi nel 1845, quando aveva solo 21 anni ed era ancora studente universitario. Sono tuttora alla base di ogni analisi di circuito, dal più semplice al più complesso.</p>
+    </div>
+
+    <p>Insieme, questi due principi permettono di risolvere qualsiasi circuito, per quanto complesso, anche quando la legge di Ohm da sola non basterebbe — sono lo strumento che un tecnico usa quando un circuito ha troppi rami e troppi nodi per essere semplificato a occhio.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Verifica sperimentale: in un circuito con due resistori in parallelo alimentati dalla stessa pila, misura con un multimetro la corrente in ogni ramo e nel ramo principale. La somma dei due rami corrisponde davvero al totale?</p>
+    </div>
+
+    <p>Nella prossima lezione lasciamo per un momento l'elettrotecnica pura e ci addentriamo nel mondo dei semiconduttori, a partire dal diodo.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/circuiti-in-parallelo/" class="related-item"><span class="r-classe">Classi seconde · Teoria</span><span class="r-title">Circuiti in parallelo</span></a>
+      <a href="/argomenti/diodo/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Il diodo e i semiconduttori</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const ITOT = 6;
+  const slider = document.getElementById('i1Slider');
+  const i1Val = document.getElementById('i1Val');
+  const i1Label = document.getElementById('i1Label');
+  const i2Label = document.getElementById('i2Label');
+  const balanceText = document.getElementById('balanceText');
+  function update(){
+    const I1 = parseInt(slider.value,10);
+    const I2 = ITOT - I1;
+    i1Val.textContent = I1 + ' A';
+    i1Label.textContent = 'I1 = ' + I1 + 'A';
+    i2Label.textContent = 'I2 = ' + I2 + 'A';
+    balanceText.textContent = ITOT + ' = ' + I1 + ' + ' + I2 + ' ✓';
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+</body>
+</html>

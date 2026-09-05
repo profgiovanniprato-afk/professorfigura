@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il condensatore: una batteria a scarica fulminea | professorfigura.it</title>
+<meta name="description" content="Come funziona un condensatore: carica e scarica, il simbolo corretto a due armature, e perché si comporta come il flash di una macchina fotografica. Per le classi terze.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/condensatore/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Il condensatore: una batteria a scarica fulminea">
+<meta property="og:description" content="Carica e scarica di un condensatore, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/condensatore/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Il condensatore: una batteria a scarica fulminea","description":"Come funziona un condensatore: come si carica, come si scarica, e perché la sua velocità lo rende diverso da una normale pila.","url":"https://www.professorfigura.it/argomenti/condensatore/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe terza","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Condensatore"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi terze","item":"https://www.professorfigura.it/classi/terze/"},{"@type":"ListItem","position":3,"name":"Il condensatore","item":"https://www.professorfigura.it/argomenti/condensatore/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .plate{stroke:var(--black);stroke-width:3.5;}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .contact{stroke:var(--black);stroke-width:2.5;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
+  .led-dot{fill:var(--grey-300);transition:fill .15s ease;}
+  .control{max-width:460px;margin:0 auto 56px;padding:0 8px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;padding:11px 22px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .add-btn:hover{background:var(--orange-dark);}
+  .add-btn.stop{background:var(--grey-100);color:var(--black);}
+  .add-btn.stop:hover{background:var(--orange-pale);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/terze/">Classi terze</a> / Il condensatore</p>
+  <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Il condensatore: una batteria a scarica fulminea</h1>
+  <p class="lead">Un componente che accumula energia come una piccola batteria, ma la rilascia in un istante. Carica il condensatore, poi scaricalo su un LED e osserva la luce affievolirsi.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 190" id="circuitSvg">
+      <path class="wire" d="M40,60 H90" /><path class="flow" id="fCharge" d="M40,60 H90" />
+      <line x1="30" y1="52" x2="50" y2="52" stroke="var(--black)" stroke-width="3"/>
+      <line x1="35" y1="42" x2="45" y2="42" stroke="var(--black)" stroke-width="1.5"/>
+      <text x="14" y="80" class="diagram-label">PILA</text>
+
+      <g id="switchGroup" style="cursor:pointer;">
+        <circle class="node" cx="90" cy="60" r="4"/>
+        <circle class="node" cx="140" cy="60" r="4"/>
+        <line class="contact" id="blade" x1="90" y1="60" x2="137" y2="60" transform="rotate(0 90 60)"/>
+        <text x="115" y="42" text-anchor="middle" class="diagram-label">carica / scarica</text>
+      </g>
+
+      <path class="wire" d="M140,60 H190" /><path class="flow" id="f2" d="M140,60 H190" />
+      <line class="plate" x1="190" y1="35" x2="190" y2="85"/>
+      <line class="plate" x1="205" y1="35" x2="205" y2="85"/>
+      <text x="197" y="105" text-anchor="middle" class="diagram-label">C</text>
+
+      <path class="wire" d="M205,60 H260" /><path class="flow" id="f3" d="M205,60 H260" />
+      <circle class="led-dot" id="ledDot" cx="275" cy="60" r="9"/>
+      <text x="275" y="88" text-anchor="middle" class="diagram-label">LED</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <button class="add-btn" id="chargeBtn">Carica il condensatore</button>
+    <button class="add-btn stop" id="dischargeBtn">Scarica sul LED</button>
+  </div>
+
+  <article>
+    <p>Il <strong>condensatore</strong> è un componente che accumula energia elettrica sotto forma di carica, un po' come una piccola batteria — ma con una differenza enorme: si carica e si scarica quasi istantaneamente, mentre una batteria chimica ci mette molto più tempo. Il suo simbolo, che vedi nello schema, è fatto da due semplici linee parallele: rappresentano le due <strong>armature</strong>, superfici conduttrici separate da un materiale isolante (il dielettrico).</p>
+
+    <p>Premi "Carica il condensatore": la corrente scorre dalla pila verso le due armature, che si caricano senza mai toccarsi — un po' come riempire due secchi separati da una parete, senza che l'acqua passi mai da un secchio all'altro. Ora premi "Scarica sul LED": la carica accumulata si riversa rapidamente nel LED, che si accende e poi si affievolisce man mano che il condensatore si esaurisce.</p>
+
+    <h2>Un flash fotografico è un condensatore</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il flash di una vecchia macchina fotografica funziona esattamente così: la pila è debole e metterebbe troppo tempo a far scattare un lampo così intenso, ma può caricare con calma un condensatore per un paio di secondi. Quando scatti la foto, il condensatore si scarica tutto in una frazione di millisecondo, liberando in un istante l'energia che la pila aveva accumulato lentamente.</p>
+    </div>
+
+    <p>Anche i condensatori, come i resistori, possono essere collegati in <strong>serie</strong> o in <strong>parallelo</strong> — con una particolarità: le formule per calcolare la capacità totale funzionano in modo esattamente opposto rispetto a quelle dei resistori. In parallelo le capacità si sommano, in serie si combinano con la stessa formula "al contrario" che usavi per i resistori in parallelo.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Su una breadboard, carica un condensatore reale con una pila per qualche secondo, poi scollega la pila e collega ai suoi capi un piccolo LED (con una resistenza in serie, per sicurezza): osserva come il LED si affievolisce mentre il condensatore si scarica, esattamente come nello schema sopra.</p>
+    </div>
+
+    <p>Nella prossima lezione ci spostiamo dall'elettrostatica al magnetismo, per scoprire il legame profondo che unisce corrente elettrica e campo magnetico.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/magnetismo/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Il magnetismo: la forza invisibile</span></a>
+      <a href="/argomenti/kirchhoff/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">I principi di Kirchhoff</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const fCharge = document.getElementById('fCharge');
+  const f2 = document.getElementById('f2');
+  const f3 = document.getElementById('f3');
+  const ledDot = document.getElementById('ledDot');
+  let dischargeTimer = null;
+
+  document.getElementById('chargeBtn').addEventListener('click', () => {
+    if(dischargeTimer) clearInterval(dischargeTimer);
+    fCharge.classList.add('on'); f2.classList.add('on'); f3.classList.remove('on');
+    ledDot.style.fill = 'var(--grey-300)';
+    setTimeout(() => { fCharge.classList.remove('on'); f2.classList.remove('on'); }, 700);
+  });
+
+  document.getElementById('dischargeBtn').addEventListener('click', () => {
+    if(dischargeTimer) clearInterval(dischargeTimer);
+    f3.classList.add('on');
+    let brightness = 1;
+    ledDot.style.fill = '#F5C518';
+    dischargeTimer = setInterval(() => {
+      brightness -= 0.08;
+      if(brightness <= 0){
+        brightness = 0;
+        f3.classList.remove('on');
+        clearInterval(dischargeTimer);
+      }
+      const grey = Math.round(211 - brightness*30);
+      ledDot.style.fill = brightness > 0.05 ? `rgba(245,197,24,${brightness})` : 'var(--grey-300)';
+    }, 150);
+  });
+</script>
+</body>
+</html>

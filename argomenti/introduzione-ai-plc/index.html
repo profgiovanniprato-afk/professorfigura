@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduzione ai PLC: il cervello dell'automazione | professorfigura.it</title>
+<meta name="description" content="Cos'è un PLC e come funziona: ingressi, elaborazione, uscite. Schema a blocchi interattivo per le classi quarte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/introduzione-ai-plc/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduzione ai PLC: il cervello dell'automazione">
+<meta property="og:description" content="Cos'è un PLC e come funziona: ingressi, elaborazione, uscite, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/introduzione-ai-plc/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Introduzione ai PLC: il cervello dell'automazione","description":"Cos'è un PLC (Controllore Logico Programmabile) e come funziona: ingressi, elaborazione, uscite, con uno schema a blocchi interattivo.","url":"https://www.professorfigura.it/argomenti/introduzione-ai-plc/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quarta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"PLC — Controllore Logico Programmabile"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quarte","item":"https://www.professorfigura.it/classi/quarte/"},{"@type":"ListItem","position":3,"name":"Introduzione ai PLC","item":"https://www.professorfigura.it/argomenti/introduzione-ai-plc/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:40px 24px 30px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
+  .block{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .block.active{fill:var(--green-pale);stroke:var(--green-dark);}
+  .arrow{stroke:var(--black);stroke-width:2.2;fill:none;marker-end:url(#arrowhead);}
+  .arrow.live{stroke:var(--green);}
+  .label{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:var(--black);text-anchor:middle;}
+  .sublabel{font-family:'Space Grotesk',sans-serif;font-size:10.5px;fill:var(--grey-700);text-anchor:middle;}
+  .sensor-btn{cursor:pointer;}
+  .led-out{fill:var(--grey-300);transition:fill .2s ease;}
+  .led-out.on{fill:var(--green);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:30px 14px 24px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quarte/">Classi quarte</a> / Introduzione ai PLC</p>
+  <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Introduzione ai PLC: il cervello dell'automazione</h1>
+  <p class="lead">Un piccolo computer industriale robustissimo, capace di leggere sensori e comandare motori. Clicca sul sensore nello schema e osserva come il segnale attraversa il PLC fino ad attivare l'uscita.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 380 160" id="circuitSvg">
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="var(--black)"/>
+        </marker>
+      </defs>
+
+      <circle class="block sensor-btn" id="sensorBtn" cx="55" cy="80" r="30"/>
+      <text x="55" y="76" class="label">SENSORE</text>
+      <text x="55" y="92" class="sublabel">clicca</text>
+
+      <path class="arrow" id="arrow1" d="M88,80 H140"/>
+
+      <rect class="block" id="plcBlock" x="140" y="45" width="100" height="70" rx="4"/>
+      <text x="190" y="75" class="label">PLC</text>
+      <text x="190" y="93" class="sublabel">elabora</text>
+
+      <path class="arrow" id="arrow2" d="M240,80 H292"/>
+
+      <rect class="block" x="292" y="55" width="66" height="50" rx="4"/>
+      <circle class="led-out" id="ledOut" cx="325" cy="70" r="7"/>
+      <text x="325" y="95" class="label">USCITA</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Il <strong>PLC</strong> (Controllore Logico Programmabile) è, in sostanza, un piccolo computer pensato per resistere alle condizioni difficili di una fabbrica — polvere, vibrazioni, sbalzi di tensione — e per fare una cosa sola, ma farla in modo affidabilissimo: leggere lo stato di <strong>sensori e pulsanti</strong> (i suoi ingressi), eseguire un programma, e comandare <strong>motori, elettrovalvole o lampade</strong> (le sue uscite).</p>
+
+    <p>Prova a cliccare sul blocco "Sensore" nello schema: il segnale attraversa il PLC, viene elaborato, e arriva fino all'uscita, accendendo il piccolo indicatore verde. È lo schema più semplice possibile — nella realtà, un PLC industriale gestisce contemporaneamente decine o centinaia di ingressi e uscite, ma il principio di fondo resta sempre questo.</p>
+
+    <h2>Prima del PLC: la logica cablata</h2>
+
+    <p>Prima che i PLC diventassero comuni, la stessa logica si realizzava con la <strong>logica cablata</strong>: relè e contattori fisicamente collegati tra loro con fili, montati su intere pareti di quadri elettrici. Il problema era che ogni modifica alla logica richiedeva di rifare fisicamente i collegamenti — un lavoro lento, costoso, e con un margine di errore tutt'altro che trascurabile.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il primo PLC fu costruito nel 1968 per l'industria automobilistica americana, proprio per eliminare la necessità di riprogrammare fisicamente intere pareti di relè ogni volta che cambiava un modello di auto in produzione.</p>
+    </div>
+
+    <p>Con un PLC, la stessa logica diventa <strong>software</strong>: cambiarla significa riscrivere un programma — nella prossima lezione vedremo proprio come, usando il linguaggio Ladder — non ricollegare cavi. Questo ha reso l'automazione industriale moderna molto più flessibile, veloce da modificare e affidabile nel tempo.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Pensa a tre dispositivi automatici che usi ogni giorno (un cancello automatico, una lavatrice, un semaforo). Per ognuno, prova a individuare quali potrebbero essere i suoi "sensori" (ingressi) e le sue "azioni" (uscite).</p>
+    </div>
+
+    <p>Nella prossima lezione, la prima "prova pratica" di quest'anno: programmeremo davvero un piccolo circuito di avviamento motore in linguaggio Ladder.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/programmazione-ladder/" class="related-item"><span class="r-classe">Classi quinte · Laboratorio</span><span class="r-title">Prova pratica: programmazione Ladder</span></a>
+      <a href="/argomenti/diodo/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Il diodo e i semiconduttori</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const sensorBtn = document.getElementById('sensorBtn');
+  const plcBlock = document.getElementById('plcBlock');
+  const ledOut = document.getElementById('ledOut');
+  const arrow1 = document.getElementById('arrow1');
+  const arrow2 = document.getElementById('arrow2');
+  let active = false;
+  sensorBtn.addEventListener('click', () => {
+    active = !active;
+    sensorBtn.classList.toggle('active', active);
+    plcBlock.classList.toggle('active', active);
+    ledOut.classList.toggle('on', active);
+    arrow1.classList.toggle('live', active);
+    arrow2.classList.toggle('live', active);
+  });
+</script>
+</body>
+</html>

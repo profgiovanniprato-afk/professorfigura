@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memorie e microprocessori: dove vivono i programmi | professorfigura.it</title>
+<meta name="description" content="La differenza tra memoria volatile (RAM) e non volatile (disco): cosa succede spegnendo il computer. Schema interattivo per le classi quinte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/memorie-microprocessori/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Memorie e microprocessori: dove vivono i programmi">
+<meta property="og:description" content="La differenza tra memoria volatile e non volatile, con una simulazione di spegnimento.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/memorie-microprocessori/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Memorie e microprocessori: dove vivono i programmi","description":"La differenza tra memoria volatile (RAM) e non volatile (disco), e cosa sono i microprocessori e i microcontrollori.","url":"https://www.professorfigura.it/argomenti/memorie-microprocessori/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quinta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Memorie e microprocessori"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quinte","item":"https://www.professorfigura.it/classi/quinte/"},{"@type":"ListItem","position":3,"name":"Memorie e microprocessori","item":"https://www.professorfigura.it/argomenti/memorie-microprocessori/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:40px 24px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .mem-row{display:flex;justify-content:center;gap:40px;margin-bottom:30px;flex-wrap:wrap;}
+  .mem-box{text-align:center;}
+  .mem-box .box{width:110px;height:80px;border:2px solid var(--black);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;background:var(--green-pale);color:var(--green-dark);transition:background .2s ease, color .2s ease;}
+  .mem-box .box.empty{background:var(--grey-100);color:var(--grey-500);}
+  .mem-box .name{font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--grey-700);margin-top:10px;}
+  .power-btn{display:block;margin:0 auto;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:12px 26px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .power-btn:hover{background:var(--orange-dark);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.mem-row{gap:20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quinte/">Classi quinte</a> / Memorie e microprocessori</p>
+  <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Memorie e microprocessori: dove vivono i programmi</h1>
+  <p class="lead">Premi "Spegni il computer" e osserva cosa sopravvive e cosa scompare. La differenza tra le due caselle è la stessa che decide se ritrovi i tuoi file al riavvio.</p>
+
+  <div class="notebook">
+    <div class="mem-row">
+      <div class="mem-box">
+        <div class="box" id="ramBox">documento.txt</div>
+        <div class="name">RAM (volatile)</div>
+      </div>
+      <div class="mem-box">
+        <div class="box" id="diskBox">foto.jpg</div>
+        <div class="name">Disco (non volatile)</div>
+      </div>
+    </div>
+    <button class="power-btn" id="powerBtn">Spegni il computer</button>
+  </div>
+
+  <article>
+    <p>Un computer ha bisogno di due cose per funzionare: un posto dove conservare istruzioni e dati (la <strong>memoria</strong>) e un "cervello" che le esegua (il <strong>microprocessore</strong>). Premi "Spegni il computer" nello schema sopra: guarda cosa sparisce e cosa resta.</p>
+
+    <p>Se spegni un computer di colpo, staccando la spina, i documenti che avevi aperto e non salvato spariscono: erano nella <strong>RAM</strong>, una memoria <strong>volatile</strong> che perde tutto senza corrente. Ma le foto salvate sul disco restano intatte anche dopo settimane spento: sono su una memoria <strong>non volatile</strong>, che conserva i dati anche senza alimentazione. La differenza tra "perdere tutto" e "ritrovare tutto" al riavvio dipende esattamente da quale tipo di memoria stai usando.</p>
+
+    <h2>Il cervello: microprocessori e microcontrollori</h2>
+
+    <p>Il <strong>microprocessore</strong> è il componente che esegue effettivamente le istruzioni contenute nella memoria, una dopo l'altra, a velocità impressionante. Un <strong>microcontrollore</strong> — come Arduino, che hai già incontrato, o come i chip <strong>PIC</strong>, un'altra famiglia molto diffusa nell'industria — è, in un certo senso, un microprocessore con memoria e periferiche già integrate nello stesso chip: un computer completo su un unico pezzo di silicio grande pochi millimetri.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il primo microprocessore commerciale, l'Intel 4004 del 1971, aveva circa 2.300 transistor. Un moderno processore per smartphone ne contiene diversi miliardi — un aumento di quasi un milione di volte in meno di sessant'anni.</p>
+    </div>
+
+    <p>Prima dei microprocessori, la stessa logica si realizzava con la <strong>logica cablata</strong>: circuiti fisicamente collegati per fare una cosa sola. Con la <strong>logica programmabile</strong>, la stessa funzione diventa software — cambiarla significa riscrivere un programma, non ricollegare componenti fisici.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Osserva le specifiche tecniche del tuo computer o smartphone: trova quanta RAM ha e quanto spazio di archiviazione (disco o memoria interna). Prova a spiegare a voce alta la differenza tra i due numeri, usando quello che hai appena imparato.</p>
+    </div>
+
+    <p>Nella prossima lezione mettiamo alla prova la stabilità di questi sistemi, con le funzioni di trasferimento e i diagrammi di Bode.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/funzioni-trasferimento-bode/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Funzioni di trasferimento e Bode</span></a>
+      <a href="/argomenti/contatori-registri/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Contatori e registri</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const ramBox = document.getElementById('ramBox');
+  const powerBtn = document.getElementById('powerBtn');
+  let off = false;
+  powerBtn.addEventListener('click', () => {
+    off = !off;
+    if(off){
+      ramBox.textContent = '(vuoto)';
+      ramBox.classList.add('empty');
+      powerBtn.textContent = 'Riaccendi il computer';
+    } else {
+      ramBox.textContent = 'documento.txt';
+      ramBox.classList.remove('empty');
+      powerBtn.textContent = 'Spegni il computer';
+    }
+  });
+</script>
+</body>
+</html>

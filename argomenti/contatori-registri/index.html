@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatori e registri: costruire con la memoria | professorfigura.it</title>
+<meta name="description" content="Come collegando più flip-flop in sequenza si costruisce un contatore digitale. Schema interattivo binario a 4 bit, per le classi quinte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/contatori-registri/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Contatori e registri: costruire con la memoria">
+<meta property="og:description" content="Come un contatore digitale a 4 bit conta in binario, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/contatori-registri/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Contatori e registri: costruire con la memoria","description":"Come collegando più flip-flop in sequenza si costruisce un contatore digitale binario, e cosa sono i divisori di frequenza.","url":"https://www.professorfigura.it/argomenti/contatori-registri/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quinta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Contatori e registri a scorrimento"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quinte","item":"https://www.professorfigura.it/classi/quinte/"},{"@type":"ListItem","position":3,"name":"Contatori e registri","item":"https://www.professorfigura.it/argomenti/contatori-registri/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:40px 20px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
+  .bits{display:flex;justify-content:center;gap:14px;margin-bottom:26px;}
+  .bit{width:56px;height:70px;border:2px solid var(--black);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;background:var(--white);transition:background .15s ease, color .15s ease;}
+  .bit.on{background:var(--black);color:var(--white);}
+  .bit-labels{display:flex;justify-content:center;gap:14px;margin-bottom:24px;}
+  .bit-labels span{width:56px;font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--grey-500);}
+  .decimal-readout{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--orange-dark);margin-bottom:24px;}
+  .pulse-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:12px 26px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .pulse-btn:hover{background:var(--orange-dark);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.bit{width:44px;height:56px;font-size:20px;}.bit-labels span{width:44px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quinte/">Classi quinte</a> / Contatori e registri</p>
+  <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Contatori e registri: costruire con la memoria</h1>
+  <p class="lead">Un contatore digitale a 4 bit, esattamente come lo troveresti in un circuito reale. Premi "Impulso" e guardalo contare in binario, un bit alla volta.</p>
+
+  <div class="notebook">
+    <div class="bit-labels"><span>8</span><span>4</span><span>2</span><span>1</span></div>
+    <div class="bits">
+      <div class="bit" id="bit3">0</div>
+      <div class="bit" id="bit2">0</div>
+      <div class="bit" id="bit1">0</div>
+      <div class="bit" id="bit0">0</div>
+    </div>
+    <div class="decimal-readout" id="decimalReadout">Valore decimale: 0</div>
+    <button class="pulse-btn" id="pulseBtn">Impulso →</button>
+  </div>
+
+  <article>
+    <p>Collegando insieme più <strong>flip-flop</strong> in sequenza si costruiscono circuiti capaci di <strong>contare</strong> impulsi elettrici — i <strong>contatori</strong>, sincroni o asincroni a seconda di come sono collegati tra loro. Premi "Impulso" più volte nello schema sopra: guarda i quattro bit cambiare esattamente come farebbe un vero contatore binario a 4 bit, e il valore decimale corrispondente aggiornarsi sotto.</p>
+
+    <p>Un contatore digitale funziona un po' come il contachilometri di un'auto: ogni "scatto" fa avanzare la cifra di uno, e quando arriva al massimo (nel nostro caso 15, cioè 1111 in binario), riparte da zero. Continua a premere il pulsante fino a superare 15, e osserva il contatore "girare" di nuovo da capo.</p>
+
+    <h2>Il divisore di frequenza</h2>
+
+    <p>Un <strong>divisore di frequenza</strong> sfrutta lo stesso principio, ma al contrario: prendendo l'ultimo bit di un contatore (quello più a sinistra, che cambia più lentamente), ottieni un segnale che cambia stato una sola volta ogni tot impulsi in ingresso — cioè un segnale a frequenza più bassa, ottenuto "dividendo" quella originale.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Un orologio al quarzo genera internamente un segnale che oscilla 32.768 volte al secondo — troppo veloce per far muovere una lancetta. Una catena di 15 divisori di frequenza collegati in cascata (32.768 è proprio 2 elevato alla 15) riduce quel segnale rapidissimo fino a un singolo impulso al secondo, esattamente quello che serve per far scattare la lancetta dei secondi.</p>
+    </div>
+
+    <p>I <strong>registri a scorrimento</strong> usano gli stessi flip-flop in un modo diverso: invece di contare, spostano un'informazione bit per bit lungo una fila di celle di memoria, un po' come far scorrere delle persone in fila indiana di un posto alla volta a ogni comando.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Costruisci con degli integrati flip-flop (o simula online) un contatore a 4 bit reale. Verifica che, dopo aver raggiunto il valore 15, un ulteriore impulso lo riporti effettivamente a 0, esattamente come hai osservato nello schema sopra.</p>
+    </div>
+
+    <p>Nella prossima lezione lasciamo la logica sequenziale per scoprire dove vivono davvero i programmi che abbiamo scritto finora: le memorie e i microprocessori.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/memorie-microprocessori/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Memorie e microprocessori</span></a>
+      <a href="/argomenti/latch-flip-flop/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Latch e flip-flop</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let count = 0;
+  const bits = [document.getElementById('bit3'),document.getElementById('bit2'),document.getElementById('bit1'),document.getElementById('bit0')];
+  const decimalReadout = document.getElementById('decimalReadout');
+  function render(){
+    const binStr = count.toString(2).padStart(4,'0');
+    for(let i=0;i<4;i++){
+      const on = binStr[i] === '1';
+      bits[i].textContent = binStr[i];
+      bits[i].classList.toggle('on', on);
+    }
+    decimalReadout.textContent = 'Valore decimale: ' + count;
+  }
+  document.getElementById('pulseBtn').addEventListener('click', () => {
+    count = (count + 1) % 16;
+    render();
+  });
+  render();
+</script>
+</body>
+</html>

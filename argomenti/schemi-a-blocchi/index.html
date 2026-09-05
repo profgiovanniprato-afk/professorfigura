@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schemi a blocchi e sistemi retroazionati | professorfigura.it</title>
+<meta name="description" content="Come funziona un sistema retroazionato: l'uscita che torna a influenzare l'ingresso, come il termostato di un termosifone. Schema interattivo per le classi quarte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/schemi-a-blocchi/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Schemi a blocchi e sistemi retroazionati">
+<meta property="og:description" content="Come funziona la retroazione in un sistema di controllo, con uno schema interattivo tipo termostato.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/schemi-a-blocchi/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Schemi a blocchi e sistemi retroazionati","description":"Come rappresentare un sistema con uno schema a blocchi e come funziona la retroazione, con l'esempio di un termostato interattivo.","url":"https://www.professorfigura.it/argomenti/schemi-a-blocchi/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quarta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Schemi a blocchi e retroazione"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quarte","item":"https://www.professorfigura.it/classi/quarte/"},{"@type":"ListItem","position":3,"name":"Schemi a blocchi e retroazione","item":"https://www.professorfigura.it/argomenti/schemi-a-blocchi/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+  .block{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .block.active{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .arrow{stroke:var(--black);stroke-width:2.2;fill:none;marker-end:url(#arrowhead2);}
+  .arrow.live{stroke:var(--green);}
+  .label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;fill:var(--black);text-anchor:middle;}
+  .sublabel{font-family:'Space Grotesk',sans-serif;font-size:10px;fill:var(--grey-700);text-anchor:middle;}
+  .thermo-dot{fill:var(--grey-300);transition:fill .2s ease;}
+  .thermo-dot.on{fill:var(--orange);}
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quarte/">Classi quarte</a> / Schemi a blocchi e retroazione</p>
+  <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Schemi a blocchi e sistemi retroazionati</h1>
+  <p class="lead">Il termostato di un termosifone: la temperatura misurata influenza la decisione di accendere o spegnere. Muovi lo slider della temperatura e osserva il sistema reagire da solo.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 190" id="circuitSvg">
+      <defs>
+        <marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="var(--black)"/>
+        </marker>
+      </defs>
+
+      <rect class="block" id="compareBlock" x="40" y="70" width="80" height="50" rx="4"/>
+      <text x="80" y="98" class="label">CONFRONTO</text>
+      <text x="80" y="112" class="sublabel">T attuale vs desiderata</text>
+
+      <path class="arrow" id="arrow1" d="M120,95 H180"/>
+      <rect class="block" id="heaterBlock" x="180" y="70" width="80" height="50" rx="4"/>
+      <text x="220" y="98" class="label">RISCALDAMENTO</text>
+      <circle class="thermo-dot" id="heaterDot" cx="220" cy="112" r="6"/>
+
+      <path class="arrow" id="arrow2" d="M260,95 H300 V150 H80 V120"/>
+      <text x="200" y="165" class="sublabel">retroazione: la temperatura misurata torna al confronto</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <div class="control-row"><label for="tempSlider">Temperatura ambiente</label><span class="val" id="tempVal">18°C</span></div>
+    <input type="range" id="tempSlider" min="14" max="24" value="18" step="1">
+  </div>
+
+  <article>
+    <p>In un sistema automatico, spesso l'uscita influenza a sua volta l'ingresso: si chiama <strong>retroazione</strong> (o feedback). Il termostato di un termosifone, che vedi simulato nello schema sopra, è un esempio perfetto: misura la temperatura ambiente, la confronta con quella desiderata, e usa questa informazione per decidere se accendere o spegnere il riscaldamento — un ciclo continuo che tiene la temperatura stabile senza che nessuno debba intervenire manualmente.</p>
+
+    <p>Muovi lo slider della temperatura: sotto una certa soglia il riscaldamento si accende (osserva il pallino arancione), sopra quella soglia si spegne. È lo stesso principio, applicato in scala diversa, che regola il volo automatico di un aereo, la velocità di crociera di un'auto, o la temperatura di un forno industriale.</p>
+
+    <h2>Perché uno schema a blocchi, e non lo schema elettrico completo</h2>
+
+    <p>Rappresentare questi sistemi con schemi a blocchi permette di analizzarli senza perdersi nei dettagli elettronici interni: conta solo cosa entra, cosa esce, e come le uscite tornano a influenzare gli ingressi. Uno schema a blocchi complesso, con più rami e retroazioni intrecciate, può spesso essere ridotto a uno schema più semplice ma equivalente, applicando alcune <strong>regole di semplificazione</strong> — un po' come semplificare una frazione matematica senza cambiarne il valore, solo per renderla più leggibile.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il termine "retroazione negativa" (quella che stabilizza un sistema, come il termostato) fu formalizzato negli anni '30 da un ingegnere dei Bell Labs, Harold Black, mentre cercava di ridurre la distorsione negli amplificatori telefonici — un'idea nata per un problema specifico, diventata poi fondamentale in tutta l'ingegneria dei controlli.</p>
+    </div>
+
+    <p>Senza retroazione, un sistema "esegue e basta", senza correggersi mai. Con la retroazione, un sistema può correggere i propri errori in tempo reale — la differenza tra un termosifone che scalda sempre alla massima potenza e uno che mantiene davvero la temperatura desiderata.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Pensa a tre sistemi automatici che usi ogni giorno (il cruise control di un'auto, lo sciacquone del water, il regolatore di un frigorifero). Per ognuno, individua cosa viene misurato, cosa viene confrontato, e quale azione correttiva viene presa.</p>
+    </div>
+
+    <p>Nella prossima lezione torniamo al mondo dell'automazione industriale con il PLC, il componente che rende reali questi sistemi di controllo su scala industriale.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/introduzione-ai-plc/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Introduzione ai PLC</span></a>
+      <a href="/argomenti/arduino/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Arduino</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const slider = document.getElementById('tempSlider');
+  const tempVal = document.getElementById('tempVal');
+  const heaterDot = document.getElementById('heaterDot');
+  const heaterBlock = document.getElementById('heaterBlock');
+  const compareBlock = document.getElementById('compareBlock');
+  const arrow1 = document.getElementById('arrow1');
+  const arrow2 = document.getElementById('arrow2');
+  const TARGET = 20;
+  function update(){
+    const t = parseInt(slider.value,10);
+    tempVal.textContent = t + '°C';
+    const heating = t < TARGET;
+    heaterDot.classList.toggle('on', heating);
+    heaterBlock.classList.toggle('active', heating);
+    compareBlock.classList.toggle('active', heating);
+    arrow1.classList.toggle('live', heating);
+    arrow2.classList.toggle('live', heating);
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+</body>
+</html>

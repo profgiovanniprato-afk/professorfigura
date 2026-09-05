@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gli amplificatori: rendere più grande un segnale | professorfigura.it</title>
+<meta name="description" content="Le tre configurazioni dell'amplificatore a transistor: emettitore comune, base comune, collettore comune. Per le classi quarte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/amplificatori-configurazioni/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gli amplificatori: rendere più grande un segnale">
+<meta property="og:description" content="Le tre configurazioni base dell'amplificatore a transistor, spiegate con parole semplici.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/amplificatori-configurazioni/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Gli amplificatori: rendere più grande un segnale","description":"Le tre configurazioni base dell'amplificatore a transistor (emettitore comune, base comune, collettore comune) e le classi di funzionamento.","url":"https://www.professorfigura.it/argomenti/amplificatori-configurazioni/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quarta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Configurazioni amplificatori a transistor"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quarte","item":"https://www.professorfigura.it/classi/quarte/"},{"@type":"ListItem","position":3,"name":"Gli amplificatori","item":"https://www.professorfigura.it/argomenti/amplificatori-configurazioni/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 50px;}
+  .config-card{border:1px solid var(--grey-150);padding:20px 16px;text-align:center;}
+  .config-card .name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;margin-bottom:8px;}
+  .config-card .desc{font-size:12.5px;color:var(--grey-700);line-height:1.5;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.cards{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quarte/">Classi quarte</a> / Gli amplificatori</p>
+  <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Gli amplificatori: rendere più grande un segnale</h1>
+  <p class="lead">Un microfono trasforma la tua voce in un segnale elettrico debolissimo. Per farlo uscire da una cassa con un volume udibile, serve amplificarlo — e un transistor, collegato in modi diversi, può farlo in tre modi distinti.</p>
+
+  <div class="cards">
+    <div class="config-card">
+      <div class="name">Emettitore comune</div>
+      <div class="desc">La più usata: amplifica sia tensione che corrente.</div>
+    </div>
+    <div class="config-card">
+      <div class="name">Base comune</div>
+      <div class="desc">Adatta soprattutto ad alte frequenze.</div>
+    </div>
+    <div class="config-card">
+      <div class="name">Collettore comune</div>
+      <div class="desc">Amplifica solo corrente, adatta senza distorcere.</div>
+    </div>
+  </div>
+
+  <article>
+    <p>Un microfono trasforma la tua voce in un segnale elettrico debolissimo. Per farlo uscire da una cassa con un volume udibile, serve <strong>amplificarlo</strong>, cioè renderlo più grande senza cambiarne la forma. Un transistor, usato in modo diverso da un semplice interruttore che hai già incontrato, può fare esattamente questo — la differenza sta in quale terminale resta "in comune" tra ingresso e uscita del circuito.</p>
+
+    <p>Nella configurazione a <strong>emettitore comune</strong> — la più diffusa in assoluto — il segnale entra dalla base ed esce dal collettore, con l'emettitore condiviso tra i due percorsi: amplifica sia la tensione sia la corrente, ed è la scelta di partenza per la maggior parte dei circuiti amplificatori. La configurazione a <strong>base comune</strong> si comporta meglio con segnali ad alta frequenza. La configurazione a <strong>collettore comune</strong> — chiamata anche inseguitore di emettitore — amplifica solo la corrente, non la tensione, ed è utile quando serve "adattare" un segnale da un circuito a un altro senza distorcerlo.</p>
+
+    <h2>Le classi di funzionamento</h2>
+
+    <p>Un amplificatore può anche lavorare in <strong>classi di funzionamento</strong> diverse (A, B, AB, C...), a seconda di quanto a lungo, durante ogni ciclo del segnale, il transistor conduce corrente. Un amplificatore in classe A conduce per l'intero ciclo del segnale — è molto fedele ma spreca energia anche senza segnale in ingresso. Uno in classe B conduce solo per metà ciclo, più efficiente ma con più distorsione. La scelta della classe è sempre un compromesso tra qualità del suono ed efficienza energetica.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Gli amplificatori Hi-Fi di alta qualità spesso lavorano in classe A proprio per la fedeltà del suono, anche se questo li rende molto meno efficienti — e infatti si scaldano notevolmente anche senza musica in riproduzione, perché consumano energia comunque.</p>
+    </div>
+
+    <p>Scegliere la configurazione e la classe giuste non è mai una decisione casuale: dipende da cosa serve amplificare (un segnale audio, un segnale radio ad alta frequenza, un piccolo sensore) e da quanto conta l'efficienza energetica rispetto alla fedeltà del segnale.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Monta su breadboard un semplice amplificatore a emettitore comune con un transistor NPN, e collega in ingresso un piccolo segnale audio (per esempio dal jack di uno smartphone, con le dovute precauzioni). Osserva con un oscilloscopio come cambia l'ampiezza del segnale tra ingresso e uscita.</p>
+    </div>
+
+    <p>Nella prossima lezione lasciamo per un momento i componenti singoli e guardiamo ai sistemi nel loro insieme, con gli schemi a blocchi e i sistemi retroazionati.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/schemi-a-blocchi/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Schemi a blocchi e retroazione</span></a>
+      <a href="/argomenti/filtri/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">I filtri</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+</script>
+</body>
+</html>

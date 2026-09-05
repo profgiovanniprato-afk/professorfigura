@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progettazione impiantistica: dalla teoria al cancello automatico | professorfigura.it</title>
+<meta name="description" content="Come si progetta un ciclo di lavoro con il PLC: il diagramma degli stati di un cancello automatico, interattivo. Per le classi quinte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/progettazione-impiantistica/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Progettazione impiantistica: dalla teoria al cancello automatico">
+<meta property="og:description" content="Il diagramma degli stati di un cancello automatico, interattivo, per capire come si progetta un ciclo di lavoro.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/progettazione-impiantistica/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Progettazione impiantistica: dalla teoria al cancello automatico","description":"Come progettare un impianto elettrico civile e un ciclo di lavoro industriale, con l'esempio interattivo del diagramma degli stati di un cancello automatico.","url":"https://www.professorfigura.it/argomenti/progettazione-impiantistica/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quinta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Progettazione di impianti civili e industriali"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quinte","item":"https://www.professorfigura.it/classi/quinte/"},{"@type":"ListItem","position":3,"name":"Progettazione impiantistica","item":"https://www.professorfigura.it/argomenti/progettazione-impiantistica/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
+  .state{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .state.active{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .state-label{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;text-anchor:middle;fill:var(--black);}
+  .transition-arrow{stroke:var(--grey-300);stroke-width:1.8;fill:none;marker-end:url(#arrowSmall);}
+  .control{max-width:460px;margin:0 auto 56px;padding:0 8px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:10px 18px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .add-btn:hover{background:var(--orange-dark);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quinte/">Classi quinte</a> / Progettazione impiantistica</p>
+  <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Progettazione impiantistica: dalla teoria al cancello automatico</h1>
+  <p class="lead">Un cancello automatico non "sa" solo aprirsi e chiudersi: passa attraverso stati precisi, uno alla volta. Premi i pulsanti e guida il cancello attraverso il suo ciclo di lavoro.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 200" id="stateSvg">
+      <defs>
+        <marker id="arrowSmall" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="var(--grey-300)"/>
+        </marker>
+      </defs>
+      <path class="transition-arrow" d="M100,45 H180" />
+      <path class="transition-arrow" d="M240,60 V140" />
+      <path class="transition-arrow" d="M180,155 H100" />
+      <path class="transition-arrow" d="M70,140 V60" />
+
+      <rect class="state" id="stChiuso" x="20" y="20" width="80" height="50" rx="4"/>
+      <text x="60" y="50" class="state-label">CHIUSO</text>
+
+      <rect class="state" id="stAprendo" x="180" y="20" width="80" height="50" rx="4"/>
+      <text x="220" y="50" class="state-label">IN APERTURA</text>
+
+      <rect class="state" id="stAperto" x="180" y="130" width="80" height="50" rx="4"/>
+      <text x="220" y="160" class="state-label">APERTO</text>
+
+      <rect class="state" id="stChiudendo" x="20" y="130" width="80" height="50" rx="4"/>
+      <text x="60" y="160" class="state-label">IN CHIUSURA</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <button class="add-btn" id="btnApri">Comando APRI</button>
+    <button class="add-btn" id="btnChiudi">Comando CHIUDI</button>
+    <button class="add-btn" id="btnFinecorsa">Finecorsa raggiunto</button>
+  </div>
+
+  <article>
+    <p>Progettare un impianto elettrico reale significa mettere insieme tutto ciò che hai studiato in questi cinque anni: calcolare le sezioni dei cavi in base alla corrente prevista, scegliere le giuste protezioni nel quadro elettrico, e rispettare la <strong>normativa di settore</strong> — norme tecniche e leggi che regolano la sicurezza degli impianti elettrici — che esiste per garantire che l'impianto sia sicuro per chi lo userà, non solo funzionante.</p>
+
+    <p>In un impianto industriale reale, un PLC gestisce spesso <strong>cicli di lavoro</strong> complessi, fatti di più fasi in sequenza, spesso rappresentate come un <strong>diagramma degli stati</strong> — esattamente come quello sopra. Prova i pulsanti: il cancello passa da "chiuso" a "in apertura", poi (al finecorsa) ad "aperto", e così via — ogni stato ha regole precise su quale sia il prossimo stato possibile, e in quali condizioni.</p>
+
+    <h2>Uno stato alla volta, come un semaforo</h2>
+
+    <p>È lo stesso principio di un semaforo: passa dal verde al giallo al rosso non a caso, ma seguendo una sequenza precisa di stati, ognuno con le proprie regole di passaggio al successivo. Un buon progetto di automazione parte quasi sempre da un diagramma come questo, disegnato su carta prima ancora di scrivere una sola riga di programma.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Oltre al PLC, un sistema di acquisizione dati e controllo può essere realizzato anche con software specializzati come LabVIEW — un ambiente che permette di costruire un sistema di misura e controllo componendo blocchi grafici invece di scrivere righe di codice tradizionali, molto usato per collaudi e strumentazione da laboratorio.</p>
+    </div>
+
+    <p>La normativa non è un ostacolo burocratico: è l'esperienza di decenni di incidenti evitati, trasformata in regole precise. Un buon progetto non è quello che funziona per caso: è quello che funziona sempre, in modo prevedibile, ed è sicuro anche in caso di guasto — per questo un tecnico verifica, controlla e collauda ogni impianto prima di consegnarlo, esattamente come dovrebbe fare con ogni stato del ciclo del nostro cancello.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Disegna su carta il diagramma degli stati di un elettrodomestico che conosci bene (una lavatrice, una macchina del caffè). Individua ogni stato possibile e le condizioni precise che fanno passare da uno stato al successivo.</p>
+    </div>
+
+    <p>Con questa lezione chiudiamo il percorso completo, dalle basi dell'elettrotecnica di classe prima fino alla progettazione impiantistica di classe quinta — la stessa idea che ha aperto il primo capitolo, l'interruttore che apre e chiude un circuito, si ritrova qui, solo su scala molto più grande.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/interruttore-lampadina/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Interruttore e lampadina</span></a>
+      <a href="/argomenti/plc-avanzato-fbd/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">PLC avanzato: Ladder e FBD</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let state = 'chiuso';
+  const states = {
+    chiuso: document.getElementById('stChiuso'),
+    aprendo: document.getElementById('stAprendo'),
+    aperto: document.getElementById('stAperto'),
+    chiudendo: document.getElementById('stChiudendo'),
+  };
+  function render(){
+    Object.keys(states).forEach(k => states[k].classList.toggle('active', k === state));
+  }
+  document.getElementById('btnApri').addEventListener('click', () => {
+    if(state === 'chiuso') state = 'aprendo';
+    render();
+  });
+  document.getElementById('btnChiudi').addEventListener('click', () => {
+    if(state === 'aperto') state = 'chiudendo';
+    render();
+  });
+  document.getElementById('btnFinecorsa').addEventListener('click', () => {
+    if(state === 'aprendo') state = 'aperto';
+    else if(state === 'chiudendo') state = 'chiuso';
+    render();
+  });
+  render();
+</script>
+</body>
+</html>

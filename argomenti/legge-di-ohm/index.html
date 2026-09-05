@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La legge di Ohm: cos'è e come si applica | professorfigura.it</title>
+<meta name="description" content="La legge di Ohm spiegata in modo semplice, con uno schema interattivo: cambia la resistenza e osserva come varia la corrente. Per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/legge-di-ohm/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="La legge di Ohm: cos'è e come si applica">
+<meta property="og:description" content="La regola che lega tensione, corrente e resistenza, spiegata con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/legge-di-ohm/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "La legge di Ohm: cos'è e come si applica",
+  "description": "La legge di Ohm spiegata in modo semplice, con uno schema interattivo che mostra come tensione, corrente e resistenza sono legate tra loro.",
+  "url": "https://www.professorfigura.it/argomenti/legge-di-ohm/",
+  "author": { "@type": "Person", "name": "Giovanni Figura", "url": "https://www.professorfigura.it/chi-sono/" },
+  "educationalLevel": "Scuola secondaria di secondo grado — Classe prima",
+  "learningResourceType": "Lezione",
+  "about": { "@type": "Thing", "name": "Legge di Ohm" },
+  "inLanguage": "it"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},
+    {"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},
+    {"@type":"ListItem","position":3,"name":"La legge di Ohm","item":"https://www.professorfigura.it/argomenti/legge-di-ohm/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --black:#010101;
+    --grey-900:#1B1C1D;
+    --grey-700:#54585C;
+    --grey-500:#8A8E92;
+    --grey-300:#DADCDE;
+    --grey-150:#EDEEEF;
+    --grey-100:#F5F5F6;
+    --orange:#E8632E;
+    --orange-dark:#B84A20;
+    --orange-pale:#FCE7DC;
+    --green:#3F7D5C;
+    --green-dark:#2A5940;
+    --green-pale:#E4EFE9;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}
+  .nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+
+  main{padding-top:96px;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}
+  .crumb a{text-decoration:none;color:var(--grey-500);}
+  .crumb a:hover{color:var(--orange);}
+
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}
+  .badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+
+  /* ---- Schema su foglio a quadretti ---- */
+  .notebook{
+    position:relative;padding:40px 24px 30px;margin:0 0 20px;
+    background-color:#FFFFFF;
+    background-image:
+      linear-gradient(#DCE6F0 1px, transparent 1px),
+      linear-gradient(90deg, #DCE6F0 1px, transparent 1px);
+    background-size:24px 24px;
+    border:1px solid var(--grey-150);
+    box-shadow:0 2px 0 var(--grey-150);
+  }
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;animation:flowDash 1s linear infinite;}
+  @keyframes flowDash{ to{ stroke-dashoffset:-48px; } }
+  .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--grey-700);}
+  .readout{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;}
+  .readout.v{fill:var(--black);}
+  .readout.r{fill:var(--black);}
+  .readout.i{fill:var(--orange-dark);}
+
+  /* ---- Controllo slider ---- */
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+
+  /* ---- Corpo testo ---- */
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}
+  .foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+
+  @media (max-width:640px){
+    header{padding:22px 24px;}
+    .related-list{grid-template-columns:1fr;}
+    .notebook{padding:30px 14px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/chi-sono/">Chi sono</a></li>
+    <li><a href="/#classi">Classi</a></li>
+    <li><a href="/#argomenti">Argomenti</a></li>
+  </ul>
+</nav>
+
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <p class="crumb"><a href="/">Home</a> / <a href="/classi/prime/">Classi prime</a> / La legge di Ohm</p>
+
+    <div class="badges">
+      <span class="badge badge-classe">Classi prime</span>
+      <span class="badge badge-tag">Teoria</span>
+    </div>
+
+    <h1>La legge di Ohm: cos'è e come si applica</h1>
+    <p class="lead">Tre grandezze, una sola formula, e un legame che regola ogni circuito elettrico che incontrerai da qui in avanti. Prova a muovere lo slider sotto lo schema e osserva cosa succede alla corrente.</p>
+
+    <div class="notebook">
+      <svg viewBox="0 0 340 220" id="circuitSvg">
+        <!-- loop -->
+        <path class="wire" d="M60,50 H280" />
+        <path class="flow" d="M60,50 H280" />
+        <path class="wire" d="M280,50 V170" />
+        <path class="flow" d="M280,50 V170" />
+        <path class="wire" d="M280,170 H210" />
+        <path class="flow" d="M280,170 H210" />
+        <path class="wire" d="M130,170 H60" />
+        <path class="flow" d="M130,170 H60" />
+        <path class="wire" d="M60,170 V50" />
+        <path class="flow" d="M60,170 V50" />
+
+        <!-- battery -->
+        <line x1="50" y1="92" x2="70" y2="92" stroke="var(--black)" stroke-width="3"/>
+        <line x1="55" y1="102" x2="65" y2="102" stroke="var(--black)" stroke-width="1.5"/>
+        <text x="30" y="120" class="diagram-label">PILA</text>
+
+        <!-- resistore: simbolo IEC, rettangolo -->
+        <rect class="resistor" x="130" y="158" width="80" height="24"/>
+        <text x="150" y="200" class="diagram-label">RESISTORE (R)</text>
+
+        <circle class="node" cx="130" cy="170" r="4"/>
+        <circle class="node" cx="210" cy="170" r="4"/>
+
+        <!-- readout -->
+        <text x="235" y="30" text-anchor="end" class="readout v">V = 9 V</text>
+        <text x="290" y="145" text-anchor="middle" class="readout r" id="readoutR">R = 6 Ω</text>
+        <text x="60" y="30" class="readout i" id="readoutI">I = 1.50 A</text>
+      </svg>
+    </div>
+
+    <div class="control">
+      <div class="control-row">
+        <label for="rSlider">Resistenza (R)</label>
+        <span class="val" id="rVal">6 Ω</span>
+      </div>
+      <input type="range" id="rSlider" min="1" max="18" value="6" step="1">
+    </div>
+
+    <article>
+      <p>Hai già incontrato tensione, corrente e resistenza come tre grandezze separate. La <strong>legge di Ohm</strong> è la formula che le lega insieme in un'unica equazione: la tensione è uguale alla corrente moltiplicata per la resistenza, cioè <strong>V = R × I</strong>. Conoscendo due di questi valori, puoi sempre calcolare il terzo.</p>
+
+      <p>Pensa di nuovo al tubo dell'acqua che hai già incontrato parlando di corrente: se aumenti la spinta della pompa — cioè la tensione — a parità di tubo, l'acqua scorre più velocemente, cioè aumenta la corrente. Se invece stringi il tubo — cioè aumenti la resistenza — a parità di spinta, l'acqua rallenta. La legge di Ohm mette questi tre effetti in un'unica equazione precisa, che puoi verificare tu stesso muovendo lo slider sopra: a parità di tensione, più resistenza significa meno corrente.</p>
+
+      <h2>Perché conviene impararla bene, e subito</h2>
+
+      <p>Questa formula tornerà utile in ogni singolo circuito che studierai da qui ai prossimi cinque anni, dal più semplice al più complesso. Prima di collegare qualsiasi componente reale, un buon tecnico sa già, sulla carta, quanta corrente scorrerà — ed è proprio questo calcolo che gli permette di scegliere il componente giusto, senza rischiare di danneggiarlo o di sottodimensionarlo.</p>
+
+      <div class="callout">
+        <span class="c-label">Curiosità</span>
+        <p>Georg Ohm pubblicò questa legge nel 1827, ma fu accolta con scetticismo dalla comunità scientifica tedesca dell'epoca. Oggi è una delle formule più famose e più usate di tutta la fisica.</p>
+      </div>
+
+      <p>Un dettaglio da tenere a mente: la resistenza si misura in <strong>ohm</strong> (simbolo Ω), la tensione in <strong>volt</strong> (V), la corrente in <strong>ampere</strong> (A). Se conosci tensione e resistenza puoi ricavare la corrente dividendo la prima per la seconda: <strong>I = V / R</strong>. È esattamente il calcolo che lo schema sopra sta facendo in tempo reale ogni volta che sposti lo slider.</p>
+
+      <div class="activity">
+        <span class="c-label">Mettiti alla prova</span>
+        <p>Con un multimetro, misura la tensione ai capi di una resistenza nota e la corrente che la attraversa. Il rapporto tra i due valori corrisponde davvero alla resistenza dichiarata dal componente? Prova a rifare lo stesso calcolo con una resistenza diversa e confronta i risultati.</p>
+      </div>
+
+      <p>Nella prossima lezione vedremo cosa succede quando, invece di un solo resistore, ne colleghiamo diversi insieme — in serie o in parallelo — e come questa scelta cambia il valore complessivo della resistenza nel circuito.</p>
+    </article>
+
+    <div class="related">
+      <h3>Continua da qui</h3>
+      <div class="related-list">
+        <a href="/argomenti/interruttore-lampadina/" class="related-item">
+          <span class="r-classe">Classi prime · Teoria</span>
+          <span class="r-title">Interruttore e lampadina</span>
+        </a>
+        <a href="/argomenti/circuiti-in-parallelo/" class="related-item">
+          <span class="r-classe">Classi seconde · Teoria</span>
+          <span class="r-title">Circuiti in parallelo</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/cookie/">Cookie Policy</a>
+    </div>
+    <p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navPanel = document.getElementById('navPanel');
+  const navClose = document.getElementById('navClose');
+  const scrim = document.getElementById('scrim');
+  function openNav(){ navPanel.classList.add('open'); scrim.classList.add('show'); }
+  function closeNav(){ navPanel.classList.remove('open'); scrim.classList.remove('show'); }
+  burger.addEventListener('click', openNav);
+  navClose.addEventListener('click', closeNav);
+  scrim.addEventListener('click', closeNav);
+
+  // Legge di Ohm interattiva: I = V / R
+  const V = 9;
+  const slider = document.getElementById('rSlider');
+  const rVal = document.getElementById('rVal');
+  const readoutR = document.getElementById('readoutR');
+  const readoutI = document.getElementById('readoutI');
+  const flows = document.querySelectorAll('.flow');
+
+  function update(){
+    const R = parseInt(slider.value, 10);
+    const I = V / R;
+    rVal.textContent = R + ' Ω';
+    readoutR.textContent = 'R = ' + R + ' Ω';
+    readoutI.textContent = 'I = ' + I.toFixed(2) + ' A';
+    // più corrente = flusso più veloce (durata minore dell'animazione)
+    const duration = Math.max(0.25, 1.6 / I).toFixed(2);
+    flows.forEach(f => f.style.animationDuration = duration + 's');
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+
+</body>
+</html>

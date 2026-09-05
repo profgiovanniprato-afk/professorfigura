@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il transistor BJT: l'interruttore comandato dalla corrente | professorfigura.it</title>
+<meta name="description" content="Come il transistor BJT usa una piccola corrente di base per controllarne una molto più grande. Schema interattivo per le classi quarte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/transistor-bjt/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Il transistor BJT: l'interruttore comandato dalla corrente">
+<meta property="og:description" content="Come una piccola corrente di base controlla una corrente molto più grande, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/transistor-bjt/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Il transistor BJT: l'interruttore comandato dalla corrente","description":"Come funziona un transistor bipolare (BJT): una piccola corrente di base controlla una corrente molto più grande tra collettore ed emettitore.","url":"https://www.professorfigura.it/argomenti/transistor-bjt/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quarta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Transistor BJT"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quarte","item":"https://www.professorfigura.it/classi/quarte/"},{"@type":"ListItem","position":3,"name":"Il transistor BJT","item":"https://www.professorfigura.it/argomenti/transistor-bjt/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:420px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .bjt-body{stroke:var(--black);stroke-width:2.2;fill:none;}
+  .bjt-arrow{fill:var(--black);}
+  .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .led-dot{fill:var(--grey-300);transition:fill .2s ease;}
+  .led-dot.on{fill:#F5C518;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
+  .status{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;}
+  .status.off{fill:var(--grey-500);}
+  .status.on{fill:var(--green-dark);}
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quarte/">Classi quarte</a> / Il transistor BJT</p>
+  <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Il transistor BJT: l'interruttore comandato dalla corrente</h1>
+  <p class="lead">Tre terminali, un solo segreto: una piccolissima corrente sulla base può accendere o spegnere una corrente molto più grande. Muovi lo slider della base e osserva il LED collegato al collettore.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 300 200" id="circuitSvg">
+      <!-- BJT NPN: simbolo corretto -->
+      <line class="bjt-body" x1="130" y1="60" x2="130" y2="130"/>
+      <path class="wire" d="M60,95 H130" /><path class="flow" id="fBase" d="M60,95 H130" />
+      <rect class="resistor" x="60" y="85" width="40" height="20"/>
+      <text x="80" y="80" text-anchor="middle" class="diagram-label">RB</text>
+
+      <line class="bjt-body" x1="130" y1="75" x2="170" y2="50"/>
+      <path class="wire" d="M170,50 V20" /><path class="flow" id="fCol" d="M170,50 V20" />
+      <text x="176" y="30" class="diagram-label">C</text>
+
+      <line class="bjt-body" x1="130" y1="115" x2="170" y2="140"/>
+      <polygon class="bjt-arrow" points="160,132 170,140 156,142"/>
+      <path class="wire" d="M170,140 V170" /><path class="flow" id="fEm" d="M170,140 V170" />
+      <text x="176" y="160" class="diagram-label">E</text>
+
+      <text x="80" y="115" text-anchor="middle" class="diagram-label">B</text>
+
+      <path class="wire" d="M170,20 H220" /><path class="flow" id="fLed" d="M170,20 H220" />
+      <circle class="led-dot" id="ledDot" cx="235" cy="20" r="9"/>
+      <text x="235" y="45" text-anchor="middle" class="diagram-label">LED</text>
+
+      <text x="150" y="185" text-anchor="middle" class="status off" id="statusText">INTERDIZIONE — spento</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <div class="control-row"><label for="baseSlider">Corrente di base</label><span class="val" id="baseVal">0%</span></div>
+    <input type="range" id="baseSlider" min="0" max="100" value="0" step="10">
+  </div>
+
+  <article>
+    <p>Il diodo, che hai già incontrato, ha due terminali. Il <strong>transistor BJT</strong> ne ha tre: <strong>collettore (C)</strong>, <strong>base (B)</strong> ed <strong>emettitore (E)</strong>. Il segreto è tutto nella base: una piccolissima corrente in ingresso su di essa può controllare una corrente molto più grande tra collettore ed emettitore — un po' come il rubinetto di un tubo dell'acqua che, con un piccolo movimento della mano, controlla un flusso d'acqua molto più potente.</p>
+
+    <p>Muovi lo slider della corrente di base: quando è a zero, il transistor è in <strong>interdizione</strong> — nessuna corrente passa tra collettore ed emettitore, il LED resta spento. Aumentando la corrente di base fino a un certo valore, il transistor entra in <strong>saturazione</strong> — conduce quasi come un semplice filo, il LED si accende alla massima luminosità. In questa modalità, il transistor funziona come un vero e proprio <strong>interruttore elettronico</strong>: acceso o spento, senza parti meccaniche in movimento e in una frazione di microsecondo.</p>
+
+    <h2>Il simbolo che racconta la freccia</h2>
+
+    <p>Nota la piccola freccia sul terminale dell'emettitore nello schema: indica il verso convenzionale della corrente, ed è anche il modo in cui si distingue un transistor <strong>NPN</strong> (freccia uscente, come in questo schema) da uno <strong>PNP</strong> (freccia entrante) — le due grandi famiglie di transistor bipolari, che si comportano in modo speculare l'una rispetto all'altra.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il transistor, inventato nel 1947, è considerato una delle invenzioni più importanti del Novecento: senza di esso non esisterebbero computer, smartphone o quasi nessun dispositivo elettronico moderno. Il processore del tuo telefono ne contiene diversi miliardi.</p>
+    </div>
+
+    <p>Tra interdizione e saturazione esiste anche una zona intermedia, la <strong>regione attiva</strong>, in cui il transistor non si comporta più come un semplice interruttore ma come un vero <strong>amplificatore</strong> — è lì che entra in gioco quando l'obiettivo non è accendere o spegnere qualcosa, ma rendere più grande un segnale.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Monta su breadboard un transistor NPN con un resistore di base e un LED al collettore. Collega la base a un pulsante: premendolo, il LED si accende all'istante. Prova poi a collegare la base a un sensore di luce al posto del pulsante — hai appena costruito un piccolo interruttore automatico.</p>
+    </div>
+
+    <p>Nella prossima lezione lasciamo per un momento i componenti analogici e passiamo al mondo del vero e del falso: la logica digitale.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/logica-digitale/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">La logica digitale</span></a>
+      <a href="/argomenti/diodo/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Il diodo e i semiconduttori</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const slider = document.getElementById('baseSlider');
+  const baseVal = document.getElementById('baseVal');
+  const statusText = document.getElementById('statusText');
+  const ledDot = document.getElementById('ledDot');
+  const flows = ['fBase','fCol','fEm','fLed'].map(id => document.getElementById(id));
+  function update(){
+    const v = parseInt(slider.value,10);
+    baseVal.textContent = v + '%';
+    const on = v >= 30;
+    flows.forEach(f => f.classList.toggle('on', on));
+    ledDot.classList.toggle('on', on);
+    statusText.textContent = on ? 'SATURAZIONE — acceso' : 'INTERDIZIONE — spento';
+    statusText.classList.toggle('on', on);
+    statusText.classList.toggle('off', !on);
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova pratica: programmazione Ladder | professorfigura.it</title>
+<meta name="description" content="Programma un circuito di avviamento motore con autoritenuta in linguaggio Ladder: marcia, arresto, contatti e bobina. Schema interattivo per le classi quinte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/programmazione-ladder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prova pratica: programmazione Ladder">
+<meta property="og:description" content="Un circuito di avviamento motore con autoritenuta, programmato in linguaggio Ladder, interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/programmazione-ladder/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Prova pratica: programmazione Ladder","description":"Guida pratica per programmare in linguaggio Ladder un circuito di avviamento motore con autoritenuta, marcia e arresto.","url":"https://www.professorfigura.it/argomenti/programmazione-ladder/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quinta","learningResourceType":"Prova pratica","about":{"@type":"Thing","name":"Programmazione PLC in linguaggio Ladder"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quinte","item":"https://www.professorfigura.it/classi/quinte/"},{"@type":"ListItem","position":3,"name":"Prova pratica: programmazione Ladder","item":"https://www.professorfigura.it/argomenti/programmazione-ladder/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-lab{background:var(--green-pale);color:var(--green-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
+  .rail{stroke:var(--black);stroke-width:3;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .contact{stroke:var(--black);stroke-width:2.5;}
+  .contact-slash{stroke:var(--black);stroke-width:2;}
+  .coil{fill:var(--white);stroke:var(--black);stroke-width:2.5;}
+  .coil.energized{fill:var(--green-pale);stroke:var(--green-dark);}
+  .rung-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-500);}
+  .io-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;fill:var(--black);text-anchor:middle;}
+  .btn-group{cursor:pointer;}
+  .btn-face{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .btn-face.pressed{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .control{max-width:460px;margin:0 auto 56px;padding:0 8px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;padding:11px 22px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .add-btn:hover{background:var(--orange-dark);}
+  .add-btn.stop{background:var(--grey-100);color:var(--black);}
+  .add-btn.stop:hover{background:var(--orange-pale);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .steps{counter-reset:step;margin:30px 0 40px;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:0 0 24px 46px;margin-bottom:2px;border-left:2px solid var(--grey-150);}
+  .steps li:last-child{border-left-color:transparent;}
+  .steps li::before{content:counter(step);position:absolute;left:-15px;top:0;width:30px;height:30px;background:var(--black);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;}
+  .steps li p{margin:0;font-size:15.5px;color:var(--grey-700);text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quinte/">Classi quinte</a> / Prova pratica: programmazione Ladder</p>
+  <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-lab">Laboratorio</span></div>
+  <h1>Prova pratica: programmazione Ladder</h1>
+  <p class="lead">Il circuito più classico dell'automazione industriale: avviare un motore con un pulsante e fermarlo con un altro, facendo in modo che il circuito "si ricordi" da solo di restare acceso. Prova tu stesso i pulsanti nello schema.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 380 180" id="circuitSvg">
+      <line class="rail" x1="30" y1="20" x2="30" y2="160"/>
+      <line class="rail" x1="350" y1="20" x2="350" y2="160"/>
+
+      <path class="wire" d="M30,60 H90" /><path class="flow" id="f1" d="M30,60 H90" />
+      <g class="btn-group" id="marciaBtn">
+        <line class="contact" x1="90" y1="50" x2="90" y2="70"/>
+        <line class="contact" x1="110" y1="50" x2="110" y2="70"/>
+        <text x="100" y="40" class="io-label">S1</text>
+        <text x="100" y="86" class="rung-label" text-anchor="middle">MARCIA</text>
+      </g>
+      <path class="wire" d="M110,60 H190" /><path class="flow" id="f2" d="M110,60 H190" />
+
+      <g class="btn-group" id="arrestoBtn">
+        <line class="contact" x1="190" y1="50" x2="190" y2="70"/>
+        <line class="contact-slash" x1="184" y1="72" x2="196" y2="48"/>
+        <line class="contact" x1="210" y1="50" x2="210" y2="70"/>
+        <text x="200" y="40" class="io-label">S2</text>
+        <text x="200" y="86" class="rung-label" text-anchor="middle">ARRESTO</text>
+      </g>
+      <path class="wire" d="M210,60 H300" /><path class="flow" id="f3" d="M210,60 H300" />
+
+      <circle class="coil" id="coil" cx="320" cy="60" r="16"/>
+      <text x="320" y="90" class="io-label">K1</text>
+
+      <!-- autoritenuta: ramo in parallelo al pulsante di marcia -->
+      <path class="wire" d="M90,60 V120 H210 V70" />
+      <path class="flow" id="f4" d="M90,60 V120 H210 V70" />
+      <line class="contact" id="k1a" x1="140" y1="110" x2="140" y2="130"/>
+      <line class="contact" id="k1b" x1="160" y1="110" x2="160" y2="130"/>
+      <text x="150" y="146" class="rung-label" text-anchor="middle">K1 (autoritenuta)</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <button class="add-btn" id="marciaWrap">Premi MARCIA</button>
+    <button class="add-btn stop" id="arrestoWrap">Premi ARRESTO</button>
+  </div>
+
+  <article>
+    <p>Lo schema sopra è disegnato in linguaggio <strong>Ladder</strong>, pensato apposta per essere familiare a chi già conosce gli schemi elettrici: due montanti verticali (i "rail" di alimentazione) e delle righe orizzontali — i "pioli della scaletta", da cui il nome — ognuna una riga di logica.</p>
+
+    <p>I simboli sono standard: due barre verticali vicine rappresentano un <strong>contatto normalmente aperto</strong> (si chiude quando il pulsante viene premuto, come S1), mentre lo stesso simbolo con una barra diagonale in più rappresenta un <strong>contatto normalmente chiuso</strong> (si apre quando il pulsante viene premuto, come S2). Il cerchio rappresenta la <strong>bobina</strong> — l'uscita che comanda realmente il motore.</p>
+
+    <h2>Il segreto dell'autoritenuta</h2>
+
+    <p>Premi il pulsante "MARCIA" nello schema: il motore (K1) si accende. Ma c'è un dettaglio importante da notare — il circuito resta acceso anche se, nella realtà, rilasciassi il pulsante subito dopo averlo premuto. Questo succede grazie al ramo aggiuntivo in basso, con il contatto <strong>K1</strong>: quando la bobina si eccita, chiude anche questo contatto ausiliario, che "tiene aperta" la strada per la corrente anche senza più bisogno del pulsante di marcia. Questo principio si chiama <strong>autoritenuta</strong>.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il pulsante per chiamare l'ascensore funziona con la stessa identica logica: lo premi un istante e lo rilasci subito, ma la lucina resta accesa finché l'ascensore non arriva — il sistema "si ricorda" della tua richiesta anche dopo che hai tolto il dito dal pulsante.</p>
+    </div>
+
+    <p>Premi ora "ARRESTO": il circuito si apre, la bobina si diseccita, e con essa si apre anche il contatto ausiliario K1 — l'autoritenuta si "rompe", e il motore resta spento anche rilasciando il pulsante di arresto. Nota che il pulsante di arresto è collegato come contatto <strong>normalmente chiuso</strong>: è una scelta di sicurezza precisa, non casuale.</p>
+
+    <h2>Come montarlo davvero su un PLC</h2>
+
+    <ol class="steps">
+      <li><p>Collega un pulsante normalmente aperto all'ingresso <strong>I1</strong> del PLC (sarà il tuo pulsante di marcia) e uno normalmente chiuso all'ingresso <strong>I2</strong> (arresto).</p></li>
+      <li><p>Collega l'uscita <strong>Q1</strong> del PLC a un piccolo relè o a un LED, che simulerà il motore.</p></li>
+      <li><p>Nel software di programmazione, disegna la riga Ladder esattamente come nello schema sopra: I1 in serie con I2, la bobina Q1, e un contatto Q1 in parallelo a I1 per l'autoritenuta.</p></li>
+      <li><p>Trasferisci il programma sul PLC e prova il circuito: verifica che il comportamento corrisponda esattamente a quello che hai osservato nello schema interattivo.</p></li>
+    </ol>
+
+    <div class="activity">
+      <span class="c-label">Prova pratica</span>
+      <p>Modifica il circuito aggiungendo un secondo pulsante di arresto in un punto diverso (per esempio un arresto di emergenza), collegato anch'esso come contatto normalmente chiuso, in serie con il primo. Verifica che premendo uno qualsiasi dei due pulsanti di arresto il motore si fermi comunque.</p>
+    </div>
+
+    <p>Questo semplice circuito, con piccole variazioni, è alla base di gran parte dell'automazione industriale reale: dai nastri trasportatori ai cancelli automatici, fino ai grandi impianti di produzione.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/introduzione-ai-plc/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Introduzione ai PLC</span></a>
+      <a href="/argomenti/timer-555/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Il timer 555</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let k1 = false; // stato della bobina (motore)
+  const coil = document.getElementById('coil');
+  const flows = ['f1','f2','f3','f4'].map(id => document.getElementById(id));
+  const f4 = document.getElementById('f4');
+
+  function render(){
+    coil.classList.toggle('energized', k1);
+    flows.forEach(f => f.classList.toggle('on', k1));
+  }
+  document.getElementById('marciaWrap').addEventListener('click', () => { k1 = true; render(); });
+  document.getElementById('arrestoWrap').addEventListener('click', () => { k1 = false; render(); });
+  render();
+</script>
+</body>
+</html>

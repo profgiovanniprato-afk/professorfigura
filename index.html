@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>professorfigura.it — Lezioni di Elettrotecnica ed Elettronica</title>
+<meta name="description" content="Le lezioni di elettrotecnica, elettronica e informatica del prof. Giovanni Figura. Contenuti organizzati per classe e per argomento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --black:#010101;
+    --grey-900:#1B1C1D;
+    --grey-700:#54585C;
+    --grey-500:#8A8E92;
+    --grey-300:#DADCDE;
+    --grey-150:#EDEEEF;
+    --grey-100:#F5F5F6;
+    --orange:#E8632E;
+    --orange-dark:#B84A20;
+    --orange-light:#F2905F;
+    --orange-pale:#FCE7DC;
+    --green:#3F7D5C;
+    --green-dark:#2A5940;
+    --green-light:#6BA184;
+    --green-pale:#E4EFE9;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  .mono{font-family:'Space Grotesk',sans-serif;}
+
+  /* ---- Header: minimal, hamburger + wordmark only ---- */
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:28px 36px;display:flex;justify-content:space-between;align-items:flex-start;}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--white);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--white);text-align:right;line-height:1.4;}
+
+  /* ---- Slide nav panel ---- */
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}
+  .nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;transition:color .15s ease;}
+  .nav-panel a:hover,.nav-panel a.current{color:var(--orange);}
+  .nav-social{display:flex;gap:16px;margin-top:50px;}
+  .nav-social a{width:30px;height:30px;border:1px solid #2E2F31;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--grey-500);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;height:88vh;min-height:600px;display:flex;align-items:center;overflow:hidden;background:var(--black);}
+  .hero img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:60%;object-fit:contain;object-position:bottom right;}
+  .hero-content{position:relative;z-index:2;text-align:left;padding:0 6vw;max-width:560px;}
+  .hero-quote{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(24px,3.2vw,38px);font-weight:400;color:var(--white);letter-spacing:0;line-height:1.4;margin:0;}
+  .hero-quote::before{content:'\201C';}
+  .hero-quote::after{content:'\201D';}
+  .hero-quote em{font-style:italic;color:var(--orange);}
+  .hero-attr{margin-top:20px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--grey-300);text-transform:uppercase;}
+
+  /* ---- Intro blurb ---- */
+  .intro{padding:80px 24px 60px;text-align:center;}
+  .intro p{max-width:620px;margin:0 auto;color:var(--grey-700);font-size:14.5px;line-height:1.85;}
+
+  /* ---- Section label ---- */
+  .sec-label{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:56px;}
+  .sec-label .rule{width:36px;height:2px;background:var(--orange);}
+  .sec-label span{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.18em;color:var(--black);text-transform:uppercase;}
+
+  /* ---- Argomenti: masonry columns, no gap within column ---- */
+  .argomenti{padding:20px 0 90px;}
+  .masonry{display:grid;grid-template-columns:repeat(5,1fr);gap:26px;padding:0 26px;max-width:1500px;margin:0 auto;}
+  .tile{position:relative;overflow:hidden;display:flex;align-items:flex-end;aspect-ratio:3/4;}
+  .tile-cap{position:relative;z-index:2;width:100%;padding:16px 16px 14px;background:linear-gradient(0deg, rgba(0,0,0,.72) 0%, transparent 100%);}
+  .tile-cap .t-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--white);line-height:1.3;}
+  .tile-cap .t-meta{display:flex;gap:8px;align-items:center;margin-top:6px;}
+  .tile-cap .t-classe{font-size:10.5px;color:var(--grey-300);}
+  .tile-cap .t-tag{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-light);}
+
+  @media (max-width:1100px){.masonry{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:640px){.masonry{grid-template-columns:repeat(2,1fr);gap:12px;padding:0 12px;}}
+
+  /* ---- Classi band ---- */
+  .classi{background:var(--grey-100);padding:80px 24px;}
+  .classi-row{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;}
+  .classe-item{flex:1;min-width:150px;text-align:center;text-decoration:none;color:var(--black);padding:18px 8px;border-top:2px solid var(--grey-300);transition:border-color .2s ease;}
+  .classe-item:hover{border-color:var(--orange);}
+  .classe-item:hover .roman{color:var(--orange);}
+  .classe-item .roman{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;color:var(--grey-500);transition:color .2s ease;margin-bottom:8px;}
+  .classe-item .label{display:block;font-size:13.5px;font-weight:600;margin-bottom:4px;}
+  .classe-item .count{display:block;font-size:11.5px;color:var(--grey-500);}
+
+  /* ---- CTA strip ---- */
+  .cta-strip{background:var(--grey-900);text-align:center;padding:20px 24px;}
+  .cta-strip a{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--white);text-decoration:none;text-transform:uppercase;}
+  .cta-strip a:hover{color:var(--orange);}
+
+  /* ---- Footer ---- */
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-contact{font-size:13px;color:var(--grey-500);line-height:1.9;}
+  .foot-social{display:flex;justify-content:center;gap:14px;margin:26px 0;}
+  .foot-social a{width:32px;height:32px;border:1px solid #2E2F31;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--grey-500);font-size:12px;text-decoration:none;}
+  .foot-social a:hover{color:var(--white);border-color:var(--grey-500);}
+  .foot-legal{margin-top:36px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;letter-spacing:.03em;}
+  .foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul>
+    <li><a href="/" class="current">Home</a></li>
+    <li><a href="/chi-sono/">Chi sono</a></li>
+    <li><a href="#classi">Classi</a></li>
+    <li><a href="#argomenti">Argomenti</a></li>
+    <li><a href="/contatti/">Contatti</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="LinkedIn">IN</a>
+  </div>
+</nav>
+
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <div class="wordmark">PROFESSOR<br>FIGURA</div>
+</header>
+
+<div class="hero">
+  <img src="prof-figura-v2.jpg" alt="Ritratto del prof. Giovanni Figura">
+  <div class="hero-content">
+    <p class="hero-quote">Chi <em>pensa</em> con la propria testa, ha già vinto.</p>
+    <p class="hero-attr">Prof. Giovanni Figura</p>
+  </div>
+</div>
+
+<div class="intro">
+  <p>professorfigura.it raccoglie le lezioni di elettrotecnica, elettronica e informatica del prof. Giovanni Figura — spiegate in modo semplice, organizzate per classe e per argomento, pensate per essere seguite anche da soli.</p>
+</div>
+
+<section class="argomenti" id="argomenti">
+  <div class="sec-label"><span class="rule"></span><span>Argomenti</span></div>
+  <div class="masonry">
+
+    <a class="tile" href="/argomenti/interruttore-lampadina/" style="background:linear-gradient(135deg,var(--grey-900),var(--black));">
+      <div class="tile-cap"><span class="t-title">Interruttore e lampadina</span><div class="t-meta"><span class="t-classe">Classi prime</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/legge-di-ohm/" style="background:linear-gradient(135deg,var(--orange-dark),var(--black));">
+      <div class="tile-cap"><span class="t-title">La legge di Ohm</span><div class="t-meta"><span class="t-classe">Classi prime</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/circuito-in-serie/" style="background:linear-gradient(135deg,var(--green-dark),var(--black));">
+      <div class="tile-cap"><span class="t-title">Prova pratica: circuito in serie</span><div class="t-meta"><span class="t-classe">Classi seconde</span><span class="t-tag">Laboratorio</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/circuiti-in-parallelo/" style="background:linear-gradient(135deg,var(--grey-700),var(--grey-900));">
+      <div class="tile-cap"><span class="t-title">Circuiti in parallelo</span><div class="t-meta"><span class="t-classe">Classi seconde</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/diodo/" style="background:linear-gradient(135deg,var(--orange),var(--orange-dark));">
+      <div class="tile-cap"><span class="t-title">Il diodo e i semiconduttori</span><div class="t-meta"><span class="t-classe">Classi terze</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/introduzione-ai-plc/" style="background:linear-gradient(135deg,var(--grey-900),var(--black));">
+      <div class="tile-cap"><span class="t-title">Introduzione ai PLC</span><div class="t-meta"><span class="t-classe">Classi quarte</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/programmazione-ladder/" style="background:linear-gradient(135deg,var(--green),var(--green-dark));">
+      <div class="tile-cap"><span class="t-title">Prova pratica: Ladder</span><div class="t-meta"><span class="t-classe">Classi quinte</span><span class="t-tag">Laboratorio</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/amplificatore-operazionale/" style="background:linear-gradient(135deg,var(--grey-700),var(--black));">
+      <div class="tile-cap"><span class="t-title">L'amplificatore operazionale</span><div class="t-meta"><span class="t-classe">Classi quinte</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/kirchhoff/" style="background:linear-gradient(135deg,var(--orange-dark),var(--grey-900));">
+      <div class="tile-cap"><span class="t-title">I principi di Kirchhoff</span><div class="t-meta"><span class="t-classe">Classi terze</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+    <a class="tile" href="/argomenti/timer-555/" style="background:linear-gradient(135deg,var(--green-dark),var(--grey-900));">
+      <div class="tile-cap"><span class="t-title">Il timer 555</span><div class="t-meta"><span class="t-classe">Classi quinte</span><span class="t-tag">Teoria</span></div></div>
+    </a>
+
+  </div>
+</section>
+
+<section class="classi" id="classi">
+  <div class="sec-label"><span class="rule"></span><span>Le classi</span></div>
+  <div class="classi-row">
+    <a href="/classi/prime/" class="classe-item"><span class="roman">I</span><span class="label">Classi prime</span><span class="count">12 lezioni</span></a>
+    <a href="/classi/seconde/" class="classe-item"><span class="roman">II</span><span class="label">Classi seconde</span><span class="count">15 lezioni</span></a>
+    <a href="/classi/terze/" class="classe-item"><span class="roman">III</span><span class="label">Classi terze</span><span class="count">18 lezioni</span></a>
+    <a href="/classi/quarte/" class="classe-item"><span class="roman">IV</span><span class="label">Classi quarte</span><span class="count">14 lezioni</span></a>
+    <a href="/classi/quinte/" class="classe-item"><span class="roman">V</span><span class="label">Classi quinte</span><span class="count">10 lezioni</span></a>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <a href="/sostieni/">Scarica le lezioni con una donazione libera →</a>
+</div>
+
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-social">
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="LinkedIn">IN</a>
+  </div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/cookie/">Cookie Policy</a>
+    </div>
+    <p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navPanel = document.getElementById('navPanel');
+  const navClose = document.getElementById('navClose');
+  const scrim = document.getElementById('scrim');
+  function openNav(){ navPanel.classList.add('open'); scrim.classList.add('show'); }
+  function closeNav(){ navPanel.classList.remove('open'); scrim.classList.remove('show'); }
+  burger.addEventListener('click', openNav);
+  navClose.addEventListener('click', closeNav);
+  scrim.addEventListener('click', closeNav);
+</script>
+
+</body>
+</html>

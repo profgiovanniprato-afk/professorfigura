@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'amplificatore operazionale: il componente universale | professorfigura.it</title>
+<meta name="description" content="Come funziona un amplificatore operazionale in configurazione invertente: il guadagno dipende solo dal rapporto tra due resistori. Schema interattivo per le classi quinte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/amplificatore-operazionale/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="L'amplificatore operazionale: il componente universale">
+<meta property="og:description" content="Come il guadagno di un operazionale dipende dal rapporto tra due resistori, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/amplificatore-operazionale/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"L'amplificatore operazionale: il componente universale","description":"Come funziona un amplificatore operazionale in configurazione invertente e come il guadagno dipende dal rapporto tra due resistori.","url":"https://www.professorfigura.it/argomenti/amplificatore-operazionale/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quinta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Amplificatore operazionale"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quinte","item":"https://www.professorfigura.it/classi/quinte/"},{"@type":"ListItem","position":3,"name":"L'amplificatore operazionale","item":"https://www.professorfigura.it/argomenti/amplificatore-operazionale/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
+  .opamp{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--grey-700);}
+  .wave-in{fill:none;stroke:var(--grey-500);stroke-width:2;}
+  .wave-out{fill:none;stroke:var(--green);stroke-width:2.2;}
+  .readout{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;fill:var(--orange-dark);}
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quinte/">Classi quinte</a> / L'amplificatore operazionale</p>
+  <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>L'amplificatore operazionale: il componente universale</h1>
+  <p class="lead">Un solo componente, mille configurazioni possibili. Qui lo vediamo nella più comune: la configurazione invertente, dove il guadagno dipende solo dal rapporto tra due resistori.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 380 220" id="circuitSvg">
+      <path class="wire" d="M20,120 H60" />
+      <rect class="resistor" x="60" y="108" width="60" height="22" />
+      <text x="90" y="102" text-anchor="middle" class="diagram-label">Rin</text>
+      <path class="wire" d="M120,120 H150" />
+
+      <polygon class="opamp" points="150,90 150,150 220,120" />
+      <text x="163" y="105" class="diagram-label">−</text>
+      <text x="163" y="140" class="diagram-label">+</text>
+
+      <path class="wire" d="M220,120 H280" />
+      <text x="250" y="112" text-anchor="middle" class="diagram-label" id="vOutLabel">Vout</text>
+
+      <path class="wire" d="M150,90 V60 H285 V120" />
+      <rect class="resistor" x="150" y="48" width="60" height="22" />
+      <text x="180" y="42" text-anchor="middle" class="diagram-label">Rf</text>
+
+      <!-- onde -->
+      <path class="wave-in" d="M20,180 q10,-16 20,0 t20,0 t20,0 t20,0" />
+      <text x="20" y="200" class="diagram-label">Vin</text>
+      <path class="wave-out" id="waveOut" d="M220,180 q10,-16 20,0 t20,0 t20,0 t20,0" />
+      <text x="220" y="200" class="diagram-label">Vout</text>
+
+      <text x="330" y="30" text-anchor="middle" class="readout" id="gainReadout">Guadagno = −6</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <div class="control-row"><label for="rfSlider">Resistenza di reazione (Rf)</label><span class="val" id="rfVal">6 kΩ</span></div>
+    <input type="range" id="rfSlider" min="1" max="15" value="6" step="1">
+  </div>
+
+  <article>
+    <p>L'<strong>amplificatore operazionale</strong> (op-amp) è uno dei componenti più versatili dell'elettronica: un piccolo integrato capace di amplificare enormemente la differenza tra i due segnali ai suoi ingressi, indicati con "+" e "−" nello schema. Da solo, con un guadagno quasi infinito, sarebbe difficile da controllare con precisione — per questo si usa quasi sempre insieme a pochi resistori esterni, che ne "addomesticano" il comportamento nel modo desiderato.</p>
+
+    <p>Nella configurazione <strong>invertente</strong> che vedi sopra, il segnale in ingresso passa attraverso il resistore <strong>Rin</strong>, mentre il resistore <strong>Rf</strong> collega l'uscita di nuovo all'ingresso invertente, creando un percorso di retroazione. Il risultato è che il guadagno dipende solo dal rapporto tra questi due resistori: <strong>guadagno = −Rf / Rin</strong>. Il segno meno indica che il segnale in uscita è "capovolto" rispetto a quello in ingresso — puoi vederlo confrontando le due onde nello schema.</p>
+
+    <h2>Perché il guadagno è così prevedibile</h2>
+
+    <p>Muovi lo slider e osserva come cambia l'onda arancione in uscita: aumentando Rf, aumenta il guadagno, e l'onda diventa più ampia. È esattamente il calcolo che un tecnico fa sulla carta prima di scegliere i resistori giusti per un progetto reale — decidere quanto amplificare un segnale non è mai una scelta a caso, ma il risultato di un rapporto preciso tra due componenti.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Il primo amplificatore operazionale integrato commerciale, il famoso 741, fu introdotto nel 1968 e — nonostante l'età — è ancora prodotto e studiato oggi in tutto il mondo.</p>
+    </div>
+
+    <p>Cambiando il modo in cui colleghi i resistori attorno all'operazionale, puoi ottenere funzioni molto diverse: un <strong>sommatore</strong> che unisce più segnali, un <strong>integratore</strong> che risponde a come il segnale cambia nel tempo, o un <strong>comparatore</strong> che confronta due tensioni. Il componente resta lo stesso — cambia solo l'architettura che gli costruisci attorno.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Calcola a mano il guadagno per Rf = 10 kΩ e Rin = 1 kΩ. Poi verifica il tuo calcolo muovendo lo slider fino al valore corrispondente: il numero mostrato coincide con quello che hai calcolato tu?</p>
+    </div>
+
+    <p>Nella prossima lezione useremo un altro integrato altrettanto celebre — il timer 555 — questa volta non per amplificare un segnale, ma per generarne uno da zero.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/timer-555/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Il timer 555</span></a>
+      <a href="/argomenti/diodo/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Il diodo e i semiconduttori</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const Rin = 1;
+  const slider = document.getElementById('rfSlider');
+  const rfVal = document.getElementById('rfVal');
+  const gainReadout = document.getElementById('gainReadout');
+  const waveOut = document.getElementById('waveOut');
+
+  function update(){
+    const Rf = parseInt(slider.value,10);
+    const gain = Rf / Rin;
+    rfVal.textContent = Rf + ' kΩ';
+    gainReadout.textContent = 'Guadagno = −' + gain;
+    const amp = Math.min(38, 6 + gain*2);
+    waveOut.setAttribute('d', `M220,180 q10,${-amp} 20,0 t20,0 t20,0 t20,0`);
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arduino: il microcontrollore che parla col mondo fisico | professorfigura.it</title>
+<meta name="description" content="Cos'è un microcontrollore come Arduino, pin digitali e analogici, sensori e attuatori. Schema interattivo per le classi quarte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/arduino/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arduino: il microcontrollore che parla col mondo fisico">
+<meta property="og:description" content="Pin digitali e analogici, sensori e attuatori, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/arduino/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Arduino: il microcontrollore che parla col mondo fisico","description":"Cos'è un microcontrollore come Arduino, la differenza tra pin digitali e analogici, sensori e attuatori.","url":"https://www.professorfigura.it/argomenti/arduino/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quarta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Arduino e microcontrollori"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quarte","item":"https://www.professorfigura.it/classi/quarte/"},{"@type":"ListItem","position":3,"name":"Arduino","item":"https://www.professorfigura.it/argomenti/arduino/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+  .board{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .pin{fill:var(--white);stroke:var(--black);stroke-width:1.8;cursor:pointer;}
+  .pin.hi{fill:var(--orange);}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
+  .led-dot{fill:var(--grey-300);transition:fill .15s ease;}
+  .led-dot.on{fill:#F5C518;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);}
+  .readout{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;fill:var(--orange-dark);}
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quarte/">Classi quarte</a> / Arduino</p>
+  <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Arduino: il microcontrollore che parla col mondo fisico</h1>
+  <p class="lead">Un pin digitale conosce solo acceso e spento. Un pin analogico può leggere valori intermedi. Clicca il pin digitale per accendere il LED, poi prova lo slider del pin analogico.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 180" id="circuitSvg">
+      <rect class="board" x="90" y="30" width="160" height="110" rx="6"/>
+      <text x="170" y="90" text-anchor="middle" class="diagram-label" style="font-weight:700;">ARDUINO</text>
+
+      <g id="pinDigital" style="cursor:pointer;">
+        <circle class="pin" id="pinDigitalDot" cx="90" cy="55" r="7"/>
+        <text x="70" y="59" text-anchor="end" class="diagram-label">PIN 13 (digitale)</text>
+      </g>
+      <path class="wire" d="M97,55 H260" id="wireDig"/>
+      <circle class="led-dot" id="ledDot" cx="275" cy="55" r="9"/>
+      <text x="275" y="80" text-anchor="middle" class="diagram-label">LED</text>
+
+      <circle class="pin" id="pinAnalog" cx="90" cy="115" r="7"/>
+      <text x="70" y="119" text-anchor="end" class="diagram-label">PIN A0 (analogico)</text>
+      <text x="180" y="119" text-anchor="middle" class="readout" id="analogReadout">Valore letto: 512</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <div class="control-row"><label for="analogSlider">Simula un sensore su A0</label><span class="val" id="analogVal">512</span></div>
+    <input type="range" id="analogSlider" min="0" max="1023" value="512" step="1">
+  </div>
+
+  <article>
+    <p>Un <strong>microcontrollore</strong> come Arduino è, in pratica, un piccolo computer dedicato: invece di aprire un browser o un videogioco, la sua unica missione è eseguire un programma che legge <strong>sensori</strong> (temperatura, luce, distanza...) e comanda <strong>attuatori</strong> (motori, LED, relè...), collegati ai suoi pin digitali e analogici.</p>
+
+    <p>Un pin <strong>digitale</strong> conosce solo due stati — acceso o spento, come un interruttore — ed è quello che stai usando quando clicchi sul "PIN 13" nello schema per accendere il LED. Un pin <strong>analogico</strong>, invece, può leggere valori intermedi: nel caso di Arduino, un numero da 0 a 1023. Muovi lo slider: stai simulando un sensore reale (per esempio una fotoresistenza o un potenziometro) collegato al pin A0.</p>
+
+    <h2>La differenza in un esempio quotidiano</h2>
+
+    <p>È la stessa differenza che c'è tra l'interruttore della luce di casa (acceso o spento, niente vie di mezzo) e la manopola del volume di uno stereo (che può assumere infinite posizioni intermedie). Arduino, con i suoi pin digitali e analogici, è capace di gestire entrambi i tipi di segnale nello stesso identico programma.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>La scheda Arduino nacque nel 2005 in Italia, a Ivrea, pensata inizialmente per studenti di design che non avevano competenze di elettronica: il suo successo ha reso l'Italia, per certi versi, la culla dell'elettronica open-source moderna.</p>
+    </div>
+
+    <p>Un programma Arduino tipico legge continuamente lo stato dei sensori collegati, decide cosa fare in base a quei valori, e aggiorna di conseguenza lo stato degli attuatori — esattamente il ciclo "leggi, decidi, agisci" che ritroverai identico anche nei PLC industriali, solo su scala molto più grande.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Collega un LED a un pin digitale di una scheda Arduino reale e scrivi un programma che lo accenda e spenga ogni secondo. Poi collega un sensore di luce (fotoresistenza) a un pin analogico e prova a leggerne il valore sul monitor seriale.</p>
+    </div>
+
+    <p>Nella prossima lezione entriamo nel cuore dell'automazione industriale vera e propria: il PLC, il "fratello maggiore" di Arduino pensato per resistere alle condizioni difficili di una fabbrica.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/introduzione-ai-plc/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Introduzione ai PLC</span></a>
+      <a href="/argomenti/logica-digitale/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">La logica digitale</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let digitalOn = false;
+  const pinDigital = document.getElementById('pinDigital');
+  const pinDigitalDot = document.getElementById('pinDigitalDot');
+  const ledDot = document.getElementById('ledDot');
+  pinDigital.addEventListener('click', () => {
+    digitalOn = !digitalOn;
+    pinDigitalDot.classList.toggle('hi', digitalOn);
+    ledDot.classList.toggle('on', digitalOn);
+  });
+
+  const analogSlider = document.getElementById('analogSlider');
+  const analogVal = document.getElementById('analogVal');
+  const analogReadout = document.getElementById('analogReadout');
+  analogSlider.addEventListener('input', () => {
+    analogVal.textContent = analogSlider.value;
+    analogReadout.textContent = 'Valore letto: ' + analogSlider.value;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I primi passi nella programmazione | professorfigura.it</title>
+<meta name="description" content="Cos'è un algoritmo e come si legge un diagramma di flusso, con i simboli corretti. Simulatore passo-passo per le classi seconde.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/primi-passi-programmazione/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I primi passi nella programmazione">
+<meta property="og:description" content="Cos'è un algoritmo, con un diagramma di flusso interattivo passo-passo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/primi-passi-programmazione/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"I primi passi nella programmazione","description":"Cos'è un algoritmo e come si rappresenta con un diagramma di flusso, usando i simboli standard.","url":"https://www.professorfigura.it/argomenti/primi-passi-programmazione/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe seconda","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Algoritmi e diagrammi di flusso"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi seconde","item":"https://www.professorfigura.it/classi/seconde/"},{"@type":"ListItem","position":3,"name":"I primi passi nella programmazione","item":"https://www.professorfigura.it/argomenti/primi-passi-programmazione/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
+  .notebook svg{max-width:280px;width:100%;}
+  .flow-shape{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:fill .2s ease, stroke .2s ease;}
+  .flow-shape.active{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .flow-text{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--black);text-anchor:middle;}
+  .flow-arrow{stroke:var(--grey-300);stroke-width:1.8;fill:none;marker-end:url(#arrowFlow);}
+  .step-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:12px 26px;background:var(--black);color:var(--white);border:none;cursor:pointer;margin-top:20px;}
+  .step-btn:hover{background:var(--orange-dark);}
+  .step-caption{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--grey-700);margin-top:16px;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/seconde/">Classi seconde</a> / I primi passi nella programmazione</p>
+  <div class="badges"><span class="badge badge-classe">Classi seconde</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>I primi passi nella programmazione</h1>
+  <p class="lead">Un algoritmo semplicissimo, disegnato con i simboli corretti del diagramma di flusso. Premi "Avanti" ed eseguilo passo dopo passo, come farebbe un computer.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 220 340" id="flowSvg">
+      <defs>
+        <marker id="arrowFlow" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto">
+          <path d="M0,0 L5,2.5 L0,5 Z" fill="var(--grey-300)"/>
+        </marker>
+      </defs>
+      <path class="flow-arrow" d="M110,45 V65"/>
+      <path class="flow-arrow" d="M110,105 V125"/>
+      <path class="flow-arrow" d="M110,165 V185"/>
+      <path class="flow-arrow" d="M110,225 V245"/>
+      <path class="flow-arrow" d="M110,285 V305"/>
+
+      <ellipse class="flow-shape" id="s0" cx="110" cy="25" rx="55" ry="20"/>
+      <text x="110" y="30" class="flow-text">INIZIO</text>
+
+      <rect class="flow-shape" id="s1" x="35" y="65" width="150" height="40"/>
+      <text x="110" y="89" class="flow-text">imposta n = 1</text>
+
+      <rect class="flow-shape" id="s2" x="35" y="125" width="150" height="40"/>
+      <text x="110" y="149" class="flow-text">scrivi n</text>
+
+      <polygon class="flow-shape" id="s3" points="110,185 185,215 110,245 35,215"/>
+      <text x="110" y="219" class="flow-text">n &lt; 5 ?</text>
+
+      <rect class="flow-shape" id="s4" x="35" y="245" width="150" height="40"/>
+      <text x="110" y="269" class="flow-text">n = n + 1</text>
+
+      <ellipse class="flow-shape" id="s5" cx="110" cy="325" rx="55" ry="20"/>
+      <text x="110" y="330" class="flow-text">FINE</text>
+    </svg>
+    <button class="step-btn" id="stepBtn">Avanti →</button>
+    <div class="step-caption" id="stepCaption">Pronto per iniziare</div>
+  </div>
+
+  <article>
+    <p>Un computer esegue solo ciò che gli viene detto, in modo estremamente preciso: non capisce "più o meno", capisce solo istruzioni esatte, una dopo l'altra. Questa sequenza di istruzioni si chiama <strong>algoritmo</strong>, e un modo comune per rappresentarlo prima ancora di scriverlo in un linguaggio di programmazione è il <strong>diagramma di flusso</strong>, con simboli standard: un'<strong>ellisse</strong> per inizio e fine, un <strong>rettangolo</strong> per un'istruzione da eseguire, un <strong>rombo</strong> per una decisione.</p>
+
+    <p>Premi "Avanti" nello schema sopra: stai eseguendo, un passo alla volta, l'algoritmo che conta da 1 a 5 e scrive ogni numero — esattamente come farebbe un computer, senza saltare passaggi e senza intuire nulla che non sia scritto esplicitamente nel diagramma.</p>
+
+    <h2>Una ricetta è già un algoritmo</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Anche una ricetta di cucina è, in fondo, un algoritmo: una sequenza ordinata di passi precisi che, se seguiti nell'ordine giusto, portano sempre allo stesso risultato — proprio come il diagramma di flusso che hai appena eseguito passo dopo passo.</p>
+    </div>
+
+    <p>Il simbolo a forma di rombo che hai incontrato — la <strong>decisione</strong> — è probabilmente il più importante di tutti: è quello che permette a un programma di comportarsi in modo diverso a seconda delle condizioni, invece di limitarsi a eseguire sempre la stessa identica sequenza di passi.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Disegna su carta il diagramma di flusso di un'azione quotidiana (per esempio "controlla se piove e decidi se prendere l'ombrello"), usando gli stessi simboli che hai visto sopra: ellisse per inizio/fine, rettangolo per un'azione, rombo per una decisione.</p>
+    </div>
+
+    <p>Con questa lezione chiudiamo il capitolo introduttivo di informatica della classe seconda. Nella prossima (e ultima) lezione della base enciclopedica, torniamo al disegno tecnico con gli schemi elettrici e a blocchi.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/schemi-elettrici-a-blocchi/" class="related-item"><span class="r-classe">Classi seconde · Teoria</span><span class="r-title">Schemi elettrici e a blocchi</span></a>
+      <a href="/argomenti/foglio-di-calcolo/" class="related-item"><span class="r-classe">Classi seconde · Teoria</span><span class="r-title">Un foglio di calcolo per misurare</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const shapes = ['s0','s1','s2','s3','s4','s5'].map(id => document.getElementById(id));
+  const stepBtn = document.getElementById('stepBtn');
+  const stepCaption = document.getElementById('stepCaption');
+  let n = 1;
+  let phase = -1; // -1 = non iniziato
+
+  const script = [
+    () => ({shape:0, text:'INIZIO del programma'}),
+    () => ({shape:1, text:'imposta n = 1'}),
+    () => ({shape:2, text:'scrivi n → il computer stampa: ' + n}),
+    () => ({shape:3, text: n < 5 ? 'n < 5? Sì → continua il ciclo' : 'n < 5? No → esci dal ciclo'}),
+  ];
+
+  function render(idx, text){
+    shapes.forEach((s,i) => s.classList.toggle('active', i===idx));
+    stepCaption.textContent = text;
+  }
+
+  stepBtn.addEventListener('click', () => {
+    if(phase === -1){ phase = 0; render(0,'INIZIO del programma'); }
+    else if(phase === 0){ phase = 1; n = 1; render(1,'imposta n = 1'); }
+    else if(phase === 1){ phase = 2; render(2,'scrivi n → il computer stampa: ' + n); }
+    else if(phase === 2){
+      phase = 3;
+      render(3, n < 5 ? 'n < 5? Sì → continua il ciclo' : 'n < 5? No → esci dal ciclo');
+    }
+    else if(phase === 3){
+      if(n < 5){ phase = 4; render(4, 'n = n + 1'); }
+      else { phase = 5; render(5, 'FINE del programma'); }
+    }
+    else if(phase === 4){ n += 1; phase = 2; render(2, 'scrivi n → il computer stampa: ' + n); }
+    else if(phase === 5){ phase = -1; n = 1; render(-1, 'Pronto per iniziare'); }
+  });
+</script>
+</body>
+</html>

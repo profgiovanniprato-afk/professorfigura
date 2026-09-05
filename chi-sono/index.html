@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chi sono — Prof. Giovanni Figura | professorfigura.it</title>
+<meta name="description" content="Giovanni Figura, docente di Elettrotecnica, Elettronica e Sistemi dal 2015. Vincitore del concorso PNRR3, fondatore di modicaai.it e aisicily.it.">
+<link rel="canonical" href="https://www.professorfigura.it/chi-sono/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Chi sono — Prof. Giovanni Figura">
+<meta property="og:description" content="Docente di Elettrotecnica, Elettronica e Sistemi dal 2015. Vincitore del concorso PNRR3.">
+<meta property="og:url" content="https://www.professorfigura.it/chi-sono/">
+<meta property="og:image" content="https://www.professorfigura.it/assets/prof-figura.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Giovanni Figura",
+  "url": "https://www.professorfigura.it/chi-sono/",
+  "image": "https://www.professorfigura.it/assets/prof-figura.jpg",
+  "jobTitle": "Docente di Elettrotecnica, Elettronica e Sistemi",
+  "worksFor": { "@type": "EducationalOrganization", "name": "Istituto Tecnico Tecnologico" },
+  "knowsAbout": ["Elettrotecnica", "Elettronica", "Informatica", "Intelligenza Artificiale applicata alla didattica"],
+  "award": "Vincitore concorso PNRR3 — classe di concorso B015",
+  "sameAs": ["https://www.modicaai.it", "https://www.aisicily.it"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --black:#010101;
+    --grey-900:#1B1C1D;
+    --grey-700:#54585C;
+    --grey-500:#8A8E92;
+    --grey-300:#DADCDE;
+    --grey-150:#EDEEEF;
+    --orange:#E8632E;
+    --orange-dark:#B84A20;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:28px 36px;display:flex;justify-content:space-between;align-items:flex-start;}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--white);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--white);text-align:right;line-height:1.4;}
+
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}
+  .nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;transition:color .15s ease;}
+  .nav-panel a:hover,.nav-panel a.current{color:var(--orange);}
+  .nav-social{display:flex;gap:16px;margin-top:50px;}
+  .nav-social a{width:30px;height:30px;border:1px solid #2E2F31;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--grey-500);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+
+  .hero{position:relative;height:88vh;min-height:600px;display:flex;align-items:center;overflow:hidden;background:var(--black);}
+  .hero img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:56%;object-fit:contain;object-position:bottom right;}
+  .hero-content{position:relative;z-index:2;text-align:left;padding:0 6vw;max-width:580px;}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--orange);margin-bottom:22px;text-transform:uppercase;}
+  .hero-quote{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(24px,3.2vw,38px);font-weight:400;color:var(--white);letter-spacing:0;line-height:1.4;margin:0;}
+  .hero-quote::before{content:'\201C';}
+  .hero-quote::after{content:'\201D';}
+  .hero-quote em{font-style:italic;color:var(--orange);}
+  .hero-attr{margin-top:20px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--grey-300);text-transform:uppercase;}
+
+  /* ---- Biografia lineare ---- */
+  .bio{max-width:680px;margin:0 auto;padding:110px 24px 130px;}
+  .bio p{font-size:17px;line-height:1.95;color:var(--grey-700);margin:0 0 28px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .bio p:first-of-type{font-size:19px;color:var(--black);}
+  .bio strong{color:var(--black);font-weight:600;}
+  .bio a{color:var(--orange-dark);text-decoration:underline;text-underline-offset:2px;}
+  .bio a:hover{color:var(--orange);}
+
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-social{display:flex;justify-content:center;gap:14px;margin:26px 0;}
+  .foot-social a{width:32px;height:32px;border:1px solid #2E2F31;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--grey-500);font-size:12px;text-decoration:none;}
+  .foot-social a:hover{color:var(--white);border-color:var(--grey-500);}
+  .foot-legal{margin-top:36px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;letter-spacing:.03em;}
+  .foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+
+  @media (max-width:900px){
+    .hero{height:auto;min-height:auto;flex-direction:column;padding-top:110px;}
+    .hero img{position:relative;height:44vh;max-width:100%;width:100%;object-position:top center;margin-top:20px;}
+    .hero-content{padding:0 24px 40px;max-width:none;}
+    .bio{padding:70px 24px 90px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/chi-sono/" class="current">Chi sono</a></li>
+    <li><a href="/#classi">Classi</a></li>
+    <li><a href="/#argomenti">Argomenti</a></li>
+    <li><a href="/contatti/">Contatti</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="LinkedIn">IN</a>
+  </div>
+</nav>
+
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <div class="wordmark">PROFESSOR<br>FIGURA</div>
+</header>
+
+<div class="hero">
+  <img src="prof-figura-v2.jpg" alt="Ritratto del prof. Giovanni Figura">
+  <div class="hero-content">
+    <p class="eyebrow">Chi sono</p>
+    <p class="hero-quote">Chi <em>pensa</em> con la propria testa, ha già vinto.</p>
+    <p class="hero-attr">Prof. Giovanni Figura</p>
+  </div>
+</div>
+
+<section class="bio">
+  <p>Insegno da undici anni, da quando nel 2015 sono entrato per la prima volta in un'aula come docente di elettrotecnica ed elettronica. In questo tempo ho portato la mia classe di concorso — la <strong>B015</strong>, i Laboratori di Scienze e Tecnologie Elettriche ed Elettroniche — in tre città diverse: da Prato a Siracusa, fino a Bronte, dove insegno oggi. Ogni trasferimento mi ha costretto a ricominciare, ma mi ha anche insegnato che il mestiere resta lo stesso ovunque: aiutare uno studente a smettere di eseguire un'istruzione e cominciare a capirla.</p>
+
+  <p>Le mie competenze coprono l'intero arco della materia che insegno: elettrotecnica, elettronica, informatica, e la progettazione di impianti civili e industriali — la parte più concreta del mestiere, quella che uno studente porta con sé anche fuori dalla scuola.</p>
+
+  <p>Nel 2026 questo percorso ha trovato una conferma importante: ho vinto il concorso <strong>PNRR3</strong> per la classe di concorso B015, ottenendo la cattedra a tempo indeterminato che ricopro attualmente a Bronte.</p>
+
+  <p>Da qualche anno affianco all'insegnamento un interesse che è diventato centrale nel mio modo di lavorare: l'intelligenza artificiale, non come scorciatoia ma come strumento per costruire lezioni più chiare e più curate, restando sempre io a decidere cosa insegnare e come. Questa stessa curiosità mi ha portato a fondare <a href="https://www.modicaai.it" target="_blank" rel="noopener">modicaai.it</a>, un progetto di automazione e intelligenza artificiale per le imprese del territorio di Modica, e <a href="https://www.aisicily.it" target="_blank" rel="noopener">aisicily.it</a>, che estende lo stesso approccio a scala regionale.</p>
+
+  <p>È una passione che non si esaurisce nei confini della scuola: l'intelligenza artificiale, e i suoi campi di applicazione, restano il terreno su cui continuo a imparare — prima ancora di insegnare.</p>
+</section>
+
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-social">
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="LinkedIn">IN</a>
+  </div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/cookie/">Cookie Policy</a>
+    </div>
+    <p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navPanel = document.getElementById('navPanel');
+  const navClose = document.getElementById('navClose');
+  const scrim = document.getElementById('scrim');
+  function openNav(){ navPanel.classList.add('open'); scrim.classList.add('show'); }
+  function closeNav(){ navPanel.classList.remove('open'); scrim.classList.remove('show'); }
+  burger.addEventListener('click', openNav);
+  navClose.addEventListener('click', closeNav);
+  scrim.addEventListener('click', closeNav);
+</script>
+
+</body>
+</html>

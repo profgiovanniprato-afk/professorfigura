@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La logica digitale: il mondo del vero e del falso | professorfigura.it</title>
+<meta name="description" content="Come funzionano le porte logiche AND, OR e NOT: tabella di verità interattiva con ingressi cliccabili. Per le classi quarte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/logica-digitale/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="La logica digitale: il mondo del vero e del falso">
+<meta property="og:description" content="Come funzionano le porte logiche AND, OR e NOT, con ingressi cliccabili per vedere l'uscita cambiare.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/logica-digitale/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"La logica digitale: il mondo del vero e del falso","description":"Come funzionano le porte logiche fondamentali AND, OR e NOT, con una simulazione interattiva a ingressi cliccabili.","url":"https://www.professorfigura.it/argomenti/logica-digitale/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quarta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Logica digitale e porte logiche"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quarte","item":"https://www.professorfigura.it/classi/quarte/"},{"@type":"ListItem","position":3,"name":"La logica digitale","item":"https://www.professorfigura.it/argomenti/logica-digitale/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:420px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .gate{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .in-btn{cursor:pointer;}
+  .in-face{fill:var(--grey-100);stroke:var(--black);stroke-width:2;}
+  .in-face.hi{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .in-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;text-anchor:middle;fill:var(--black);}
+  .led-dot{fill:var(--grey-300);transition:fill .15s ease;}
+  .led-dot.on{fill:var(--green);}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
+  .gate-select{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap;}
+  .gate-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);cursor:pointer;}
+  .gate-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quarte/">Classi quarte</a> / La logica digitale</p>
+  <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>La logica digitale: il mondo del vero e del falso</h1>
+  <p class="lead">Scegli una porta logica, clicca sui due ingressi per impostarli a 0 o 1, e osserva l'uscita cambiare in tempo reale.</p>
+
+  <div class="gate-select">
+    <button class="gate-btn active" data-gate="AND">AND</button>
+    <button class="gate-btn" data-gate="OR">OR</button>
+    <button class="gate-btn" data-gate="NAND">NAND</button>
+  </div>
+
+  <div class="notebook">
+    <svg viewBox="0 0 300 160" id="circuitSvg">
+      <g class="in-btn" id="btnA">
+        <rect class="in-face" x="20" y="30" width="36" height="30" rx="3"/>
+        <text x="38" y="50" class="in-text" id="labelA">0</text>
+      </g>
+      <text x="38" y="20" text-anchor="middle" class="diagram-label">A</text>
+      <path class="wire" d="M56,45 H110" /><path class="flow" id="fA" d="M56,45 H110" />
+
+      <g class="in-btn" id="btnB">
+        <rect class="in-face" x="20" y="90" width="36" height="30" rx="3"/>
+        <text x="38" y="110" class="in-text" id="labelB">0</text>
+      </g>
+      <text x="38" y="140" text-anchor="middle" class="diagram-label">B</text>
+      <path class="wire" d="M56,105 H110" /><path class="flow" id="fB" d="M56,105 H110" />
+
+      <path class="gate" id="gateShape" d="M110,25 H150 A25,50 0 0 1 150,125 H110 Z"/>
+      <circle id="negBubble" cx="0" cy="0" r="0" fill="var(--white)" stroke="var(--black)" stroke-width="2" style="display:none"/>
+
+      <path class="wire" d="M198,75 H240" /><path class="flow" id="fOut" d="M198,75 H240" />
+      <circle class="led-dot" id="ledOut" cx="255" cy="75" r="10"/>
+      <text x="255" y="100" text-anchor="middle" class="diagram-label">Y</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Hai già incontrato il sistema binario in prima. Ora scopri come, con solo 0 e 1 (che possiamo anche chiamare "falso" e "vero"), si costruiscono le decisioni logiche che stanno alla base di ogni computer. Le <strong>porte logiche</strong> sono i mattoncini di questa logica. Prova a cliccare sui due ingressi A e B nello schema, e osserva come cambia l'uscita Y a seconda della porta scelta.</p>
+
+    <p>La porta <strong>AND</strong> dà 1 solo se <em>entrambi</em> gli ingressi sono 1 — come dire "esco solo se ho finito i compiti E smesso di piovere". La porta <strong>OR</strong> dà 1 se <em>almeno uno</em> dei due ingressi è 1. La porta <strong>NAND</strong> è semplicemente un AND seguito da un NOT: dà l'esatto contrario di quello che darebbe una normale AND.</p>
+
+    <h2>Un esempio concreto</h2>
+
+    <p>Immagina un allarme antifurto con due sensori: uno sulla porta, uno sulla finestra. Se vuoi che l'allarme suoni <strong>solo</strong> quando entrambi i sensori rilevano un'apertura contemporaneamente, userai una porta AND. Se invece vuoi che l'allarme suoni se anche uno solo dei due si attiva, userai una porta OR. Stessa coppia di sensori, comportamento completamente diverso: dipende solo da quale porta logica scegli tra le due.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Con sole tre porte logiche di base — AND, OR e NOT — è possibile costruire qualsiasi funzione logica esistente, per quanto complessa. È il motivo per cui, un livello sopra l'altro, si arriva a costruire un intero microprocessore combinando solo questi pochi mattoncini.</p>
+    </div>
+
+    <p>Ogni porta logica reale ha anche dei <strong>parametri caratteristici</strong> da rispettare — per esempio quanto tempo impiega a reagire, o quanta corrente può fornire in uscita — utili quando la si sceglie per un progetto reale, non solo per un esercizio teorico.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Costruisci con degli integrati logici reali (o simulali online) una porta AND a due ingressi, e verifica tutte e quattro le combinazioni possibili di ingresso confrontandole con quello che hai osservato nello schema sopra.</p>
+    </div>
+
+    <p>Nella prossima lezione applichiamo questi stessi principi a un contesto molto pratico: il microcontrollore Arduino, che parla direttamente col mondo fisico attraverso sensori e attuatori.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/arduino/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Arduino: il microcontrollore</span></a>
+      <a href="/argomenti/transistor-bjt/" class="related-item"><span class="r-classe">Classi quarte · Teoria</span><span class="r-title">Il transistor BJT</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let a = 0, b = 0, gate = 'AND';
+  const labelA = document.getElementById('labelA');
+  const labelB = document.getElementById('labelB');
+  const btnA = document.getElementById('btnA');
+  const btnB = document.getElementById('btnB');
+  const fA = document.getElementById('fA');
+  const fB = document.getElementById('fB');
+  const fOut = document.getElementById('fOut');
+  const ledOut = document.getElementById('ledOut');
+  const negBubble = document.getElementById('negBubble');
+  const gateBtns = document.querySelectorAll('.gate-btn');
+
+  function compute(){
+    if(gate === 'AND') return a && b ? 1 : 0;
+    if(gate === 'OR') return a || b ? 1 : 0;
+    if(gate === 'NAND') return (a && b) ? 0 : 1;
+  }
+  function render(){
+    labelA.textContent = a; labelB.textContent = b;
+    btnA.querySelector('.in-face').classList.toggle('hi', a===1);
+    btnB.querySelector('.in-face').classList.toggle('hi', b===1);
+    fA.classList.toggle('on', a===1);
+    fB.classList.toggle('on', b===1);
+    const y = compute();
+    fOut.classList.toggle('on', y===1);
+    ledOut.classList.toggle('on', y===1);
+    negBubble.style.display = gate === 'NAND' ? 'block' : 'none';
+    if(gate === 'NAND'){ negBubble.setAttribute('cx',204); negBubble.setAttribute('cy',75); negBubble.setAttribute('r',6); }
+  }
+  btnA.addEventListener('click', () => { a = a ? 0 : 1; render(); });
+  btnB.addEventListener('click', () => { b = b ? 0 : 1; render(); });
+  gateBtns.forEach(btn => btn.addEventListener('click', () => {
+    gateBtns.forEach(b2 => b2.classList.remove('active'));
+    btn.classList.add('active');
+    gate = btn.dataset.gate;
+    render();
+  }));
+  render();
+</script>
+</body>
+</html>

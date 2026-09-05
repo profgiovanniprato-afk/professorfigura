@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuiti in parallelo: come si comportano | professorfigura.it</title>
+<meta name="description" content="Come funziona un circuito con resistori in parallelo: la tensione resta la stessa, la corrente si divide. Spiegato con uno schema interattivo, per le classi seconde.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/circuiti-in-parallelo/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Circuiti in parallelo: come si comportano">
+<meta property="og:description" content="La tensione resta la stessa, la corrente si divide: il circuito in parallelo spiegato con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/circuiti-in-parallelo/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Circuiti in parallelo: come si comportano","description":"Come funziona un circuito con resistori collegati in parallelo: la tensione resta la stessa su ogni ramo, la corrente si divide.","url":"https://www.professorfigura.it/argomenti/circuiti-in-parallelo/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe seconda","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Circuiti in parallelo"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi seconde","item":"https://www.professorfigura.it/classi/seconde/"},{"@type":"ListItem","position":3,"name":"Circuiti in parallelo","item":"https://www.professorfigura.it/argomenti/circuiti-in-parallelo/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:40px 24px 30px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;animation:flowDash 1s linear infinite;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
+  .readout{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;fill:var(--orange-dark);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:30px 14px 24px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/seconde/">Classi seconde</a> / Circuiti in parallelo</p>
+  <div class="badges"><span class="badge badge-classe">Classi seconde</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Circuiti in parallelo: come si comportano</h1>
+  <p class="lead">Stessi resistori della lezione precedente, ma collegati in un modo completamente diverso: il comportamento del circuito cambia quasi al contrario. Guarda lo schema e scopri perché.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 220" id="circuitSvg">
+      <path class="wire" d="M40,110 H90" /><path class="flow" d="M40,110 H90" />
+      <path class="wire" d="M90,50 V170" /><path class="flow" d="M90,50 V170" />
+      <path class="wire" d="M90,50 H150" /><path class="flow" d="M90,50 H150" />
+      <path class="wire" d="M90,110 H150" /><path class="flow" d="M90,110 H150" />
+      <path class="wire" d="M90,170 H150" /><path class="flow" d="M90,170 H150" />
+      <path class="wire" d="M210,50 H270" /><path class="flow" d="M210,50 H270" />
+      <path class="wire" d="M210,110 H270" /><path class="flow" d="M210,110 H270" />
+      <path class="wire" d="M210,170 H270" /><path class="flow" d="M210,170 H270" />
+      <path class="wire" d="M270,50 V170" /><path class="flow" d="M270,50 V170" />
+      <path class="wire" d="M270,110 H300" /><path class="flow" d="M270,110 H300" />
+
+      <line x1="30" y1="100" x2="50" y2="100" stroke="var(--black)" stroke-width="3"/>
+      <line x1="35" y1="90" x2="45" y2="90" stroke="var(--black)" stroke-width="1.5"/>
+      <text x="14" y="130" class="diagram-label">PILA</text>
+
+      <rect class="resistor" x="150" y="38" width="60" height="24"/>
+      <rect class="resistor" x="150" y="98" width="60" height="24"/>
+      <rect class="resistor" x="150" y="158" width="60" height="24"/>
+      <text x="180" y="20" text-anchor="middle" class="diagram-label">R1</text>
+      <text x="180" y="97" text-anchor="middle" class="diagram-label" style="display:none"></text>
+
+      <text x="170" y="205" text-anchor="middle" class="readout">3 rami, stessa tensione su ognuno</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Quando invece colleghi più resistori su percorsi diversi, ma con gli stessi due punti di partenza e di arrivo, li colleghi <strong>in parallelo</strong>. Guardando lo schema sopra, noterai subito la differenza rispetto alla lezione precedente: qui la corrente, uscita dalla pila, si divide su tre percorsi distinti, per poi ricongiungersi prima di tornare al polo negativo — un po' come un fiume che si divide in più canali prima di sfociare di nuovo in un unico corso.</p>
+
+    <p>La formula per calcolare la resistenza totale, in questo caso, è meno immediata di una semplice somma: <strong>1 / R totale = 1/R1 + 1/R2 + 1/R3</strong>. Il risultato è sempre più piccolo del più piccolo dei resistori coinvolti — aggiungere un percorso in più, per quanto possa sembrare strano, riduce sempre la resistenza complessiva, perché offri alla corrente più strade tra cui scegliere.</p>
+
+    <h2>La differenza chiave rispetto alla serie</h2>
+
+    <p>Nel circuito in serie la <strong>corrente</strong> era identica ovunque, e la tensione si divideva. Nel circuito in parallelo succede esattamente il contrario: la <strong>tensione</strong> è identica su ogni singolo ramo — sempre uguale a quella della pila — mentre è la <strong>corrente</strong> a dividersi tra i vari rami, in proporzione inversa alla loro resistenza. Un ramo con resistenza più bassa lascia passare più corrente, uno con resistenza più alta ne lascia passare meno.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>L'impianto elettrico di casa tua è collegato quasi interamente in parallelo, non in serie: è per questo che, se stacchi la spina del frigorifero, la luce del salotto resta accesa — ogni elettrodomestico ha il proprio ramo indipendente, alimentato dalla stessa tensione.</p>
+    </div>
+
+    <p>Questo spiega anche perché i circuiti domestici usano il parallelo e non la serie: se fosse tutto collegato in serie, come le vecchie luci di Natale, basterebbe che un solo apparecchio si guastasse per spegnere l'intera casa.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Su una breadboard, collega tre resistori uguali prima in serie (come nella lezione precedente) e poi in parallelo. Misura la resistenza totale in entrambi i casi con un multimetro: quale configurazione dà il valore più basso? Corrisponde a quello che hai appena letto?</p>
+    </div>
+
+    <p>Nella prossima lezione entriamo nel mondo dei semiconduttori, a partire dal componente che si comporta come una valvola a senso unico per la corrente: il diodo.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/circuito-in-serie/" class="related-item"><span class="r-classe">Classi seconde · Laboratorio</span><span class="r-title">Prova pratica: circuito in serie</span></a>
+      <a href="/argomenti/diodo/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Il diodo e i semiconduttori</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schemi elettrici e a blocchi: i livelli del CAD | professorfigura.it</title>
+<meta name="description" content="La differenza tra uno schema elettrico e uno schema a blocchi, e come i livelli del CAD organizzano un disegno tecnico. Simulatore di livelli per le classi seconde.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/schemi-elettrici-a-blocchi/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Schemi elettrici e a blocchi: i livelli del CAD">
+<meta property="og:description" content="Come i livelli del CAD organizzano un disegno tecnico, con un simulatore interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/schemi-elettrici-a-blocchi/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Schemi elettrici e a blocchi: i livelli del CAD","description":"La differenza tra schema a blocchi e schema elettrico dettagliato, e come i livelli (layer) organizzano un disegno CAD.","url":"https://www.professorfigura.it/argomenti/schemi-elettrici-a-blocchi/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe seconda","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Schemi a blocchi e disegno CAD a livelli"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi seconde","item":"https://www.professorfigura.it/classi/seconde/"},{"@type":"ListItem","position":3,"name":"Schemi elettrici e a blocchi","item":"https://www.professorfigura.it/argomenti/schemi-elettrici-a-blocchi/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:420px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;}
+  .comp{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .dim-line{stroke:var(--orange);stroke-width:1.2;}
+  .dim-text{font-family:'Space Grotesk',sans-serif;font-size:10px;fill:var(--orange-dark);}
+  .quote-text{font-family:'Space Grotesk',sans-serif;font-size:10px;fill:var(--green-dark);}
+  .layer-toggle{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;}
+  .layer-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;padding:8px 16px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);cursor:pointer;}
+  .layer-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/seconde/">Classi seconde</a> / Schemi elettrici e a blocchi</p>
+  <div class="badges"><span class="badge badge-classe">Classi seconde</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Schemi elettrici e a blocchi: i livelli del CAD</h1>
+  <p class="lead">Un disegno CAD è organizzato in livelli, come fogli di lucido trasparente sovrapposti. Accendi e spegni ogni livello e osserva cosa mostra da solo.</p>
+
+  <div class="layer-toggle">
+    <button class="layer-btn active" data-layer="contorno">Contorno</button>
+    <button class="layer-btn active" data-layer="quote">Quote</button>
+    <button class="layer-btn active" data-layer="simboli">Simboli elettrici</button>
+  </div>
+
+  <div class="notebook">
+    <svg viewBox="0 0 300 200" id="cadSvg">
+      <g id="layerContorno">
+        <rect class="wire" x="40" y="40" width="220" height="120" fill="none"/>
+      </g>
+      <g id="layerQuote">
+        <line class="dim-line" x1="40" y1="170" x2="260" y2="170"/>
+        <text x="150" y="185" text-anchor="middle" class="dim-text">220 cm</text>
+        <line class="dim-line" x1="20" y1="40" x2="20" y2="160"/>
+        <text x="15" y="100" text-anchor="end" class="dim-text">120 cm</text>
+      </g>
+      <g id="layerSimboli">
+        <circle class="comp" cx="80" cy="70" r="10"/>
+        <line x1="74" y1="64" x2="86" y2="76" stroke="var(--green)" stroke-width="2"/>
+        <line x1="86" y1="64" x2="74" y2="76" stroke="var(--green)" stroke-width="2"/>
+        <text x="80" y="95" class="quote-text" text-anchor="middle">Lampada</text>
+
+        <line class="wire" x1="150" y1="65" x2="150" y2="75" stroke="var(--green)"/>
+        <line class="wire" x1="170" y1="65" x2="170" y2="75" stroke="var(--green)"/>
+        <line class="wire" x1="150" y1="70" x2="170" y2="70" stroke="var(--green)"/>
+        <text x="160" y="95" class="quote-text" text-anchor="middle">Interruttore</text>
+      </g>
+    </svg>
+  </div>
+
+  <article>
+    <p>Oltre ai simboli dei singoli componenti che hai già incontrato, esiste un modo più generale di rappresentare un sistema: lo <strong>schema a blocchi</strong>, che hai già visto per PLC, Arduino e sistemi di controllo. Invece di disegnare ogni singolo componente, si disegnano "scatole" che rappresentano intere funzioni, collegate da frecce che indicano come l'informazione o l'energia si muove da una all'altra — perfetto per una visione d'insieme, ma meno dettagliato di uno schema elettrico completo.</p>
+
+    <p>Uno schema elettrico dettagliato, invece, è organizzato al meglio quando è disegnato al <strong>CAD</strong>, in <strong>livelli</strong> (layer): puoi immaginarli come fogli di lucido trasparente sovrapposti, ognuno dedicato a un tipo di elemento. Prova a spegnere e accendere i tre livelli nello schema sopra — contorno, quote, simboli elettrici — e osserva come ogni livello, da solo, racconta una parte diversa dello stesso disegno.</p>
+
+    <h2>Perché conviene separare le informazioni</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>In un vero progetto CAD professionale, non è raro avere quindici o venti livelli diversi: uno per le pareti, uno per l'impianto elettrico, uno per l'idraulico, uno per le quote, uno per i testi. Un elettricista, in cantiere, può stampare solo il livello dell'impianto elettrico sovrapposto alla pianta dell'edificio, senza il rumore visivo di tutto il resto.</p>
+    </div>
+
+    <p>Questa organizzazione a livelli non è solo comodità: evita errori. Se le quote e i simboli elettrici fossero disegnati mescolati insieme senza distinzione, modificare l'uno rischierebbe continuamente di spostare o cancellare per sbaglio l'altro.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova (attività pratica)</span>
+      <p>Apri un software CAD 2D (anche gratuito) e prova a disegnare un semplice rettangolo con due simboli elettrici al suo interno. Poi crea due livelli diversi: uno per il rettangolo, uno per i simboli. Prova ad accendere e spegnere i livelli separatamente, come hai fatto nello schema sopra.</p>
+    </div>
+
+    <p>Con questa lezione la base enciclopedica del sito è completa: dalle prime nozioni di classe prima fino alla progettazione impiantistica di classe quinta. Buono studio!</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/primi-passi-programmazione/" class="related-item"><span class="r-classe">Classi seconde · Teoria</span><span class="r-title">I primi passi nella programmazione</span></a>
+      <a href="/argomenti/interruttore-lampadina/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Interruttore e lampadina</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const layers = {
+    contorno: document.getElementById('layerContorno'),
+    quote: document.getElementById('layerQuote'),
+    simboli: document.getElementById('layerSimboli'),
+  };
+  document.querySelectorAll('.layer-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const key = btn.dataset.layer;
+      layers[key].style.display = btn.classList.contains('active') ? 'block' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

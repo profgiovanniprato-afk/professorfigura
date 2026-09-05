@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLC avanzato: Ladder, FBD e logica programmabile | professorfigura.it</title>
+<meta name="description" content="La stessa logica PLC scritta in due linguaggi diversi: Ladder e FBD. Schema interattivo che confronta le due rappresentazioni, per le classi quinte.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/plc-avanzato-fbd/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PLC avanzato: Ladder, FBD e logica programmabile">
+<meta property="og:description" content="Confronto tra Ladder e FBD per rappresentare la stessa logica PLC.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/plc-avanzato-fbd/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"PLC avanzato: Ladder, FBD e logica programmabile","description":"Come la stessa logica di controllo PLC può essere rappresentata in Ladder o in FBD (Function Block Diagram), e cenni su PLD e FPGA.","url":"https://www.professorfigura.it/argomenti/plc-avanzato-fbd/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe quinta","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Linguaggi di programmazione PLC"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi quinte","item":"https://www.professorfigura.it/classi/quinte/"},{"@type":"ListItem","position":3,"name":"PLC avanzato: Ladder e FBD","item":"https://www.professorfigura.it/argomenti/plc-avanzato-fbd/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .gate-select{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;}
+  .gate-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);cursor:pointer;}
+  .gate-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
+  .rail{stroke:var(--black);stroke-width:2.5;}
+  .contact{stroke:var(--black);stroke-width:2.2;}
+  .coil{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .block{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
+  .view{display:none;}
+  .view.show{display:block;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="/">Home</a></li><li><a href="/chi-sono/">Chi sono</a></li><li><a href="/#classi">Classi</a></li><li><a href="/#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="/" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/classi/quinte/">Classi quinte</a> / PLC avanzato: Ladder e FBD</p>
+  <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>PLC avanzato: Ladder, FBD e logica programmabile</h1>
+  <p class="lead">Stessa identica logica — un AND tra due sensori — scritta in due linguaggi diversi. Passa da uno all'altro e confronta.</p>
+
+  <div class="gate-select">
+    <button class="gate-btn active" data-view="ladder">Ladder</button>
+    <button class="gate-btn" data-view="fbd">FBD</button>
+  </div>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 140" id="viewSvg">
+      <g class="view show" id="ladderView">
+        <line class="rail" x1="30" y1="20" x2="30" y2="120"/>
+        <line class="rail" x1="310" y1="20" x2="310" y2="120"/>
+        <path class="wire" d="M30,50 H90" />
+        <line class="contact" x1="90" y1="40" x2="90" y2="60"/><line class="contact" x1="110" y1="40" x2="110" y2="60"/>
+        <text x="100" y="30" text-anchor="middle" class="diagram-label">I1</text>
+        <path class="wire" d="M110,50 H170" />
+        <line class="contact" x1="170" y1="40" x2="170" y2="60"/><line class="contact" x1="190" y1="40" x2="190" y2="60"/>
+        <text x="180" y="30" text-anchor="middle" class="diagram-label">I2</text>
+        <path class="wire" d="M190,50 H260" />
+        <circle class="coil" cx="275" cy="50" r="14"/>
+        <text x="275" y="80" text-anchor="middle" class="diagram-label">Q1</text>
+      </g>
+      <g class="view" id="fbdView">
+        <path class="wire" d="M30,45 H90" /><text x="20" y="49" text-anchor="end" class="diagram-label">I1</text>
+        <path class="wire" d="M30,95 H90" /><text x="20" y="99" text-anchor="end" class="diagram-label">I2</text>
+        <rect class="block" x="90" y="30" width="70" height="80" rx="4"/>
+        <text x="125" y="75" text-anchor="middle" class="diagram-label" style="font-weight:700;">AND</text>
+        <path class="wire" d="M160,70 H220" />
+        <text x="230" y="74" class="diagram-label">Q1</text>
+      </g>
+    </svg>
+  </div>
+
+  <article>
+    <p>Oltre al <strong>Ladder</strong>, un PLC può essere programmato anche in <strong>FBD</strong> (Function Block Diagram), un linguaggio che rappresenta la logica come blocchi funzionali collegati tra loro — più simile a uno schema a blocchi che a uno schema elettrico. Passa dalla vista Ladder a quella FBD nello schema sopra: è esattamente la stessa logica — un AND tra due sensori I1 e I2, che comanda l'uscita Q1 — scritta in due modi diversi.</p>
+
+    <p>Immagina di dover controllare un semaforo pedonale. In Ladder disegneresti la logica come uno schema elettrico a relè, riga per riga, con contatti in serie o in parallelo. In FBD, invece, prenderesti un blocco "AND" già pronto e lo collegheresti agli ingressi con delle frecce, quasi come assemblare pezzi di un puzzle — stessa logica finale, due modi diversi di scriverla, adatti a modi di pensare diversi.</p>
+
+    <h2>Oltre il PLC: la logica programmabile</h2>
+
+    <p>Per applicazioni ancora più specializzate esistono i <strong>PLD</strong> e le <strong>FPGA</strong>: chip che puoi "configurare" per realizzare esattamente il circuito logico digitale che ti serve, come se disegnassi tu stesso l'hardware invece di limitarti a scrivere un programma che gira su un hardware già fisso. È un livello di flessibilità ulteriore rispetto anche al PLC più avanzato.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Le FPGA vengono usate anche per progettare e testare nuovi microprocessori prima ancora che vengano fabbricati fisicamente: gli ingegneri "programmano" temporaneamente l'architettura di un chip futuro dentro una FPGA, per verificare che funzioni correttamente prima di investire nella produzione reale.</p>
+    </div>
+
+    <p>La scelta tra Ladder e FBD, nella pratica industriale, dipende spesso da chi ha progettato l'impianto prima di te: un tecnico con background elettrico si troverà più a suo agio con il Ladder, uno con background informatico spesso preferisce l'FBD — ma entrambi descrivono, alla fine, esattamente la stessa logica.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Prendi la logica di autoritenuta che hai già programmato in Ladder (marcia, arresto, autoritenuta) e prova a ridisegnarla come schema a blocchi FBD, usando i blocchi AND, OR e la memoria che hai incontrato con il latch S-R.</p>
+    </div>
+
+    <p>Nell'ultima lezione del percorso mettiamo insieme tutto quello che hai imparato, progettando un impianto completo — dalla parte elettrica a quella di automazione.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="/argomenti/progettazione-impiantistica/" class="related-item"><span class="r-classe">Classi quinte · Teoria</span><span class="r-title">Progettazione impiantistica</span></a>
+      <a href="/argomenti/programmazione-ladder/" class="related-item"><span class="r-classe">Classi quinte · Laboratorio</span><span class="r-title">Prova pratica: programmazione Ladder</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="/privacy/">Privacy Policy</a><a href="/cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const ladderView = document.getElementById('ladderView');
+  const fbdView = document.getElementById('fbdView');
+  const btns = document.querySelectorAll('.gate-btn');
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const isLadder = btn.dataset.view === 'ladder';
+    ladderView.classList.toggle('show', isLadder);
+    fbdView.classList.toggle('show', !isLadder);
+  }));
+</script>
+</body>
+</html>
