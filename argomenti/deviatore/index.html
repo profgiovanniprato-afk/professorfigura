@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il deviatore: accendere la luce da due punti | professorfigura.it</title>
+<meta name="description" content="Come due deviatori permettono di accendere e spegnere la stessa lampada da due punti diversi, come sulle scale. Schema interattivo per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/deviatore/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Il deviatore: accendere la luce da due punti">
+<meta property="og:description" content="Come due deviatori accendono la stessa lampada da due punti diversi, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/deviatore/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Il deviatore: accendere la luce da due punti","description":"Come due deviatori collegati insieme permettono di accendere e spegnere la stessa lampada da due punti di comando diversi.","url":"https://www.professorfigura.it/argomenti/deviatore/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Deviatore elettrico"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"Il deviatore","item":"https://www.professorfigura.it/argomenti/deviatore/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .contact{stroke:var(--black);stroke-width:2.2;transition:transform .2s ease;cursor:pointer;}
+  .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .3s ease;}
+  .bulb-glow.lit{opacity:.35;}
+  .bulb-glass{fill:none;stroke:var(--black);stroke-width:2.2;transition:stroke .2s ease;}
+  .bulb-glass.lit{stroke:#D6A400;}
+  .bulb-filament{stroke:var(--black);stroke-width:2;transition:stroke .2s ease;}
+  .bulb-filament.lit{stroke:#F5C518;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);}
+  .status-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;}
+  .status-text.off{fill:var(--grey-500);}
+  .status-text.on{fill:var(--green-dark);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Il deviatore</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Il deviatore: accendere la luce da due punti</h1>
+  <p class="lead">Sali le scale, accendi la luce dal basso. Arrivi in cima, la spegni da lassù. Clicca su ciascun deviatore e scopri come è possibile.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 380 200" id="circuitSvg">
+      <path class="wire" d="M30,100 H70" /><path class="flow" id="f1" d="M30,100 H70" />
+      <text x="20" y="90" class="diagram-label">PILA</text>
+
+      <g id="dev1">
+        <circle class="node" cx="70" cy="100" r="4"/>
+        <circle class="node" cx="110" cy="60" r="4"/>
+        <circle class="node" cx="110" cy="140" r="4"/>
+        <line class="contact" id="blade1" x1="70" y1="100" x2="107" y2="63"/>
+        <text x="60" y="160" class="diagram-label">DEV. 1</text>
+      </g>
+
+      <path class="wire" d="M110,60 H270" /><path class="flow" id="fTrav1" d="M110,60 H270" />
+      <path class="wire" d="M110,140 H270" /><path class="flow" id="fTrav2" d="M110,140 H270" />
+      <text x="190" y="52" class="diagram-label">viaggiatore A</text>
+      <text x="190" y="158" class="diagram-label">viaggiatore B</text>
+
+      <g id="dev2">
+        <circle class="node" cx="270" cy="60" r="4"/>
+        <circle class="node" cx="270" cy="140" r="4"/>
+        <circle class="node" cx="310" cy="100" r="4"/>
+        <line class="contact" id="blade2" x1="310" y1="100" x2="273" y2="63"/>
+        <text x="280" y="160" class="diagram-label">DEV. 2</text>
+      </g>
+
+      <path class="wire" d="M310,100 H350" /><path class="flow" id="f2" d="M310,100 H350" />
+      <circle class="bulb-glow" id="bulbGlow" cx="365" cy="100" r="22"/>
+      <circle class="bulb-glass" id="bulbGlass" cx="365" cy="100" r="14"/>
+      <line class="bulb-filament" id="f1b" x1="355" y1="90" x2="375" y2="110"/>
+      <line class="bulb-filament" id="f2b" x1="375" y1="90" x2="355" y2="110"/>
+
+      <text x="190" y="190" text-anchor="middle" class="status-text off" id="statusText">Lampada spenta — clicca i deviatori</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Il <strong>deviatore</strong> ha tre terminali invece dei due dell'interruttore: un contatto comune, e due possibili posizioni verso cui la lama può orientarsi. Da solo non basta ad accendere una lampada — serve sempre <strong>una coppia</strong> di deviatori, collegati tra loro da due fili chiamati <strong>viaggiatori</strong>. Clicca su ciascuno dei due deviatori nello schema sopra: la lampada si accende solo quando entrambe le lame puntano verso lo <em>stesso</em> viaggiatore, completando il percorso.</p>
+
+    <p>È esattamente il principio che permette di accendere la luce delle scale dal piano di sotto e spegnerla dal piano di sopra, o viceversa: qualunque sia la posizione di partenza dei due deviatori, basta muoverne uno qualsiasi per cambiare lo stato della luce, indipendentemente da dove ti trovi.</p>
+
+    <h2>Perché serve un secondo filo in più</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Un impianto con due deviatori usa sempre due fili viaggiatori tra i due punti di comando — mai uno solo. È uno degli errori più comuni nei primi schemi disegnati da chi inizia: dimenticare che serve un percorso completo per <em>entrambe</em> le posizioni possibili, non solo per una.</p>
+    </div>
+
+    <p>Osserva che la lampada non "sa" quale dei due deviatori è stato mosso per ultimo: risponde solo alla condizione finale del circuito — stesso viaggiatore selezionato da entrambi i lati, oppure no. Questo è ciò che rende il sistema funzionante da qualsiasi punto di partenza.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Disegna su carta lo schema di due deviatori e una lampada, partendo da zero, senza guardare quello sopra. Poi prova a "seguire" con il dito il percorso della corrente in entrambe le combinazioni possibili delle due lame, verificando quando la lampada si accende.</p>
+    </div>
+
+    <p>Nella prossima lezione vediamo cosa succede quando i punti di comando diventano tre o più: entra in gioco un terzo componente, l'invertitore.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../invertitore/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">L'invertitore</span></a>
+      <a href="../interruttore-unipolare-bipolare/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Interruttore unipolare e bipolare</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let s1 = 0, s2 = 0; // 0 = verso A (alto), 1 = verso B (basso)
+  const blade1 = document.getElementById('blade1');
+  const blade2 = document.getElementById('blade2');
+  const fTrav1 = document.getElementById('fTrav1');
+  const fTrav2 = document.getElementById('fTrav2');
+  const f1 = document.getElementById('f1');
+  const f2 = document.getElementById('f2');
+  const bulbGlow = document.getElementById('bulbGlow');
+  const bulbGlass = document.getElementById('bulbGlass');
+  const f1b = document.getElementById('f1b');
+  const f2b = document.getElementById('f2b');
+  const statusText = document.getElementById('statusText');
+
+  function render(){
+    blade1.setAttribute('x2', s1===0?107:107);
+    blade1.setAttribute('y2', s1===0?63:137);
+    blade2.setAttribute('x2', s2===0?273:273);
+    blade2.setAttribute('y2', s2===0?63:137);
+    const on = s1 === s2;
+    fTrav1.classList.toggle('on', on && s1===0);
+    fTrav2.classList.toggle('on', on && s1===1);
+    f1.classList.toggle('on', on);
+    f2.classList.toggle('on', on);
+    bulbGlow.classList.toggle('lit', on);
+    bulbGlass.classList.toggle('lit', on);
+    f1b.classList.toggle('lit', on);
+    f2b.classList.toggle('lit', on);
+    statusText.textContent = on ? 'Lampada accesa!' : 'Lampada spenta — clicca i deviatori';
+    statusText.classList.toggle('on', on);
+    statusText.classList.toggle('off', !on);
+  }
+  document.getElementById('dev1').addEventListener('click', () => { s1 = s1 ? 0 : 1; render(); });
+  document.getElementById('dev2').addEventListener('click', () => { s2 = s2 ? 0 : 1; render(); });
+  render();
+</script>
+</body>
+</html>

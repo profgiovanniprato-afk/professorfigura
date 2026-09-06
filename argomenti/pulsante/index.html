@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il pulsante: acceso solo finché lo tieni premuto | professorfigura.it</title>
+<meta name="description" content="La differenza tra un interruttore, che resta nella posizione scelta, e un pulsante, che torna sempre a riposo da solo. Schema interattivo per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/pulsante/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Il pulsante: acceso solo finché lo tieni premuto">
+<meta property="og:description" content="Perché un pulsante torna sempre a riposo da solo, a differenza di un interruttore.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/pulsante/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Il pulsante: acceso solo finché lo tieni premuto","description":"La differenza tra un interruttore, che resta nella posizione scelta, e un pulsante a contatto momentaneo, che torna sempre a riposo da solo.","url":"https://www.professorfigura.it/argomenti/pulsante/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Pulsante a contatto momentaneo"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"Il pulsante","item":"https://www.professorfigura.it/argomenti/pulsante/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
+  .notebook svg{max-width:340px;width:100%;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .15s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .push-bar{stroke:var(--black);stroke-width:3;transition:transform .12s ease;cursor:pointer;}
+  .spring{fill:none;stroke:var(--grey-500);stroke-width:1.6;}
+  .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .15s ease;}
+  .bulb-glow.lit{opacity:.35;}
+  .bulb-glass{fill:none;stroke:var(--black);stroke-width:2.2;transition:stroke .15s ease;}
+  .bulb-glass.lit{stroke:#D6A400;}
+  .bulb-filament{stroke:var(--black);stroke-width:2;transition:stroke .15s ease;}
+  .bulb-filament.lit{stroke:#F5C518;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
+  .press-hint{font-family:'Space Grotesk',sans-serif;font-size:12.5px;color:var(--grey-700);margin-top:14px;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Il pulsante</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Il pulsante: acceso solo finché lo tieni premuto</h1>
+  <p class="lead">Tieni premuto il pulsante nello schema e osserva la lampada. Rilascialo. Nota la differenza rispetto a un normale interruttore.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 300 160" id="circuitSvg">
+      <path class="wire" d="M30,80 H90" /><path class="flow" id="f1" d="M30,80 H90" />
+      <text x="20" y="70" class="diagram-label">PILA</text>
+
+      <g id="pushGroup" style="cursor:pointer;">
+        <circle class="node" cx="90" cy="80" r="4"/>
+        <circle class="node" cx="130" cy="80" r="4"/>
+        <path class="spring" d="M108,80 q3,-10 6,0 q3,-10 6,0"/>
+        <line class="push-bar" id="pushBar" x1="88" y1="55" x2="132" y2="55"/>
+        <line x1="110" y1="55" x2="110" y2="65" stroke="var(--black)" stroke-width="2.5"/>
+        <text x="110" y="40" text-anchor="middle" class="diagram-label">PREMI QUI</text>
+      </g>
+
+      <path class="wire" d="M130,80 H210" /><path class="flow" id="f2" d="M130,80 H210" />
+      <circle class="bulb-glow" id="bulbGlow" cx="225" cy="80" r="24"/>
+      <circle class="bulb-glass" id="bulbGlass" cx="225" cy="80" r="15"/>
+      <line class="bulb-filament" id="f1b" x1="214.4" y1="69.4" x2="235.6" y2="90.6"/>
+      <line class="bulb-filament" id="f2b" x1="235.6" y1="69.4" x2="214.4" y2="90.6"/>
+    </svg>
+    <div class="press-hint" id="pressHint">Tieni premuto (mouse giù) per accendere</div>
+  </div>
+
+  <article>
+    <p>Il <strong>pulsante</strong> assomiglia molto a un interruttore, ma con una differenza fondamentale: mentre un interruttore <strong>resta</strong> nella posizione in cui lo metti — aperto o chiuso, finché non lo tocchi di nuovo — un pulsante torna sempre da solo alla sua posizione di riposo, grazie a una molla interna (rappresentata nello schema sopra). Tieni premuto il pulsante nello schema: la lampada si accende solo finché mantieni la pressione, e si spegne da sola appena rilasci.</p>
+
+    <p>Questo comportamento si chiama <strong>contatto momentaneo</strong>, ed è esattamente quello che serve in tutte le situazioni dove vuoi un'azione solo per il tempo in cui la richiedi attivamente — un citofono, un clacson, il pulsante per chiamare l'ascensore (che "ricorda" la richiesta grazie a un circuito di memoria collegato dopo di lui, non grazie al pulsante stesso).</p>
+
+    <h2>Normalmente aperto o normalmente chiuso</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Esistono anche pulsanti "normalmente chiusi", che fanno l'esatto contrario: lasciano passare la corrente a riposo, e la interrompono solo mentre li premi. Sono usati spesso nei circuiti di arresto di emergenza — dove serve che, in caso di guasto al pulsante stesso, il circuito si comporti in modo sicuro (si fermi) piuttosto che continuare a funzionare senza controllo.</p>
+    </div>
+
+    <p>Un pulsante da solo, quindi, non riesce a "tenere accesa" una luce dopo che lo rilasci: se vuoi ottenere quel comportamento (come nel circuito di avviamento motore che vedrai più avanti nel percorso), serve aggiungere un componente capace di ricordare lo stato — un relè, o più avanti un circuito di memoria digitale.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Trova in casa tua tre dispositivi che usano un pulsante a contatto momentaneo (non un interruttore) e prova a spiegare perché, per ognuno, ha senso che l'azione duri solo finché lo tieni premuto.</p>
+    </div>
+
+    <p>Nella prossima (e ultima) lezione di questo gruppo, vediamo proprio il componente che permette a un piccolo segnale di comandarne uno molto più grande, restando elettricamente separato da esso: il relè.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../rele/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Il relè</span></a>
+      <a href="../prese-mono-bivalenti/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Prese mono e bivalenti</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const pushGroup = document.getElementById('pushGroup');
+  const pushBar = document.getElementById('pushBar');
+  const f1 = document.getElementById('f1');
+  const f2 = document.getElementById('f2');
+  const bulbGlow = document.getElementById('bulbGlow');
+  const bulbGlass = document.getElementById('bulbGlass');
+  const f1b = document.getElementById('f1b');
+  const f2b = document.getElementById('f2b');
+  const pressHint = document.getElementById('pressHint');
+
+  function setOn(on){
+    pushBar.setAttribute('transform', on ? 'translate(0,25)' : 'translate(0,0)');
+    f1.classList.toggle('on', on);
+    f2.classList.toggle('on', on);
+    bulbGlow.classList.toggle('lit', on);
+    bulbGlass.classList.toggle('lit', on);
+    f1b.classList.toggle('lit', on);
+    f2b.classList.toggle('lit', on);
+    pressHint.textContent = on ? 'Acceso! Rilascia per spegnere' : 'Tieni premuto (mouse giù) per accendere';
+  }
+  pushGroup.addEventListener('mousedown', () => setOn(true));
+  pushGroup.addEventListener('mouseup', () => setOn(false));
+  pushGroup.addEventListener('mouseleave', () => setOn(false));
+  pushGroup.addEventListener('touchstart', (e) => { e.preventDefault(); setOn(true); });
+  pushGroup.addEventListener('touchend', () => setOn(false));
+</script>
+</body>
+</html>

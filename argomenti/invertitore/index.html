@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'invertitore: comandare la luce da tre o più punti | professorfigura.it</title>
+<meta name="description" content="Come l'invertitore, inserito tra due deviatori, permette di comandare una lampada da tre o più punti diversi. Schema interattivo per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/invertitore/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="L'invertitore: comandare la luce da tre o più punti">
+<meta property="og:description" content="Come l'invertitore, tra due deviatori, comanda una lampada da tre o più punti diversi.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/invertitore/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"L'invertitore: comandare la luce da tre o più punti","description":"Come l'invertitore, inserito tra due deviatori, permette di comandare una lampada da tre o più punti di comando diversi.","url":"https://www.professorfigura.it/argomenti/invertitore/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Invertitore elettrico"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"L'invertitore","item":"https://www.professorfigura.it/argomenti/invertitore/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
+  .notebook svg{max-width:280px;width:100%;cursor:pointer;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .invert-line{stroke:var(--green);stroke-width:2.5;transition:opacity .2s ease;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);}
+  .step-caption{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--grey-700);margin-top:16px;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / L'invertitore</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>L'invertitore: comandare la luce da tre o più punti</h1>
+  <p class="lead">Due deviatori bastano per due punti di comando. Per un terzo punto (o un quarto, un quinto...) serve un componente in più, inserito nel mezzo. Clicca sullo schema per vederlo "scambiare" i fili.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 220 160" id="invSvg">
+      <circle class="node" cx="30" cy="40" r="4"/>
+      <circle class="node" cx="30" cy="120" r="4"/>
+      <circle class="node" cx="190" cy="40" r="4"/>
+      <circle class="node" cx="190" cy="120" r="4"/>
+      <rect x="60" y="20" width="100" height="120" fill="none" stroke="var(--grey-300)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="110" y="15" text-anchor="middle" class="diagram-label">INVERTITORE</text>
+
+      <line class="invert-line" id="lineA" x1="30" y1="40" x2="190" y2="40"/>
+      <line class="invert-line" id="lineB" x1="30" y1="120" x2="190" y2="120"/>
+      <line class="invert-line" id="lineC" x1="30" y1="40" x2="190" y2="120" style="opacity:0"/>
+      <line class="invert-line" id="lineD" x1="30" y1="120" x2="190" y2="40" style="opacity:0"/>
+
+      <text x="15" y="35" text-anchor="end" class="diagram-label">da DEV. 1</text>
+      <text x="15" y="130" text-anchor="end" class="diagram-label"></text>
+      <text x="205" y="35" class="diagram-label">a DEV. 2</text>
+    </svg>
+    <div class="step-caption" id="invCaption">Posizione diritta: i due viaggiatori proseguono senza incrociarsi. Clicca per invertire.</div>
+  </div>
+
+  <article>
+    <p>Due deviatori, collegati tra loro come hai visto nella lezione precedente, permettono di comandare una lampada da <strong>due</strong> punti diversi. Ma cosa succede se serve un terzo punto di comando — per esempio un lungo corridoio con tre interruttori, uno a ogni estremità e uno a metà? Qui entra in gioco l'<strong>invertitore</strong>: un componente a quattro terminali, inserito <em>tra</em> i due deviatori, lungo i due fili viaggiatori.</p>
+
+    <p>Clicca sullo schema sopra: l'invertitore ha solo due posizioni possibili. Nella posizione <strong>diritta</strong>, i due viaggiatori proseguono senza incrociarsi. Nella posizione <strong>incrociata</strong>, li scambia — il viaggiatore che arrivava "in alto" da un lato esce "in basso" dall'altro, e viceversa. Ogni volta che l'invertitore cambia posizione, "inverte" la condizione che permette alla lampada di accendersi o spegnersi, esattamente come farebbe un terzo deviatore.</p>
+
+    <h2>Quanti punti di comando si possono aggiungere?</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Non c'è un limite teorico al numero di invertitori che puoi inserire tra i due deviatori: un corridoio lunghissimo con dieci punti di comando userebbe due deviatori (alle estremità) e otto invertitori (uno per ogni punto intermedio) — tutti collegati in serie lungo la stessa coppia di viaggiatori.</p>
+    </div>
+
+    <p>Il nome "invertitore" descrive esattamente la sua funzione: non decide da solo se la lampada è accesa o spenta, ma "inverte" la situazione che trova, qualunque essa sia — è un componente che ha senso solo in combinazione con almeno due deviatori, mai da solo.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Disegna su carta lo schema completo di tre punti di comando per una stessa lampada: due deviatori alle estremità e un invertitore nel mezzo. Prova a "seguire" il percorso della corrente in almeno due combinazioni diverse delle tre posizioni.</p>
+    </div>
+
+    <p>Nella prossima lezione lasciamo gli interruttori e i loro derivati per un componente diverso: la presa elettrica, e la differenza tra formato monovalente e bivalente.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../prese-mono-bivalenti/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Prese mono e bivalenti</span></a>
+      <a href="../deviatore/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Il deviatore</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let crossed = false;
+  const lineA = document.getElementById('lineA');
+  const lineB = document.getElementById('lineB');
+  const lineC = document.getElementById('lineC');
+  const lineD = document.getElementById('lineD');
+  const caption = document.getElementById('invCaption');
+  document.getElementById('invSvg').addEventListener('click', () => {
+    crossed = !crossed;
+    lineA.style.opacity = crossed ? 0 : 1;
+    lineB.style.opacity = crossed ? 0 : 1;
+    lineC.style.opacity = crossed ? 1 : 0;
+    lineD.style.opacity = crossed ? 1 : 0;
+    caption.textContent = crossed
+      ? 'Posizione incrociata: i due viaggiatori si scambiano.'
+      : 'Posizione diritta: i due viaggiatori proseguono senza incrociarsi. Clicca per invertire.';
+  });
+</script>
+</body>
+</html>

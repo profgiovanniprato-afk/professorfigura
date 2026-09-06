@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interruttore unipolare e bipolare: la differenza | professorfigura.it</title>
+<meta name="description" content="La differenza tra un interruttore unipolare (interrompe solo la fase) e uno bipolare (interrompe fase e neutro insieme). Schema interattivo per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/interruttore-unipolare-bipolare/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interruttore unipolare e bipolare: la differenza">
+<meta property="og:description" content="Interrompere solo la fase o fase e neutro insieme: la differenza tra unipolare e bipolare.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/interruttore-unipolare-bipolare/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Interruttore unipolare e bipolare: la differenza","description":"La differenza tra un interruttore unipolare, che interrompe solo la fase, e uno bipolare, che interrompe fase e neutro contemporaneamente.","url":"https://www.professorfigura.it/argomenti/interruttore-unipolare-bipolare/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Interruttori unipolari e bipolari"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"Interruttore unipolare e bipolare","item":"https://www.professorfigura.it/argomenti/interruttore-unipolare-bipolare/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .gate-select{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;}
+  .gate-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);cursor:pointer;}
+  .gate-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .contact{stroke:var(--black);stroke-width:2.5;}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .3s ease;}
+  .bulb-glow.lit{opacity:.35;}
+  .bulb-glass{fill:none;stroke:var(--black);stroke-width:2.2;transition:stroke .2s ease;}
+  .bulb-glass.lit{stroke:#D6A400;}
+  .bulb-filament{stroke:var(--black);stroke-width:2;transition:stroke .2s ease;}
+  .bulb-filament.lit{stroke:#F5C518;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Interruttore unipolare e bipolare</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Interruttore unipolare e bipolare: la differenza</h1>
+  <p class="lead">Lo stesso identico compito — accendere e spegnere — ma con una differenza di sicurezza importante. Confronta i due schemi.</p>
+
+  <div class="gate-select">
+    <button class="gate-btn active" data-mode="uni">Unipolare</button>
+    <button class="gate-btn" data-mode="bi">Bipolare</button>
+  </div>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 190" id="circuitSvg">
+      <path class="wire" d="M40,60 H120" /><path class="flow" id="fTop" d="M40,60 H120" />
+      <path class="wire" d="M220,60 H300" /><path class="flow" id="fTop2" d="M220,60 H300" />
+      <path class="wire" d="M300,60 V150" /><path class="flow" id="fRight" d="M300,60 V150" />
+      <path class="wire" d="M300,150 H40" /><path class="flow" id="fBottom" d="M300,150 H40" />
+      <path class="wire" d="M40,150 V60" /><path class="flow" id="fLeft" d="M40,150 V60" />
+
+      <text x="20" y="55" class="diagram-label">FASE</text>
+
+      <g id="poleTop">
+        <circle class="node" cx="120" cy="60" r="4"/>
+        <circle class="node" cx="220" cy="60" r="4"/>
+        <line class="contact" id="bladeTop" x1="120" y1="60" x2="217" y2="60" transform="rotate(0 120 60)"/>
+      </g>
+      <g id="poleBottom" style="display:none">
+        <path class="wire" d="M40,105 H120" /><path class="flow" id="fMidL" d="M40,105 H120" />
+        <path class="wire" d="M220,105 H300" /><path class="flow" id="fMidR" d="M220,105 H300" />
+        <circle class="node" cx="120" cy="105" r="4"/>
+        <circle class="node" cx="220" cy="105" r="4"/>
+        <line class="contact" id="bladeBottom" x1="120" y1="105" x2="217" y2="105" transform="rotate(0 120 105)"/>
+        <text x="20" y="110" class="diagram-label">NEUTRO</text>
+        <line x1="170" y1="45" x2="170" y2="120" stroke="var(--grey-300)" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </g>
+
+      <circle class="bulb-glow" cx="80" cy="105" r="26" id="bulbGlow" style="display:none"/>
+      <circle class="bulb-glass" cx="170" cy="150" r="18" id="bulbGlass2" style="display:none"/>
+
+      <circle class="bulb-glow" cx="170" cy="150" r="30" id="bulbGlowMain"/>
+      <circle class="bulb-glass" cx="170" cy="150" r="18" id="bulbGlassMain"/>
+      <line class="bulb-filament" id="f1Main" x1="158.7" y1="138.7" x2="181.3" y2="161.3"/>
+      <line class="bulb-filament" id="f2Main" x1="181.3" y1="138.7" x2="158.7" y2="161.3"/>
+
+      <text x="220" y="180" text-anchor="end" class="diagram-label" id="modeCaption">1 solo contatto: interrompe la fase</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Un interruttore <strong>unipolare</strong> — quello che hai già incontrato nella prima lezione — interrompe un solo conduttore: per convenzione, sempre la <strong>fase</strong>, mai il neutro. Guarda lo schema sopra in modalità "Unipolare": un solo punto di contatto, una sola lama che si apre o si chiude.</p>
+
+    <p>Un interruttore <strong>bipolare</strong> interrompe invece <strong>entrambi</strong> i conduttori contemporaneamente — fase e neutro — con due lame meccanicamente collegate tra loro (nello schema, la linea tratteggiata che le unisce), che si aprono e si chiudono sempre insieme, mai una senza l'altra. Passa alla modalità "Bipolare" e osserva i due contatti muoversi in sincronia.</p>
+
+    <h2>Perché a volte serve interrompere anche il neutro</h2>
+
+    <p>In un impianto domestico normale, l'interruttore unipolare basta: se la fase è interrotta, non c'è pericolo, anche se il neutro resta collegato. Ma in alcuni casi — per esempio un impianto alimentato da un sistema senza un chiaro riferimento a terra, o alcuni apparecchi specifici che lo richiedono per norma — serve la certezza che <em>nessun</em> conduttore resti sotto tensione: lì si usa l'interruttore bipolare.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Riconoscere un interruttore bipolare da uno unipolare, guardandolo da fuori, è quasi impossibile: la differenza è tutta dentro, nel meccanismo. È uno dei motivi per cui, prima di lavorare su un circuito, un tecnico controlla sempre con un multimetro — mai a occhio.</p>
+    </div>
+
+    <p>Il simbolo tratteggiato che collega le due lame nello schema bipolare non è un filo elettrico: rappresenta il collegamento <strong>meccanico</strong> tra le due parti mobili, che si muovono insieme perché fisicamente vincolate, non perché elettricamente connesse.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Osserva un interruttore reale (con l'aiuto di un adulto, senza smontarlo se è collegato). Prova a dedurre, dal numero di viti o morsetti visibili, se è unipolare (2 morsetti) o bipolare (4 morsetti).</p>
+    </div>
+
+    <p>Nella prossima lezione vediamo un componente che risolve un problema diverso: accendere la stessa lampada da due punti differenti, con il deviatore.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../deviatore/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Il deviatore</span></a>
+      <a href="../interruttore-lampadina/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Interruttore e lampadina</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const poleBottom = document.getElementById('poleBottom');
+  const modeCaption = document.getElementById('modeCaption');
+  const btns = document.querySelectorAll('.gate-btn');
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const bi = btn.dataset.mode === 'bi';
+    poleBottom.style.display = bi ? 'block' : 'none';
+    modeCaption.textContent = bi ? '2 contatti collegati: interrompe fase e neutro insieme' : '1 solo contatto: interrompe la fase';
+  }));
+</script>
+</body>
+</html>
