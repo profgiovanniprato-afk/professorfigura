@@ -1,0 +1,45 @@
+/* Font ospitati localmente al posto di Google Fonts, per non trasmettere l'indirizzo IP
+   dei visitatori a server di terze parti (vedi Cookie Policy). */
+
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-display:swap;
+  font-weight:400;
+  src:url('inter-400.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-display:swap;
+  font-weight:500;
+  src:url('inter-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-display:swap;
+  font-weight:600;
+  src:url('inter-600.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Space Grotesk';
+  font-style:normal;
+  font-display:swap;
+  font-weight:500;
+  src:url('space-grotesk-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Space Grotesk';
+  font-style:normal;
+  font-display:swap;
+  font-weight:600;
+  src:url('space-grotesk-600.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Space Grotesk';
+  font-style:normal;
+  font-display:swap;
+  font-weight:700;
+  src:url('space-grotesk-700.woff2') format('woff2');
+}

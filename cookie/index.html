@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy | professorfigura.it</title>
+<meta name="description" content="Cookie Policy di professorfigura.it: il sito non utilizza cookie di profilazione, statistici o di terze parti.">
+<link rel="canonical" href="https://www.professorfigura.it/cookie/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cookie Policy">
+<meta property="og:description" content="Il sito professorfigura.it non utilizza cookie di profilazione, statistici o di terze parti.">
+<meta property="og:url" content="https://www.professorfigura.it/cookie/">
+<meta property="og:locale" content="it_IT">
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:720px;margin:0 auto;padding:0 24px 80px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  h1{font-size:clamp(28px,4vw,38px);line-height:1.2;letter-spacing:-0.015em;margin:0 0 10px;font-weight:600;}
+  .updated{font-size:13px;color:var(--grey-500);margin:0 0 44px;}
+  article h2{font-size:20px;font-weight:600;letter-spacing:-0.01em;margin:44px 0 16px;color:var(--black);}
+  article p{font-size:15.5px;line-height:1.85;color:var(--grey-700);margin:0 0 18px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article ul{margin:0 0 18px;padding-left:22px;}
+  article li{font-size:15.5px;line-height:1.85;color:var(--grey-700);margin-bottom:8px;}
+  article strong{color:var(--black);font-weight:600;}
+  article a{color:var(--orange-dark);text-decoration:underline;}
+  .activity{padding:22px 26px;margin:30px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:14.5px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+  th,td{border:1px solid var(--grey-150);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--grey-100);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--grey-700);}
+  td{color:var(--grey-700);}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}table{font-size:12.5px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../">Home</a></li><li><a href="../chi-sono/">Chi sono</a></li><li><a href="../#classi">Classi</a></li><li><a href="../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../">Home</a> / Cookie Policy</p>
+  <h1>Cookie Policy</h1>
+  <p class="updated">Ultimo aggiornamento: settembre 2026</p>
+
+  <article>
+    <div class="activity">
+      <span class="c-label">In sintesi</span>
+      <p>professorfigura.it <strong>non installa alcun cookie di profilazione, statistico o di terze parti</strong> sul dispositivo di chi lo visita. Per questo motivo non è presente (né è richiesto dalla normativa) un banner di richiesta consenso ai cookie.</p>
+    </div>
+
+    <h2>1. Cosa sono i cookie</h2>
+    <p>I cookie sono piccoli file di testo che i siti visitati inviano al browser dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti in occasione di visite successive. Sono usati per diverse finalità: autenticazione, monitoraggio di sessioni, memorizzazione di preferenze, profilazione a fini pubblicitari.</p>
+
+    <h2>2. Cookie utilizzati da questo sito</h2>
+    <p>professorfigura.it è un sito statico, senza aree di login, moduli, carrello o strumenti di analisi del traffico. Non viene installato <strong>nessun tipo di cookie</strong>: né tecnici, né analitici, né di profilazione, né di terze parti.</p>
+
+    <table>
+      <tr><th>Tipo di cookie</th><th>Presente su questo sito?</th></tr>
+      <tr><td>Cookie tecnici necessari</td><td>No</td></tr>
+      <tr><td>Cookie analitici / statistici (es. Google Analytics)</td><td>No</td></tr>
+      <tr><td>Cookie di profilazione / marketing</td><td>No</td></tr>
+      <tr><td>Cookie di terze parti (social, pubblicità)</td><td>No</td></tr>
+    </table>
+
+    <h2>3. Risorse esterne (non cookie, ma da segnalare comunque)</h2>
+    <p>Alcune immagini della homepage sono caricate direttamente dai server di <strong>Wikimedia Commons</strong> anziché essere ospitate su questo sito. Questo caricamento non installa cookie sul tuo dispositivo, ma comporta — come per qualunque immagine incorporata da fonte esterna — l'invio del tuo indirizzo IP ai server di Wikimedia nel momento in cui la pagina viene visualizzata. Per i dettagli, vedi la <a href="../privacy/">Privacy Policy</a>.</p>
+    <p>I font del sito (Inter e Space Grotesk) sono invece ospitati localmente, proprio per evitare questo tipo di richiesta verso server esterni come quelli di Google Fonts.</p>
+
+    <h2>4. Come gestire i cookie dal browser</h2>
+    <p>Anche se questo sito non ne installa, ricordiamo che è sempre possibile controllare, bloccare o eliminare i cookie impostati da qualsiasi sito attraverso le impostazioni del proprio browser:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>5. Modifiche future</h2>
+    <p>Se in futuro il sito introdurrà strumenti che richiedono l'uso di cookie non tecnici (per esempio un sistema di analisi del traffico o di donazioni online), questa pagina verrà aggiornata e verrà introdotto un apposito banner di richiesta del consenso, come previsto dalla normativa vigente.</p>
+  </article>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../privacy/">Privacy Policy</a><a href="../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+</script>
+</body>
+</html>
