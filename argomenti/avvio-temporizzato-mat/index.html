@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avvio temporizzato di un MAT | professorfigura.it</title>
+<meta name="description" content="Come un relè temporizzatore ritarda l'avviamento di un motore asincrono trifase di un tempo prestabilito. Schema di potenza e comando CEI-IEC per le classi terze.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/avvio-temporizzato-mat/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Avvio temporizzato di un MAT">
+<meta property="og:description" content="Come un relè temporizzatore ritarda l'avviamento di un motore trifase, con schema di potenza e comando.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/avvio-temporizzato-mat/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Avvio temporizzato di un MAT","description":"Come un relè temporizzatore (KT) ritarda di un tempo prestabilito l'eccitazione del teleruttore che avvia un motore asincrono trifase.","url":"https://www.professorfigura.it/argomenti/avvio-temporizzato-mat/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe terza","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Avvio temporizzato motore asincrono trifase"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi terze","item":"https://www.professorfigura.it/classi/terze/"},{"@type":"ListItem","position":3,"name":"Avvio temporizzato di un MAT","item":"https://www.professorfigura.it/argomenti/avvio-temporizzato-mat/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 40px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .diagram-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-700);margin:44px 0 14px;text-align:center;}
+  .notebook{position:relative;padding:30px 16px 22px;margin:0 0 10px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:22px 22px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;}
+  .rail{stroke:var(--black);stroke-width:2.5;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  .flow.timing{stroke:var(--orange-dark);}
+  @keyframes flowDash{to{stroke-dashoffset:-34px;}}
+  .contact{stroke:var(--black);stroke-width:2;}
+  .contact-slash{stroke:var(--black);stroke-width:1.6;}
+  .coil{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .coil.energized{fill:var(--green-pale);stroke:var(--green-dark);}
+  .coil.timing{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:1.8;}
+  .fuse{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .motor-circle{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:fill .2s ease, stroke .2s ease;}
+  .motor-circle.running{fill:var(--green-pale);stroke:var(--green-dark);}
+  .thermal-zigzag{fill:none;stroke:var(--black);stroke-width:1.6;}
+  .delay-arc{fill:none;stroke:var(--black);stroke-width:1.4;}
+  .io-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;fill:var(--black);text-anchor:middle;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:10px;fill:var(--grey-700);}
+  .status-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;text-anchor:middle;}
+  .status-text.off{fill:var(--grey-500);}
+  .status-text.timing{fill:var(--orange-dark);}
+  .status-text.on{fill:var(--green-dark);}
+  .control{max-width:460px;margin:14px auto 12px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:10px 20px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .add-btn:hover{background:var(--orange-dark);}
+  .add-btn.stop{background:var(--grey-100);color:var(--black);}
+  .add-btn.stop:hover{background:var(--orange-pale);}
+  .countdown{text-align:center;font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--grey-700);margin:0 0 50px;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:23px;font-weight:600;letter-spacing:-0.01em;margin:52px 0 20px;color:var(--black);}
+  .callout{padding:24px 26px;margin:36px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:24px 26px;margin:36px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:70px 0 40px;padding-top:40px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:20px 8px 16px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/terze/">Classi terze</a> / Avvio temporizzato di un MAT</p>
+  <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Avvio temporizzato di un MAT</h1>
+  <p class="lead">Premi marcia: non succede nulla subito. Un relè temporizzatore conta un tempo prestabilito, e solo alla fine il motore parte davvero.</p>
+
+  <div class="diagram-title">Schema di potenza</div>
+  <div class="notebook">
+    <svg viewBox="0 0 300 220" id="powerSvg">
+      <text x="40" y="16" class="io-label">L1</text><text x="90" y="16" class="io-label">L2</text><text x="140" y="16" class="io-label">L3</text>
+      <path class="wire" d="M40,22 V40"/><path class="wire" d="M90,22 V40"/><path class="wire" d="M140,22 V40"/>
+
+      <line class="contact" x1="35" y1="40" x2="45" y2="52"/><line class="contact" x1="85" y1="40" x2="95" y2="52"/><line class="contact" x1="135" y1="40" x2="145" y2="52"/>
+      <text x="170" y="48" class="diagram-label">QS — sezionatore</text>
+
+      <path class="wire" d="M40,52 V70"/><path class="wire" d="M90,52 V70"/><path class="wire" d="M140,52 V70"/>
+      <rect class="fuse" x="33" y="70" width="14" height="20" rx="2"/><rect class="fuse" x="83" y="70" width="14" height="20" rx="2"/><rect class="fuse" x="133" y="70" width="14" height="20" rx="2"/>
+      <text x="170" y="84" class="diagram-label">F — fusibili</text>
+
+      <path class="wire" d="M40,90 V108"/><path class="wire" d="M90,90 V108"/><path class="wire" d="M140,90 V108"/>
+      <path class="flow" id="pf7" d="M40,90 V108"/><path class="flow" id="pf8" d="M90,90 V108"/><path class="flow" id="pf9" d="M140,90 V108"/>
+
+      <line class="contact" id="pk1" x1="35" y1="108" x2="45" y2="120"/><line class="contact" id="pk2" x1="85" y1="108" x2="95" y2="120"/><line class="contact" id="pk3" x1="135" y1="108" x2="145" y2="120"/>
+      <text x="170" y="118" class="diagram-label">KM — teleruttore</text>
+
+      <path class="wire" d="M40,120 V138"/><path class="wire" d="M90,120 V138"/><path class="wire" d="M140,120 V138"/>
+      <path class="flow" id="pf10" d="M40,120 V138"/><path class="flow" id="pf11" d="M90,120 V138"/><path class="flow" id="pf12" d="M140,120 V138"/>
+
+      <path class="thermal-zigzag" d="M35,138 q5,6 0,12 q-5,6 0,12 M85,138 q5,6 0,12 q-5,6 0,12 M135,138 q5,6 0,12 q-5,6 0,12"/>
+      <text x="170" y="152" class="diagram-label">F2 — relè termico</text>
+
+      <path class="wire" d="M40,162 V178"/><path class="wire" d="M90,162 V178"/><path class="wire" d="M140,162 V178"/>
+      <path class="flow" id="pf13" d="M40,162 V178"/><path class="flow" id="pf14" d="M90,162 V178"/><path class="flow" id="pf15" d="M140,162 V178"/>
+
+      <circle class="motor-circle" id="motorCircle" cx="90" cy="200" r="20"/>
+      <text x="90" y="205" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="14">M</text>
+      <text x="90" y="215" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="9">3~</text>
+    </svg>
+  </div>
+
+  <div class="diagram-title">Schema di comando</div>
+  <div class="notebook">
+    <svg viewBox="0 0 300 175" id="controlSvg">
+      <line class="rail" x1="30" y1="20" x2="30" y2="155"/>
+      <line class="rail" x1="270" y1="20" x2="270" y2="155"/>
+      <text x="30" y="14" text-anchor="middle" class="io-label">L</text>
+      <text x="270" y="14" text-anchor="middle" class="io-label">N</text>
+
+      <path class="wire" d="M30,50 H70"/><path class="flow" id="cf1" d="M30,50 H70"/>
+      <g id="s0Btn">
+        <line class="contact" x1="70" y1="40" x2="70" y2="60"/>
+        <line class="contact-slash" x1="64" y1="62" x2="76" y2="38"/>
+        <line class="contact" x1="90" y1="40" x2="90" y2="60"/>
+        <text x="80" y="30" class="io-label">S0</text>
+      </g>
+      <path class="wire" d="M90,50 H130"/><path class="flow" id="cf2" d="M90,50 H130"/>
+
+      <g class="btn-group" id="s1Btn">
+        <line class="contact" x1="130" y1="40" x2="130" y2="60"/>
+        <line class="contact" x1="150" y1="40" x2="150" y2="60"/>
+        <text x="140" y="30" class="io-label">S1</text>
+      </g>
+      <path class="wire" d="M150,50 H190"/><path class="flow" id="cf3" d="M150,50 H190"/>
+
+      <path class="coil" id="ktCoilL" d="M194,36 Q184,50 194,64" fill="none"/>
+      <path class="coil" id="ktCoilR" d="M206,36 Q216,50 206,64" fill="none"/>
+      <path class="delay-arc" d="M200,26 a6,6 0 1 1 -0.1,0"/>
+      <path class="wire" d="M210,50 H270"/><path class="flow" id="cf4" d="M210,50 H270"/>
+      <text x="200" y="78" text-anchor="middle" class="io-label">KT</text>
+
+      <path class="wire" d="M130,60 V90 H150 V60"/><path class="flow" id="cf5" d="M130,60 V90 H150 V60"/>
+      <line class="contact" x1="132" y1="83" x2="132" y2="97"/><line class="contact" x1="148" y1="83" x2="148" y2="97"/>
+      <text x="140" y="112" class="diagram-label" text-anchor="middle">KT (autoritenuta)</text>
+
+      <path class="wire" d="M90,50 V132 H130"/><path class="flow" id="cf6" d="M90,50 V132 H130"/>
+      <line class="contact" id="ktDelayed" x1="130" y1="122" x2="130" y2="142"/>
+      <path class="delay-arc" id="delayMark" d="M118,120 q6,12 0,24"/>
+      <line class="contact" x1="150" y1="122" x2="150" y2="142"/>
+      <text x="140" y="115" class="io-label">KT — ritardato</text>
+      <path class="wire" d="M150,132 H240"/><path class="flow" id="cf7" d="M150,132 H240"/>
+
+      <path class="coil" id="kmCoilL" d="M244,120 Q234,132 244,144" fill="none"/>
+      <path class="coil" id="kmCoilR" d="M256,120 Q266,132 256,144" fill="none"/>
+      <path class="wire" d="M260,132 H270"/><path class="flow" id="cf8" d="M260,132 H270"/>
+      <text x="250" y="158" text-anchor="middle" class="io-label">KM</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <button class="add-btn" id="marciaBtn">Premi S1 — MARCIA</button>
+    <button class="add-btn stop" id="arrestoBtn">Premi S0 — ARRESTO</button>
+  </div>
+  <p class="countdown" id="countdown">Pronto — ritardo impostato: 3 secondi</p>
+
+  <article>
+    <p>A volte non basta avviare un motore: serve farlo partire dopo un <strong>tempo prestabilito</strong>, per esempio per lasciare che altri macchinari a monte si avviino prima, in sequenza. Lo strumento giusto è il <strong>relè temporizzatore KT</strong>: una bobina che, una volta eccitata, non chiude subito il proprio contatto come farebbe un relè normale, ma aspetta un intervallo di tempo regolabile prima di farlo. Il simbolo CEI/IEC per un contatto a chiusura ritardata è lo stesso contatto normalmente aperto, con in più un piccolo arco che indica il ritardo.</p>
+
+    <p>Premi "S1 — MARCIA": nello schema di comando, il pulsante alimenta subito la bobina <strong>KT</strong>, che si autoalimenta tramite il proprio contatto istantaneo (esattamente come l'autoritenuta che già conosci). Osserva il conto alla rovescia: solo al termine del tempo impostato, il contatto <strong>ritardato di KT</strong> si chiude, alimentando finalmente la bobina del teleruttore <strong>KM</strong> — ed è solo a questo punto che il circuito di potenza si chiude e il motore parte davvero.</p>
+
+    <h2>Un ritardo "programmato", non improvvisato</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>I relè temporizzatori industriali possono essere <strong>pneumatici</strong> (un piccolo soffietto d'aria regola il tempo), <strong>elettronici</strong> (un circuito RC o un microcontrollore) o <strong>a motorino sincrono</strong> (un piccolo motore che aziona una camma meccanica). Il simbolo elettrico è identico per tutti e tre — quello che cambia è solo la tecnologia usata internamente per "contare" il tempo.</p>
+    </div>
+
+    <p>Premi "S0 — ARRESTO" in qualsiasi momento, anche durante il conto alla rovescia: il circuito si apre subito, KT si diseccita, e se il motore era già partito anche KM si disecciterà, fermandolo. Nota che se interrompi durante l'attesa, il motore non parte affatto — il timer viene semplicemente resettato.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Immagina un impianto con tre nastri trasportatori in sequenza: per evitare che il materiale si accumuli, il secondo nastro deve partire 3 secondi dopo il primo, e il terzo altri 3 secondi dopo il secondo. Prova a disegnare, anche solo a parole, come collegheresti tre relè temporizzatori in cascata per ottenere questo effetto.</p>
+    </div>
+
+    <p>Con queste tre lezioni hai visto i tre schemi di comando più diffusi nell'automazione industriale: autoritenuta, inversione di marcia e temporizzazione — le basi su cui si costruisce ogni impianto più complesso che studierai nei prossimi anni.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../avviamento-mat-autoritenuta/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Avviamento MAT con autoritenuta</span></a>
+      <a href="../marcia-avanti-indietro-mat/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Marcia avanti e indietro di un MAT</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const DELAY = 3;
+  let phase = 'stop'; // stop | timing | running
+  let timer = null;
+  let secondsLeft = DELAY;
+
+  const motorCircle = document.getElementById('motorCircle');
+  const countdown = document.getElementById('countdown');
+  const ktCoilL = document.getElementById('ktCoilL'), ktCoilR = document.getElementById('ktCoilR');
+  const kmCoilL = document.getElementById('kmCoilL'), kmCoilR = document.getElementById('kmCoilR');
+  const powerFlows = ['pf7','pf8','pf9','pf10','pf11','pf12','pf13','pf14','pf15'].map(id => document.getElementById(id));
+  const controlFlowsKT = ['cf1','cf2','cf3','cf4','cf5','cf6'].map(id => document.getElementById(id));
+  const controlFlowsKM = ['cf7','cf8'].map(id => document.getElementById(id));
+
+  function render(){
+    const running = phase === 'running';
+    const timing = phase === 'timing';
+    motorCircle.classList.toggle('running', running);
+    ktCoilL.classList.toggle('energized', timing || running);
+    ktCoilR.classList.toggle('energized', timing || running);
+    kmCoilL.classList.toggle('energized', running);
+    kmCoilR.classList.toggle('energized', running);
+    controlFlowsKT.forEach(f => f.classList.toggle('on', timing || running));
+    controlFlowsKM.forEach(f => f.classList.toggle('on', running));
+    powerFlows.forEach(f => f.classList.toggle('on', running));
+
+    if(phase === 'stop'){ countdown.textContent = 'Pronto — ritardo impostato: ' + DELAY + ' secondi'; }
+    else if(phase === 'timing'){ countdown.textContent = 'KT in conteggio... avvio tra ' + secondsLeft + ' s'; }
+    else { countdown.textContent = 'Tempo scaduto — KM eccitato, motore in marcia'; }
+  }
+
+  function startTiming(){
+    clearInterval(timer);
+    phase = 'timing';
+    secondsLeft = DELAY;
+    render();
+    timer = setInterval(() => {
+      secondsLeft -= 1;
+      if(secondsLeft <= 0){
+        clearInterval(timer);
+        phase = 'running';
+        render();
+      } else {
+        render();
+      }
+    }, 1000);
+  }
+  function stopAll(){
+    clearInterval(timer);
+    phase = 'stop';
+    secondsLeft = DELAY;
+    render();
+  }
+  document.getElementById('marciaBtn').addEventListener('click', startTiming);
+  document.getElementById('arrestoBtn').addEventListener('click', stopAll);
+  render();
+</script>
+</body>
+</html>

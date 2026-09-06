@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcia avanti e marcia indietro di un MAT | professorfigura.it</title>
+<meta name="description" content="Come invertire il senso di rotazione di un motore asincrono trifase scambiando due fasi, con due teleruttori e l'interblocco elettrico. Schema di potenza e comando CEI-IEC per le classi terze.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/marcia-avanti-indietro-mat/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marcia avanti e marcia indietro di un MAT">
+<meta property="og:description" content="Come invertire il senso di rotazione di un motore trifase con due teleruttori e l'interblocco elettrico.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/marcia-avanti-indietro-mat/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Marcia avanti e marcia indietro di un MAT","description":"Come invertire il senso di rotazione di un motore asincrono trifase scambiando due fasi, con due teleruttori interbloccati elettricamente.","url":"https://www.professorfigura.it/argomenti/marcia-avanti-indietro-mat/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe terza","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Inversione di marcia motore asincrono trifase"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi terze","item":"https://www.professorfigura.it/classi/terze/"},{"@type":"ListItem","position":3,"name":"Marcia avanti e indietro di un MAT","item":"https://www.professorfigura.it/argomenti/marcia-avanti-indietro-mat/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 40px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .diagram-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-700);margin:44px 0 14px;text-align:center;}
+  .notebook{position:relative;padding:30px 16px 22px;margin:0 0 10px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:22px 22px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;}
+  .rail{stroke:var(--black);stroke-width:2.5;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  .flow.reverse{stroke:var(--orange-dark);}
+  @keyframes flowDash{to{stroke-dashoffset:-34px;}}
+  .contact{stroke:var(--black);stroke-width:2;}
+  .contact-slash{stroke:var(--black);stroke-width:1.6;}
+  .coil{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .coil.energized{fill:var(--green-pale);stroke:var(--green-dark);}
+  .coil.energized.reverse{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:1.8;}
+  .fuse{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .motor-circle{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:fill .2s ease, stroke .2s ease;}
+  .motor-circle.running{fill:var(--green-pale);stroke:var(--green-dark);}
+  .motor-circle.running.reverse{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .rot-arrow{stroke:var(--grey-300);stroke-width:2;fill:none;opacity:0;transition:opacity .2s ease;}
+  .rot-arrow.show{opacity:1;}
+  .thermal-zigzag{fill:none;stroke:var(--black);stroke-width:1.6;}
+  .io-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;fill:var(--black);text-anchor:middle;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:9.5px;fill:var(--grey-700);}
+  .status-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;text-anchor:middle;}
+  .status-text.off{fill:var(--grey-500);}
+  .status-text.on{fill:var(--green-dark);}
+  .status-text.rev{fill:var(--orange-dark);}
+  .control{max-width:460px;margin:14px auto 50px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;padding:10px 16px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
+  .add-btn:hover{background:var(--orange-dark);}
+  .add-btn.stop{background:var(--grey-100);color:var(--black);}
+  .add-btn.stop:hover{background:var(--orange-pale);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:23px;font-weight:600;letter-spacing:-0.01em;margin:52px 0 20px;color:var(--black);}
+  .callout{padding:24px 26px;margin:36px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:24px 26px;margin:36px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:70px 0 40px;padding-top:40px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:20px 8px 16px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/terze/">Classi terze</a> / Marcia avanti e indietro di un MAT</p>
+  <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Marcia avanti e marcia indietro di un MAT</h1>
+  <p class="lead">Basta scambiare due fasi qualsiasi per invertire il senso di rotazione di un motore trifase. Prova i due sensi di marcia, poi prova a premerli insieme: l'interblocco impedirà l'errore.</p>
+
+  <div class="diagram-title">Schema di potenza</div>
+  <div class="notebook">
+    <svg viewBox="0 0 320 230" id="powerSvg">
+      <text x="60" y="16" class="io-label">L1</text><text x="110" y="16" class="io-label">L2</text><text x="160" y="16" class="io-label">L3</text>
+      <path class="wire" d="M60,22 V40"/><path class="wire" d="M110,22 V40"/><path class="wire" d="M160,22 V40"/>
+
+      <rect class="fuse" x="53" y="40" width="14" height="18" rx="2"/><rect class="fuse" x="103" y="40" width="14" height="18" rx="2"/><rect class="fuse" x="153" y="40" width="14" height="18" rx="2"/>
+      <text x="200" y="52" class="diagram-label">F — fusibili</text>
+
+      <path class="wire" d="M60,58 V72"/><path class="wire" d="M110,58 V72"/><path class="wire" d="M160,58 V72"/>
+
+      <!-- ramo diretto (KM1 - avanti) -->
+      <path class="wire" d="M40,72 H190"/>
+      <line class="contact" id="km1_1" x1="35" y1="72" x2="45" y2="84"/><line class="contact" id="km1_2" x1="85" y1="72" x2="95" y2="84"/><line class="contact" id="km1_3" x1="135" y1="72" x2="145" y2="84"/>
+      <path class="wire" d="M60,72 V60"/><path class="wire" d="M110,72 V60"/><path class="wire" d="M160,72 V60"/>
+      <path class="flow" id="pfA1" d="M60,60 V84"/><path class="flow" id="pfA2" d="M110,60 V84"/><path class="flow" id="pfA3" d="M160,60 V84"/>
+      <text x="200" y="80" class="diagram-label">KM1 — avanti</text>
+
+      <!-- ramo inverso (KM2 - indietro, L1 e L3 scambiate) -->
+      <path class="wire" d="M40,100 H190"/>
+      <line class="contact" id="km2_1" x1="35" y1="100" x2="45" y2="112"/><line class="contact" id="km2_2" x1="85" y1="100" x2="95" y2="112"/><line class="contact" id="km2_3" x1="135" y1="100" x2="145" y2="112"/>
+      <path class="wire" d="M60,58 V60 M60,100 V88"/>
+      <path class="wire" d="M40,72 V100" transform="translate(0,0)"/>
+      <path class="flow" id="pfB1" d="M40,72 V112" style="display:none"/>
+      <text x="200" y="108" class="diagram-label">KM2 — indietro (L1↔L3)</text>
+
+      <!-- collegamento diagonale che scambia L1 e L3 sul ramo KM2 -->
+      <path class="wire" d="M40,72 V100" />
+      <path class="wire" d="M40,100 H45"/>
+      <path class="wire" d="M160,72 V100" transform="translate(0,0)" opacity="0"/>
+
+      <path class="wire" d="M45,84 V96 H145 V84" opacity="0"/>
+
+      <line x1="40" y1="72" x2="40" y2="100" class="wire"/>
+      <line x1="190" y1="72" x2="190" y2="100" class="wire"/>
+
+      <!-- uscita comune verso relè termico e motore -->
+      <path class="wire" d="M60,84 H60 M110,84 H110 M160,84 H160"/>
+      <path class="wire" d="M45,84 L60,140"/>
+      <path class="wire" d="M95,84 L110,140"/>
+      <path class="wire" d="M145,84 L160,140" transform="translate(0,0)"/>
+
+      <path class="wire" d="M45,112 L60,140" transform="translate(0,0)" opacity="0"/>
+
+      <!-- per chiarezza, uniamo le tre uscite (avanti/indietro) su un unico bus verso il motore -->
+      <path class="wire" d="M60,140 V150"/><path class="wire" d="M110,140 V150"/><path class="wire" d="M160,140 V150"/>
+      <path class="flow" id="pf10" d="M60,140 V150"/><path class="flow" id="pf11" d="M110,140 V150"/><path class="flow" id="pf12" d="M160,140 V150"/>
+
+      <path class="thermal-zigzag" d="M55,150 q5,6 0,12 q-5,6 0,12 M105,150 q5,6 0,12 q-5,6 0,12 M155,150 q5,6 0,12 q-5,6 0,12"/>
+      <text x="200" y="164" class="diagram-label">F2 — relè termico</text>
+
+      <path class="wire" d="M60,174 V190"/><path class="wire" d="M110,174 V190"/><path class="wire" d="M160,174 V190"/>
+      <path class="flow" id="pf13" d="M60,174 V190"/><path class="flow" id="pf14" d="M110,174 V190"/><path class="flow" id="pf15" d="M160,174 V190"/>
+
+      <circle class="motor-circle" id="motorCircle" cx="110" cy="210" r="20"/>
+      <text x="110" y="215" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="14">M</text>
+      <text x="110" y="225" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="9">3~</text>
+      <path class="rot-arrow" id="arrowCW" d="M130,198 A22,22 0 1 1 122,180" marker-end="url(#arwHead)"/>
+      <path class="rot-arrow" id="arrowCCW" d="M90,198 A22,22 0 1 0 98,180" marker-end="url(#arwHead)"/>
+      <defs><marker id="arwHead" markerWidth="6" markerHeight="6" refX="4" refY="2" orient="auto"><path d="M0,0 L4,2 L0,4 Z" fill="var(--grey-300)"/></marker></defs>
+    </svg>
+  </div>
+
+  <div class="diagram-title">Schema di comando</div>
+  <div class="notebook">
+    <svg viewBox="0 0 320 190" id="controlSvg">
+      <line class="rail" x1="30" y1="15" x2="30" y2="175"/>
+      <line class="rail" x1="290" y1="15" x2="290" y2="175"/>
+      <text x="30" y="10" text-anchor="middle" class="io-label">L</text>
+      <text x="290" y="10" text-anchor="middle" class="io-label">N</text>
+
+      <path class="wire" d="M30,45 H60"/><path class="flow" id="cf0" d="M30,45 H60"/>
+      <g id="s0Btn">
+        <line class="contact" x1="60" y1="35" x2="60" y2="55"/>
+        <line class="contact-slash" x1="54" y1="57" x2="66" y2="33"/>
+        <line class="contact" x1="80" y1="35" x2="80" y2="55"/>
+        <text x="70" y="26" class="io-label">S0</text>
+      </g>
+      <path class="wire" d="M80,45 H250"/><path class="flow" id="cf00" d="M80,45 H250"/>
+
+      <!-- ramo avanti -->
+      <path class="wire" d="M80,45 V80 H120"/><path class="flow" id="cfA1" d="M80,45 V80 H120"/>
+      <g class="btn-group" id="s1Btn">
+        <line class="contact" x1="120" y1="70" x2="120" y2="90"/>
+        <line class="contact" x1="140" y1="70" x2="140" y2="90"/>
+        <text x="130" y="62" class="io-label">S1</text>
+      </g>
+      <path class="wire" d="M140,80 H165"/><path class="flow" id="cfA2" d="M140,80 H165"/>
+      <line class="contact" id="km2nc" x1="165" y1="70" x2="165" y2="90"/>
+      <line class="contact-slash" x1="159" y1="92" x2="171" y2="68"/>
+      <line class="contact" x1="185" y1="70" x2="185" y2="90"/>
+      <text x="175" y="62" class="io-label">KM2</text>
+      <path class="wire" d="M185,80 H240"/><path class="flow" id="cfA3" d="M185,80 H240"/>
+      <path class="coil" id="km1coilL" d="M244,68 Q236,80 244,92" fill="none"/>
+      <path class="coil" id="km1coilR" d="M254,68 Q262,80 254,92" fill="none"/>
+      <path class="wire" d="M258,80 H290"/><path class="flow" id="cfA4" d="M258,80 H290"/>
+      <text x="250" y="106" text-anchor="middle" class="io-label">KM1</text>
+
+      <path class="wire" d="M120,90 V105 H140 V90"/><path class="flow" id="cfA5" d="M120,90 V105 H140 V90"/>
+      <line class="contact" x1="122" y1="100" x2="122" y2="112"/><line class="contact" x1="138" y1="100" x2="138" y2="112"/>
+      <text x="130" y="122" class="diagram-label" text-anchor="middle">KM1 (autoritenuta)</text>
+
+      <!-- ramo indietro -->
+      <path class="wire" d="M80,45 V140 H120"/><path class="flow" id="cfB1" d="M80,45 V140 H120"/>
+      <g class="btn-group" id="s2Btn">
+        <line class="contact" x1="120" y1="130" x2="120" y2="150"/>
+        <line class="contact" x1="140" y1="130" x2="140" y2="150"/>
+        <text x="130" y="122" class="io-label" style="display:none"></text>
+        <text x="130" y="168" class="io-label">S2</text>
+      </g>
+      <path class="wire" d="M140,140 H165"/><path class="flow" id="cfB2" d="M140,140 H165"/>
+      <line class="contact" id="km1nc" x1="165" y1="130" x2="165" y2="150"/>
+      <line class="contact-slash" x1="159" y1="152" x2="171" y2="128"/>
+      <line class="contact" x1="185" y1="130" x2="185" y2="150"/>
+      <text x="175" y="122" class="io-label">KM1</text>
+      <path class="wire" d="M185,140 H240"/><path class="flow" id="cfB3" d="M185,140 H240"/>
+      <path class="coil" id="km2coilL" d="M244,128 Q236,140 244,152" fill="none"/>
+      <path class="coil" id="km2coilR" d="M254,128 Q262,140 254,152" fill="none"/>
+      <path class="wire" d="M258,140 H290"/><path class="flow" id="cfB4" d="M258,140 H290"/>
+      <text x="250" y="166" text-anchor="middle" class="io-label">KM2</text>
+
+      <path class="wire" d="M120,150 V163 H140 V150"/><path class="flow" id="cfB5" d="M120,150 V163 H140 V150"/>
+      <line class="contact" x1="122" y1="158" x2="122" y2="170"/><line class="contact" x1="138" y1="158" x2="138" y2="170"/>
+      <text x="130" y="181" class="diagram-label" text-anchor="middle">KM2 (autoritenuta)</text>
+    </svg>
+  </div>
+
+  <div class="control">
+    <button class="add-btn" id="avantiBtn">Premi S1 — AVANTI</button>
+    <button class="add-btn" id="indietroBtn">Premi S2 — INDIETRO</button>
+    <button class="add-btn stop" id="arrestoBtn">Premi S0 — ARRESTO</button>
+  </div>
+  <p class="status-text off" id="statusText" style="text-align:center;">Motore fermo</p>
+
+  <article>
+    <p>Un motore asincrono trifase gira sempre nello stesso verso finché l'ordine delle tre fasi resta lo stesso. Il modo più semplice per invertire il senso di rotazione è scambiare tra loro <strong>due fasi qualsiasi</strong> (nello schema di potenza, L1 e L3): il campo magnetico rotante cambia verso, e il motore gira al contrario. Per farlo servono <strong>due teleruttori</strong>: <strong>KM1</strong> collega le fasi nell'ordine diretto (marcia avanti), <strong>KM2</strong> le collega scambiate (marcia indietro).</p>
+
+    <p>Premi "S1 — AVANTI" o "S2 — INDIETRO" e osserva il motore ruotare nei due sensi. Ora prova a premere avanti mentre il motore sta già girando indietro (o viceversa): noterai che il comando non ha effetto. Questo è l'<strong>interblocco elettrico</strong>: nello schema di comando, il ramo di KM1 contiene un contatto <strong>normalmente chiuso di KM2</strong>, e viceversa. Se un teleruttore è già eccitato, il suo contatto NC nel ramo dell'altro si apre, impedendo fisicamente che i due possano essere alimentati insieme.</p>
+
+    <h2>Perché l'interblocco non è un dettaglio opzionale</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Se KM1 e KM2 si chiudessero insieme anche solo per un istante, si creerebbe un cortocircuito diretto tra le fasi scambiate — un guasto violento e distruttivo. Per questo, negli impianti reali, all'interblocco elettrico si affianca quasi sempre anche un <strong>interblocco meccanico</strong>: i due teleruttori sono costruiti in modo che, meccanicamente, non possano chiudersi entrambi, anche in caso di guasto ai contatti elettrici.</p>
+    </div>
+
+    <p>Nota anche che il pulsante di arresto S0 è comune a entrambi i sensi di marcia, collegato in serie prima della diramazione: premerlo interrompe l'alimentazione a monte di entrambi i rami, fermando il motore indipendentemente dal senso in cui stava girando.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Disegna sulla carta cosa succederebbe se, per errore, dimenticassi di inserire il contatto NC di interblocco in uno solo dei due rami (per esempio solo nel ramo di KM1, non in quello di KM2). In quali condizioni il circuito diventerebbe pericoloso?</p>
+    </div>
+
+    <p>Nella prossima lezione aggiungiamo la dimensione del tempo: vedremo come avviare un motore con un ritardo programmato, usando un relè temporizzatore.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../avvio-temporizzato-mat/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Avvio temporizzato di un MAT</span></a>
+      <a href="../avviamento-mat-autoritenuta/" class="related-item"><span class="r-classe">Classi terze · Teoria</span><span class="r-title">Avviamento MAT con autoritenuta</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let state = 'stop'; // 'stop' | 'forward' | 'reverse'
+  const motorCircle = document.getElementById('motorCircle');
+  const arrowCW = document.getElementById('arrowCW');
+  const arrowCCW = document.getElementById('arrowCCW');
+  const statusText = document.getElementById('statusText');
+  const km1coilL = document.getElementById('km1coilL'), km1coilR = document.getElementById('km1coilR');
+  const km2coilL = document.getElementById('km2coilL'), km2coilR = document.getElementById('km2coilR');
+  const powerFlowsA = ['pfA1','pfA2','pfA3'].map(id => document.getElementById(id));
+  const powerFlowsCommon = ['pf10','pf11','pf12','pf13','pf14','pf15'].map(id => document.getElementById(id));
+  const controlFlowsCommon = ['cf0','cf00'].map(id => document.getElementById(id));
+  const controlFlowsA = ['cfA1','cfA2','cfA3','cfA4','cfA5'].map(id => document.getElementById(id));
+  const controlFlowsB = ['cfB1','cfB2','cfB3','cfB4','cfB5'].map(id => document.getElementById(id));
+
+  function render(){
+    const running = state !== 'stop';
+    const reverse = state === 'reverse';
+    motorCircle.classList.toggle('running', running);
+    motorCircle.classList.toggle('reverse', reverse);
+    arrowCW.classList.toggle('show', state === 'forward');
+    arrowCCW.classList.toggle('show', state === 'reverse');
+
+    km1coilL.classList.toggle('energized', state === 'forward');
+    km1coilR.classList.toggle('energized', state === 'forward');
+    km2coilL.classList.toggle('energized', state === 'reverse');
+    km2coilR.classList.toggle('energized', state === 'reverse');
+    km1coilL.classList.toggle('reverse', false);
+    km2coilL.classList.toggle('reverse', state === 'reverse');
+    km2coilR.classList.toggle('reverse', state === 'reverse');
+
+    controlFlowsCommon.forEach(f => f.classList.toggle('on', running));
+    controlFlowsA.forEach(f => f.classList.toggle('on', state === 'forward'));
+    controlFlowsB.forEach(f => f.classList.toggle('on', state === 'reverse'));
+    powerFlowsA.forEach(f => f.classList.toggle('on', running));
+    powerFlowsCommon.forEach(f => f.classList.toggle('on', running));
+    powerFlowsCommon.forEach(f => f.classList.toggle('reverse', reverse));
+    powerFlowsA.forEach(f => f.classList.toggle('reverse', reverse));
+
+    if(state === 'stop'){ statusText.textContent = 'Motore fermo'; statusText.className = 'status-text off'; }
+    else if(state === 'forward'){ statusText.textContent = 'Marcia AVANTI — KM1 eccitato'; statusText.className = 'status-text on'; }
+    else { statusText.textContent = 'Marcia INDIETRO — KM2 eccitato (fasi scambiate)'; statusText.className = 'status-text rev'; }
+  }
+  document.getElementById('avantiBtn').addEventListener('click', () => { if(state !== 'reverse') state = 'forward'; render(); });
+  document.getElementById('indietroBtn').addEventListener('click', () => { if(state !== 'forward') state = 'reverse'; render(); });
+  document.getElementById('arrestoBtn').addEventListener('click', () => { state = 'stop'; render(); });
+  render();
+</script>
+</body>
+</html>
