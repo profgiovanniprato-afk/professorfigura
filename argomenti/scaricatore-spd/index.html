@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lo scaricatore SPD: proteggere dai fulmini | professorfigura.it</title>
+<meta name="description" content="Come lo scaricatore di sovratensione (SPD) devia verso terra un picco di tensione improvviso, proteggendo gli apparecchi collegati. Schema interattivo per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/scaricatore-spd/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lo scaricatore SPD: proteggere dai fulmini">
+<meta property="og:description" content="Come lo scaricatore SPD devia verso terra un picco di tensione, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/scaricatore-spd/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Lo scaricatore SPD: proteggere dai fulmini","description":"Come uno scaricatore di sovratensione (SPD) devia verso terra un picco di tensione improvviso, proteggendo gli apparecchi collegati a valle.","url":"https://www.professorfigura.it/argomenti/scaricatore-spd/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Scaricatore di sovratensione SPD"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"Lo scaricatore SPD","item":"https://www.professorfigura.it/argomenti/scaricatore-spd/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
+  .notebook svg{max-width:520px;width:100%;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  .flow.surge{stroke:var(--orange-dark);animation-duration:.3s;}
+  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  .spd-symbol{fill:none;stroke:var(--black);stroke-width:2.2;}
+  .ground-line{stroke:var(--black);stroke-width:2;}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .3s ease;}
+  .bulb-glow.lit{opacity:.35;}
+  .bulb-glow.burnt{fill:var(--orange-dark);opacity:.5;}
+  .bulb-glass{fill:none;stroke:var(--black);stroke-width:2.2;transition:stroke .2s ease;}
+  .bulb-glass.lit{stroke:#D6A400;}
+  .bulb-glass.burnt{stroke:var(--orange-dark);}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);}
+  .lightning{cursor:pointer;}
+  .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;padding:11px 22px;background:var(--black);color:var(--white);border:none;cursor:pointer;margin:16px 6px 0;}
+  .add-btn:hover{background:var(--orange-dark);}
+  .add-btn.secondary{background:var(--grey-100);color:var(--black);}
+  .add-btn.secondary:hover{background:var(--grey-150);}
+  .gate-select{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;}
+  .gate-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);cursor:pointer;}
+  .gate-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Lo scaricatore SPD</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>Lo scaricatore SPD: proteggere dai fulmini</h1>
+  <p class="lead">Un fulmine caduto lontano può comunque mandare un picco di tensione lungo la linea elettrica. Confronta cosa succede con e senza uno scaricatore SPD.</p>
+
+  <div class="gate-select">
+    <button class="gate-btn active" data-mode="con">Con SPD</button>
+    <button class="gate-btn" data-mode="senza">Senza SPD</button>
+  </div>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 200" id="circuitSvg">
+      <path class="wire" d="M20,80 H140" /><path class="flow" id="f1" d="M20,80 H140" />
+      <text x="14" y="70" class="diagram-label">RETE</text>
+
+      <g id="lightningGroup" class="lightning">
+        <path d="M170,20 L160,45 L172,45 L158,75" stroke="var(--orange-dark)" stroke-width="2.5" fill="none"/>
+        <text x="185" y="45" class="diagram-label">clicca: sovratensione</text>
+      </g>
+
+      <g id="spdGroup">
+        <rect class="spd-symbol" x="150" y="65" width="30" height="30"/>
+        <line class="spd-symbol" x1="150" y1="65" x2="180" y2="95"/>
+        <text x="165" y="112" text-anchor="middle" class="diagram-label">SPD</text>
+        <path class="ground-line" d="M165,95 V130" />
+        <line class="ground-line" x1="150" y1="130" x2="180" y2="130"/>
+        <line class="ground-line" x1="156" y1="136" x2="174" y2="136"/>
+        <line class="ground-line" x1="161" y1="142" x2="169" y2="142"/>
+        <path class="flow surge" id="fGround" d="M165,95 V130" />
+      </g>
+
+      <path class="wire" d="M180,80 H260" /><path class="flow" id="f2" d="M180,80 H260" />
+      <circle class="bulb-glow" id="bulbGlow" cx="280" cy="80" r="22"/>
+      <circle class="bulb-glass" id="bulbGlass" cx="280" cy="80" r="14"/>
+      <text x="280" y="115" text-anchor="middle" class="diagram-label">apparecchio protetto</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Lo <strong>scaricatore SPD</strong> (Surge Protection Device, "dispositivo di protezione dalle sovratensioni") ha un compito molto specifico: proteggere gli apparecchi collegati da picchi di tensione improvvisi e brevissimi — dovuti, per esempio, a un fulmine caduto anche a chilometri di distanza, che induce una sovratensione lungo la linea elettrica, o a manovre improvvise sulla rete di distribuzione.</p>
+
+    <p>In condizioni normali, lo SPD si comporta come un componente quasi invisibile al circuito: lascia passare la corrente senza interferire. Ma se la tensione supera una soglia di sicurezza, anche solo per una frazione di millisecondo, lo SPD diventa immediatamente conduttivo e devia l'eccesso di energia verso <strong>terra</strong>, invece di lasciarlo proseguire verso gli apparecchi a valle. Clicca sul fulmine nello schema, poi confronta cosa succede con SPD attivo e senza.</p>
+
+    <h2>Perché il differenziale e il magnetotermico non bastano</h2>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>Un fulmine può indurre sulla rete elettrica una sovratensione di migliaia di volt, mentre la tensione normale è di soli 230 V — e questo può accadere anche senza che il fulmine colpisca direttamente l'edificio o la linea, semplicemente cadendo nelle vicinanze. È un fenomeno molto più comune di quanto si pensi, soprattutto nelle zone con forte attività temporalesca.</p>
+    </div>
+
+    <p>Né il differenziale né il magnetotermico, che hai già studiato, sono pensati per questo tipo di guasto: il differenziale cerca dispersioni verso terra durante il normale funzionamento, il magnetotermico reagisce a correnti troppo alte per troppo tempo. Un picco di sovratensione dura una frazione di millisecondo — troppo poco perché loro intervengano, ma abbastanza per danneggiare in modo permanente un computer, una scheda elettronica o un elettrodomestico moderno.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Cerca (con un adulto) se il quadro elettrico di casa tua ha uno scaricatore SPD installato — è più comune negli impianti recenti o in zone con frequenti temporali. Se non lo trovi, prova a capire quali apparecchi elettronici in casa sarebbero più a rischio in caso di sovratensione.</p>
+    </div>
+
+    <p>Con questa lezione hai visto tre dispositivi di protezione diversi, ognuno pensato per un guasto specifico. Nell'ultima lezione di questo gruppo, vediamo il collegamento che li rende tutti davvero efficaci: l'impianto di messa a terra.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../impianto-messa-a-terra/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">L'impianto di messa a terra</span></a>
+      <a href="../interruttore-magnetotermico/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">L'interruttore magnetotermico</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let hasSpd = true;
+  const f2 = document.getElementById('f2');
+  const fGround = document.getElementById('fGround');
+  const bulbGlow = document.getElementById('bulbGlow');
+  const bulbGlass = document.getElementById('bulbGlass');
+  const btns = document.querySelectorAll('.gate-btn');
+
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    hasSpd = btn.dataset.mode === 'con';
+  }));
+
+  document.getElementById('lightningGroup').addEventListener('click', () => {
+    if(hasSpd){
+      fGround.classList.add('on');
+      setTimeout(() => fGround.classList.remove('on'), 500);
+      bulbGlow.classList.remove('burnt'); bulbGlass.classList.remove('burnt');
+      bulbGlow.classList.add('lit'); bulbGlass.classList.add('lit');
+    } else {
+      f2.classList.add('surge','on');
+      setTimeout(() => {
+        f2.classList.remove('surge','on');
+        bulbGlow.classList.remove('lit'); bulbGlass.classList.remove('lit');
+        bulbGlow.classList.add('burnt'); bulbGlass.classList.add('burnt');
+      }, 300);
+    }
+  });
+</script>
+</body>
+</html>

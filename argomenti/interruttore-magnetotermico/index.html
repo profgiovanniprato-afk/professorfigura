@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'interruttore magnetotermico: due protezioni in una | professorfigura.it</title>
+<meta name="description" content="Come il magnetotermico protegge da sovraccarico (lentamente, con il calore) e da cortocircuito (istantaneamente, con il magnetismo). Schema interattivo per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/interruttore-magnetotermico/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="L'interruttore magnetotermico: due protezioni in una">
+<meta property="og:description" content="Come il magnetotermico protegge da sovraccarico e cortocircuito, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/interruttore-magnetotermico/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"L'interruttore magnetotermico: due protezioni in una","description":"Come l'interruttore magnetotermico protegge un circuito sia dal sovraccarico (con un elemento termico) sia dal cortocircuito (con un elemento magnetico).","url":"https://www.professorfigura.it/argomenti/interruttore-magnetotermico/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Interruttore magnetotermico"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"L'interruttore magnetotermico","item":"https://www.professorfigura.it/argomenti/interruttore-magnetotermico/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-tag{background:var(--orange-pale);color:var(--orange-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
+  .axis{stroke:var(--grey-300);stroke-width:1.5;}
+  .zone-normal{fill:var(--green-pale);opacity:.6;}
+  .zone-overload{fill:var(--orange-pale);opacity:.6;}
+  .zone-short{fill:#F7D0BC;opacity:.7;}
+  .curve-line{stroke:var(--black);stroke-width:1;stroke-dasharray:3 3;}
+  .marker-dot{fill:var(--orange-dark);}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:10.5px;fill:var(--grey-700);}
+  .zone-title{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;}
+  .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
+  .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+  .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
+  .control-row .val{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--orange-dark);}
+  input[type=range]{width:100%;accent-color:var(--orange);}
+  .result-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;text-align:center;margin-top:16px;}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / L'interruttore magnetotermico</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
+  <h1>L'interruttore magnetotermico: due protezioni in una</h1>
+  <p class="lead">Due guasti diversi, due modi diversi di reagire: lento e graduale per uno, immediato per l'altro. Muovi lo slider della corrente assorbita e osserva in quale zona ricadi.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 340 200" id="chartSvg">
+      <rect class="zone-normal" x="30" y="20" width="90" height="150"/>
+      <rect class="zone-overload" x="120" y="20" width="90" height="150"/>
+      <rect class="zone-short" x="210" y="20" width="90" height="150"/>
+      <line class="axis" x1="30" y1="170" x2="300" y2="170"/>
+      <text x="75" y="185" text-anchor="middle" class="diagram-label zone-title">NORMALE</text>
+      <text x="165" y="185" text-anchor="middle" class="diagram-label zone-title">SOVRACCARICO</text>
+      <text x="255" y="185" text-anchor="middle" class="diagram-label zone-title">CORTOCIRCUITO</text>
+      <text x="75" y="45" text-anchor="middle" class="diagram-label">nessun intervento</text>
+      <text x="165" y="45" text-anchor="middle" class="diagram-label">interviene l'elemento TERMICO</text>
+      <text x="165" y="58" text-anchor="middle" class="diagram-label">(con ritardo, dopo secondi/minuti)</text>
+      <text x="255" y="45" text-anchor="middle" class="diagram-label">interviene l'elemento MAGNETICO</text>
+      <text x="255" y="58" text-anchor="middle" class="diagram-label">(istantaneo)</text>
+      <line class="curve-line" id="markerLine" x1="75" y1="20" x2="75" y2="170"/>
+      <circle class="marker-dot" id="markerDot" cx="75" cy="170" r="6"/>
+    </svg>
+  </div>
+
+  <div class="control">
+    <div class="control-row"><label for="currentSlider">Corrente assorbita dal circuito</label><span class="val" id="currentVal">Normale</span></div>
+    <input type="range" id="currentSlider" min="0" max="100" value="15" step="1">
+  </div>
+  <p class="result-text" id="resultText">Nessun intervento — il circuito lavora entro i limiti previsti.</p>
+
+  <article>
+    <p>L'<strong>interruttore magnetotermico</strong> protegge un circuito da due tipi di guasto completamente diversi, con due meccanismi distinti racchiusi nello stesso componente. Muovi lo slider sopra e osserva in quale delle tre zone ricade il punto di funzionamento del circuito.</p>
+
+    <p>Nella zona di <strong>sovraccarico</strong> — quando il circuito assorbe più corrente del previsto, ma non in modo estremo, per esempio troppi elettrodomestici collegati insieme — interviene l'elemento <strong>termico</strong>: una lamina bimetallica che si scalda lentamente per effetto Joule e, superata una certa temperatura, si piega abbastanza da far scattare il meccanismo. È un intervento <strong>ritardato</strong>, dell'ordine di secondi o minuti, proporzionale a quanto il sovraccarico è severo.</p>
+
+    <h2>Il cortocircuito richiede un'altra velocità</h2>
+
+    <p>Nella zona di <strong>cortocircuito</strong> — quando due conduttori si toccano direttamente, magari perché un cavo si è danneggiato — la corrente sale a valori enormi in una frazione di millisecondo. Aspettare che l'elemento termico si scaldi sarebbe troppo lento: qui interviene l'elemento <strong>magnetico</strong>, una bobina che, attraversata da una corrente così alta, genera un campo magnetico abbastanza forte da attirare istantaneamente il meccanismo di apertura — nessun ritardo, intervento immediato.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>La "curva di intervento" di un magnetotermico reale è pubblicata dal produttore in un grafico dettagliato, con tempi precisi per ogni multiplo della corrente nominale: un tecnico la consulta per scegliere l'interruttore giusto per ogni circuito, in base a cosa deve proteggere.</p>
+    </div>
+
+    <p>A differenza del differenziale, che hai già studiato e che rileva dispersioni verso terra, il magnetotermico non si accorge affatto se la corrente "esce" dal percorso previsto — gli interessa solo <em>quanta</em> corrente sta scorrendo, non se sta andando dove dovrebbe. I due dispositivi lavorano fianco a fianco nel quadro elettrico, proteggendo da guasti diversi.</p>
+
+    <div class="activity">
+      <span class="c-label">Mettiti alla prova</span>
+      <p>Osserva un interruttore magnetotermico reale (spesso ha una targhetta con scritto un numero seguito da una lettera, tipo "C16"): quel numero indica la corrente nominale in Ampere. Prova a scoprire cosa succederebbe collegando a quella linea troppi elettrodomestici insieme.</p>
+    </div>
+
+    <p>Nella prossima lezione vediamo un dispositivo diverso, pensato per un tipo di sovratensione improvvisa che nessuno dei due precedenti riesce a fermare: lo scaricatore SPD.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../scaricatore-spd/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Lo scaricatore SPD</span></a>
+      <a href="../interruttore-differenziale/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">L'interruttore differenziale</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  const slider = document.getElementById('currentSlider');
+  const currentVal = document.getElementById('currentVal');
+  const markerLine = document.getElementById('markerLine');
+  const markerDot = document.getElementById('markerDot');
+  const resultText = document.getElementById('resultText');
+
+  function update(){
+    const v = parseInt(slider.value,10);
+    const x = 30 + (v/100)*270;
+    markerLine.setAttribute('x1', x); markerLine.setAttribute('x2', x);
+    markerDot.setAttribute('cx', x);
+    if(v < 40){
+      currentVal.textContent = "Normale";
+      resultText.textContent = "Nessun intervento — il circuito lavora entro i limiti previsti.";
+    } else if(v < 70){
+      currentVal.textContent = "Sovraccarico";
+      resultText.textContent = "L'elemento termico si scalda: intervento con qualche secondo di ritardo.";
+    } else {
+      currentVal.textContent = "Cortocircuito";
+      resultText.textContent = "L'elemento magnetico scatta all'istante!";
+    }
+  }
+  slider.addEventListener('input', update);
+  update();
+</script>
+</body>
+</html>
