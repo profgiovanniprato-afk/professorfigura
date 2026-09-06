@@ -134,7 +134,10 @@
       </g>
       <path class="wire" d="M210,60 H300" /><path class="flow" id="f3" d="M210,60 H300" />
 
-      <circle class="coil" id="coil" cx="320" cy="60" r="16"/>
+      <path class="wire" d="M300,60 H308" /><path class="flow" id="fCoilIn" d="M300,60 H308" />
+      <path class="coil" id="coilL" d="M312,44 Q302,60 312,76" fill="none"/>
+      <path class="coil" id="coilR" d="M328,44 Q338,60 328,76" fill="none"/>
+      <path class="wire" d="M332,60 H350" /><path class="flow" id="fCoilOut" d="M332,60 H350" />
       <text x="320" y="90" class="io-label">K1</text>
 
       <!-- autoritenuta: ramo in parallelo al pulsante di marcia -->
@@ -203,12 +206,13 @@
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
 
   let k1 = false; // stato della bobina (motore)
-  const coil = document.getElementById('coil');
-  const flows = ['f1','f2','f3','f4'].map(id => document.getElementById(id));
-  const f4 = document.getElementById('f4');
+  const coilL = document.getElementById('coilL');
+  const coilR = document.getElementById('coilR');
+  const flows = ['f1','f2','f3','f4','fCoilIn','fCoilOut'].map(id => document.getElementById(id));
 
   function render(){
-    coil.classList.toggle('energized', k1);
+    coilL.classList.toggle('energized', k1);
+    coilR.classList.toggle('energized', k1);
     flows.forEach(f => f.classList.toggle('on', k1));
   }
   document.getElementById('marciaWrap').addEventListener('click', () => { k1 = true; render(); });
