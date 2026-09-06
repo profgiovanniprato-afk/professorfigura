@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prova pratica: accensione da tre punti con pulsanti e relè | professorfigura.it</title>
+<meta name="description" content="Un metodo alternativo ai deviatori: comandare una lampada da tre (o più) punti con semplici pulsanti collegati a un relè passo-passo. Per le classi prime.">
+<link rel="canonical" href="https://www.professorfigura.it/argomenti/accensione-tre-punti-pulsanti-rele/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prova pratica: accensione da tre punti con pulsanti e relè">
+<meta property="og:description" content="Comandare una lampada da più punti con pulsanti e un relè passo-passo, con uno schema interattivo.">
+<meta property="og:url" content="https://www.professorfigura.it/argomenti/accensione-tre-punti-pulsanti-rele/">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Prova pratica: accensione da tre punti con pulsanti e relè","description":"Come comandare una lampada da tre o più punti usando semplici pulsanti collegati in parallelo a un relè passo-passo bistabile.","url":"https://www.professorfigura.it/argomenti/accensione-tre-punti-pulsanti-rele/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe prima","learningResourceType":"Prova pratica","about":{"@type":"Thing","name":"Relè passo-passo"},"inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi prime","item":"https://www.professorfigura.it/classi/prime/"},{"@type":"ListItem","position":3,"name":"Accensione da tre punti con pulsanti e relè","item":"https://www.professorfigura.it/argomenti/accensione-tre-punti-pulsanti-rele/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--black:#010101;--grey-900:#1B1C1D;--grey-700:#54585C;--grey-500:#8A8E92;--grey-300:#DADCDE;--grey-150:#EDEEEF;--grey-100:#F5F5F6;--orange:#E8632E;--orange-dark:#B84A20;--orange-pale:#FCE7DC;--green:#3F7D5C;--green-dark:#2A5940;--green-pale:#E4EFE9;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;}
+  a{color:inherit;}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:26px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:var(--white);border-bottom:1px solid var(--grey-150);}
+  .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--black);}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--black);text-align:right;line-height:1.4;text-decoration:none;}
+  .nav-panel{position:fixed;inset:0 auto 0 0;width:340px;max-width:82vw;background:var(--grey-900);z-index:100;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:34px 30px;}
+  .nav-panel.open{transform:translateX(0);}
+  .nav-close{background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;margin-bottom:60px;}
+  .nav-panel ul{list-style:none;margin:0;padding:0;}.nav-panel li{border-bottom:1px solid #2E2F31;}
+  .nav-panel a{display:block;padding:16px 2px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--grey-500);text-decoration:none;}
+  .nav-panel a:hover{color:var(--orange);}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .scrim.show{opacity:1;pointer-events:auto;}
+  main{padding-top:96px;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .crumb{font-size:12.5px;color:var(--grey-500);margin:26px 0 30px;}.crumb a{text-decoration:none;color:var(--grey-500);}.crumb a:hover{color:var(--orange);}
+  .badges{display:flex;gap:10px;margin-bottom:18px;}
+  .badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;}
+  .badge-classe{background:var(--grey-100);color:var(--grey-700);}.badge-lab{background:var(--green-pale);color:var(--green-dark);}
+  h1{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 20px;font-weight:600;}
+  .lead{font-size:18px;color:var(--grey-700);line-height:1.75;max-width:60ch;margin:0 0 50px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
+  .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
+  .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow.on{opacity:1;}
+  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .push-group{cursor:pointer;}
+  .push-face{fill:var(--grey-100);stroke:var(--black);stroke-width:2;transition:fill .12s ease;}
+  .push-face.pressed{fill:var(--orange-pale);stroke:var(--orange-dark);}
+  .coil{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
+  .contact{stroke:var(--black);stroke-width:2.2;}
+  .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .3s ease;}
+  .bulb-glow.lit{opacity:.35;}
+  .bulb-glass{fill:none;stroke:var(--black);stroke-width:2.2;transition:stroke .2s ease;}
+  .bulb-glass.lit{stroke:#D6A400;}
+  .bulb-filament{stroke:var(--black);stroke-width:2;transition:stroke .2s ease;}
+  .bulb-filament.lit{stroke:#F5C518;}
+  .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);}
+  .status-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;}
+  .status-text.off{fill:var(--grey-500);}
+  .status-text.on{fill:var(--green-dark);}
+  .steps{counter-reset:step;margin:30px 0 40px;padding:0;list-style:none;}
+  .steps li{counter-increment:step;position:relative;padding:0 0 24px 46px;margin-bottom:2px;border-left:2px solid var(--grey-150);}
+  .steps li:last-child{border-left-color:transparent;}
+  .steps li::before{content:counter(step);position:absolute;left:-15px;top:0;width:30px;height:30px;background:var(--black);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;}
+  .steps li p{margin:0;font-size:15.5px;color:var(--grey-700);text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .steps li strong{color:var(--black);}
+  article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  article p strong{color:var(--black);font-weight:600;}
+  article h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:56px 0 22px;color:var(--black);}
+  .callout{padding:26px 28px;margin:38px 0;border-left:3px solid var(--orange);background:var(--orange-pale);}
+  .callout .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px;display:block;}
+  .callout p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .activity{padding:26px 28px;margin:38px 0;border-left:3px solid var(--green);background:var(--green-pale);}
+  .activity .c-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-bottom:10px;display:block;}
+  .activity p{margin:0;color:var(--black);font-size:15.5px;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .related{margin:80px 0 40px;padding-top:44px;border-top:1px solid var(--grey-150);}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin:0 0 24px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .related-item{display:block;padding:20px 22px;background:var(--grey-100);text-decoration:none;color:var(--black);transition:background .15s ease;}
+  .related-item:hover{background:var(--orange-pale);}
+  .related-item .r-classe{font-size:11.5px;color:var(--grey-500);display:block;margin-bottom:6px;}
+  .related-item .r-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  footer{background:var(--black);padding:60px 24px 28px;text-align:center;margin-top:60px;}
+  .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--white);margin-bottom:18px;}
+  .foot-legal{margin-top:30px;padding-top:22px;border-top:1px solid #232426;}
+  .foot-legal .links{display:flex;justify-content:center;gap:22px;margin-bottom:14px;}
+  .foot-legal a{font-size:12px;color:var(--grey-500);text-decoration:none;}.foot-legal a:hover{color:var(--white);}
+  .foot-legal p{font-size:11.5px;color:#5C5F62;margin:2px 0;}
+  @media (max-width:640px){header{padding:22px 24px;}.related-list{grid-template-columns:1fr;}.notebook{padding:26px 10px 20px;}}
+</style>
+</head>
+<body>
+<div class="scrim" id="scrim"></div>
+<nav class="nav-panel" id="navPanel">
+  <button class="nav-close" id="navClose">✕</button>
+  <ul><li><a href="../../">Home</a></li><li><a href="../../chi-sono/">Chi sono</a></li><li><a href="../../#classi">Classi</a></li><li><a href="../../#argomenti">Argomenti</a></li></ul>
+</nav>
+<header>
+  <button class="burger" id="burgerBtn" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  <a href="../../" class="wordmark">PROFESSOR<br>FIGURA</a>
+</header>
+<main><div class="wrap">
+  <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Accensione da tre punti con pulsanti e relè</p>
+  <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-lab">Laboratorio</span></div>
+  <h1>Prova pratica: accensione da tre punti con pulsanti e relè</h1>
+  <p class="lead">Niente deviatori, niente invertitori: solo tre semplici pulsanti, tutti collegati in parallelo alla bobina di un relè speciale. Premi un pulsante qualsiasi e osserva.</p>
+
+  <div class="notebook">
+    <svg viewBox="0 0 380 200" id="circuitSvg">
+      <text x="20" y="20" class="diagram-label" style="font-weight:700;">TRE PULSANTI IN PARALLELO</text>
+      <g class="push-group" id="p1"><rect class="push-face" x="20" y="35" width="60" height="30" rx="3"/><text x="50" y="55" text-anchor="middle" class="diagram-label">P1</text></g>
+      <g class="push-group" id="p2"><rect class="push-face" x="20" y="75" width="60" height="30" rx="3"/><text x="50" y="95" text-anchor="middle" class="diagram-label">P2</text></g>
+      <g class="push-group" id="p3"><rect class="push-face" x="20" y="115" width="60" height="30" rx="3"/><text x="50" y="135" text-anchor="middle" class="diagram-label">P3</text></g>
+
+      <path class="wire" d="M80,50 H140 V80 H80" />
+      <path class="wire" d="M80,90 H140" />
+      <path class="wire" d="M80,130 H140 V100 H80" />
+      <path class="flow" id="fCmd" d="M80,90 H140" />
+
+      <path class="wire" d="M140,90 H180" />
+      <rect class="coil" id="coil" x="180" y="70" width="60" height="40" rx="4"/>
+      <text x="210" y="94" text-anchor="middle" class="diagram-label" style="font-weight:700;">RELÈ</text>
+      <text x="210" y="128" text-anchor="middle" class="diagram-label">passo-passo</text>
+      <path class="wire" d="M240,90 H260" />
+
+      <line x1="270" y1="30" x2="270" y2="170" stroke="var(--grey-300)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+      <path class="wire" d="M290,150 H320" /><path class="flow" id="fPow1" d="M290,150 H320" />
+      <text x="284" y="140" class="diagram-label">RETE</text>
+      <circle class="node" cx="320" cy="150" r="4"/>
+      <circle class="node" cx="350" cy="150" r="4"/>
+      <line class="contact" id="powerBlade" x1="320" y1="150" x2="347" y2="150"/>
+
+      <circle class="bulb-glow" id="bulbGlow" cx="360" cy="90" r="18"/>
+      <circle class="bulb-glass" id="bulbGlass" cx="360" cy="90" r="11"/>
+      <path class="wire" d="M350,150 V90 H349" /><path class="flow" id="fPow2" d="M350,150 V90" />
+
+      <text x="190" y="188" text-anchor="middle" class="status-text off" id="statusText">Lampada spenta</text>
+    </svg>
+  </div>
+
+  <article>
+    <p>Questa prova pratica risolve lo stesso problema delle due precedenti — comandare una lampada da più punti — ma con un approccio completamente diverso: invece di deviatori e invertitori, usa semplici <strong>pulsanti</strong>, tutti collegati <strong>in parallelo</strong> tra loro, che alimentano la bobina di un relè speciale, chiamato <strong>relè passo-passo</strong> (o teleruttore). Premi uno qualsiasi dei tre pulsanti nello schema: la lampada cambia stato — da spenta ad accesa, o da accesa a spenta — indipendentemente da quale dei tre hai premuto.</p>
+
+    <p>La differenza fondamentale rispetto al relè "semplice" che hai già studiato è che questo tipo di relè è <strong>bistabile</strong>: non si limita a restare acceso finché la bobina è alimentata, ma "ricorda" il proprio stato e lo inverte a ogni impulso ricevuto — un comportamento di memoria simile, concettualmente, al latch che incontrerai studiando l'elettronica digitale.</p>
+
+    <h2>Perché conviene con molti punti di comando</h2>
+
+    <p>Con i deviatori, aggiungere un quarto o quinto punto di comando richiede sempre nuovi invertitori e nuovi fili viaggiatori dedicati. Con i pulsanti e il relè passo-passo, invece, basta collegare in parallelo un pulsante in più, sullo stesso paio di fili di comando già esistente — un vantaggio enorme quando i punti di comando diventano molti, come in un grande corridoio o in un capannone.</p>
+
+    <div class="callout">
+      <span class="c-label">Curiosità</span>
+      <p>I relè passo-passo sono lo stesso principio usato nei grandi impianti di illuminazione degli edifici pubblici e delle scale condominiali con molti piani: decine di pulsanti, tutti in parallelo su due soli fili, comandano un unico relè che accende o spegne l'intera illuminazione delle scale.</p>
+    </div>
+
+    <h2>Come montarlo davvero</h2>
+
+    <ol class="steps">
+      <li><p>Procurati tre pulsanti (contatto normalmente aperto), un relè passo-passo (o un relè bistabile equivalente), e una lampada.</p></li>
+      <li><p>Collega i tre pulsanti <strong>in parallelo</strong> tra loro, tutti sugli stessi due fili: un capo comune alla fase, l'altro capo comune alla bobina del relè.</p></li>
+      <li><p>Collega l'altro terminale della bobina al neutro, chiudendo il circuito di comando.</p></li>
+      <li><p>Collega il contatto di potenza del relè in serie tra la rete e la lampada, in un circuito completamente separato da quello di comando.</p></li>
+      <li><p>Premi ciascuno dei tre pulsanti più volte, in ordine diverso: verifica che la lampada cambi sempre stato a ogni pressione, indipendentemente da quale pulsante hai usato.</p></li>
+    </ol>
+
+    <div class="activity">
+      <span class="c-label">Prova pratica</span>
+      <p>Confronta i vantaggi e gli svantaggi di questa soluzione rispetto a quella con deviatori e invertitori delle due prove pratiche precedenti: quale richiede meno fili? Quale è più facile da capire osservando solo lo schema, senza spiegazioni?</p>
+    </div>
+
+    <p>Con questa prova pratica chiudiamo il gruppo dedicato ai comandi luce da più punti — un tema che, con soluzioni sempre più sofisticate, ritroverai anche nei sistemi di domotica che studierai più avanti nel percorso.</p>
+  </article>
+
+  <div class="related">
+    <h3>Continua da qui</h3>
+    <div class="related-list">
+      <a href="../rele/" class="related-item"><span class="r-classe">Classi prime · Teoria</span><span class="r-title">Il relè</span></a>
+      <a href="../accensione-tre-punti-invertitore/" class="related-item"><span class="r-classe">Classi prime · Laboratorio</span><span class="r-title">Accensione da tre punti con l'invertitore</span></a>
+    </div>
+  </div>
+</div></main>
+<footer>
+  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
+</footer>
+<script>
+  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+  function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
+  function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
+  burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
+
+  let lampOn = false;
+  const coil = document.getElementById('coil');
+  const powerBlade = document.getElementById('powerBlade');
+  const fCmd = document.getElementById('fCmd');
+  const fPow1 = document.getElementById('fPow1');
+  const fPow2 = document.getElementById('fPow2');
+  const bulbGlow = document.getElementById('bulbGlow');
+  const bulbGlass = document.getElementById('bulbGlass');
+  const statusText = document.getElementById('statusText');
+
+  function pulse(faceId){
+    const face = document.querySelector('#' + faceId + ' .push-face');
+    face.classList.add('pressed');
+    fCmd.classList.add('on');
+    coil.classList.add('energized');
+    setTimeout(() => {
+      face.classList.remove('pressed');
+      fCmd.classList.remove('on');
+      coil.classList.remove('energized');
+    }, 300);
+
+    lampOn = !lampOn;
+    powerBlade.setAttribute('transform', lampOn ? 'rotate(0 320 150)' : 'rotate(-20 320 150)');
+    fPow1.classList.toggle('on', lampOn);
+    fPow2.classList.toggle('on', lampOn);
+    bulbGlow.classList.toggle('lit', lampOn);
+    bulbGlass.classList.toggle('lit', lampOn);
+    statusText.textContent = lampOn ? 'Lampada accesa!' : 'Lampada spenta';
+    statusText.classList.toggle('on', lampOn);
+    statusText.classList.toggle('off', !lampOn);
+  }
+  document.getElementById('p1').addEventListener('click', () => pulse('p1'));
+  document.getElementById('p2').addEventListener('click', () => pulse('p2'));
+  document.getElementById('p3').addEventListener('click', () => pulse('p3'));
+</script>
+</body>
+</html>
