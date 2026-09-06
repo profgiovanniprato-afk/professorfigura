@@ -114,15 +114,15 @@
       </g>
       <path class="wire" d="M80,145 H140" /><path class="flow" id="fReset" d="M80,145 H140" />
 
-      <!-- NOR gate 1 (top) -->
-      <path class="gate" d="M140,30 H170 A25,45 0 0 1 170,100 H140 Z"/>
+      <!-- NOR gate 1 (top) — simbolo CEI/IEC 60617: rettangolo, qualificatore ≥1, pallino di negazione in uscita -->
+      <path class="gate" d="M140,30 H192 V100 H140 Z"/>
+      <text x="166" y="70" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="17" font-weight="700" fill="var(--black)">≥1</text>
       <circle class="bubble" cx="199" cy="65" r="4"/>
-      <text x="155" y="70" class="diagram-label">NOR</text>
 
       <!-- NOR gate 2 (bottom) -->
-      <path class="gate" d="M140,110 H170 A25,45 0 0 1 170,180 H140 Z"/>
+      <path class="gate" d="M140,110 H192 V180 H140 Z"/>
+      <text x="166" y="150" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="17" font-weight="700" fill="var(--black)">≥1</text>
       <circle class="bubble" cx="199" cy="145" r="4"/>
-      <text x="155" y="150" class="diagram-label">NOR</text>
 
       <!-- cross-coupling -->
       <path class="wire" d="M203,65 H240 V125 H140" /><path class="flow" id="fCross1" d="M203,65 H240 V125 H140" />
@@ -135,7 +135,7 @@
   </div>
 
   <article>
-    <p>Le porte logiche che conosci decidono un'uscita basandosi solo sull'ingresso presente in quel momento. Ma un computer deve anche <strong>ricordare</strong> informazioni. Il <strong>latch S-R</strong> che vedi nello schema — costruito con due porte <strong>NOR</strong> incrociate, dove l'uscita di ciascuna torna in ingresso all'altra — è il primo circuito capace di farlo.</p>
+    <p>Le porte logiche che conosci decidono un'uscita basandosi solo sull'ingresso presente in quel momento. Ma un computer deve anche <strong>ricordare</strong> informazioni. Il <strong>latch S-R</strong> che vedi nello schema — costruito con due porte <strong>NOR</strong> incrociate, dove l'uscita di ciascuna torna in ingresso all'altra — è il primo circuito capace di farlo. Ogni porta è disegnata secondo la norma CEI/IEC 60617: un rettangolo con il simbolo "≥1" (la funzione OR) e un pallino sull'uscita che ne indica la negazione — insieme, rettangolo più pallino, formano il simbolo standard della NOR.</p>
 
     <p>Premi "SET": l'uscita Q si accende. Ora prova a immaginare di rilasciare il pulsante (nel circuito reale l'ingresso torna a riposo) — l'uscita resta accesa comunque, perché il collegamento incrociato tra le due porte "tiene aperta" la strada anche senza più bisogno del pulsante. Premi "RESET" per riportare l'uscita a zero. È la più semplice forma di memoria elettronica che esista: un solo bit, ricordato per sempre finché non arriva un comando che lo cambia.</p>
 

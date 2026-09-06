@@ -124,17 +124,18 @@
       <text x="38" y="140" text-anchor="middle" class="diagram-label">B</text>
       <path class="wire" d="M56,105 H110" /><path class="flow" id="fB" d="M56,105 H110" />
 
-      <path class="gate" id="gateShape" d="M110,25 H150 A25,50 0 0 1 150,125 H110 Z"/>
+      <path class="gate" id="gateShape" d="M110,25 H170 V125 H110 Z"/>
+      <text id="gateQualifier" x="140" y="82" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700" fill="var(--black)">&amp;</text>
       <circle id="negBubble" cx="0" cy="0" r="0" fill="var(--white)" stroke="var(--black)" stroke-width="2" style="display:none"/>
 
-      <path class="wire" d="M198,75 H240" /><path class="flow" id="fOut" d="M198,75 H240" />
+      <path class="wire" d="M170,75 H240" /><path class="flow" id="fOut" d="M170,75 H240" />
       <circle class="led-dot" id="ledOut" cx="255" cy="75" r="10"/>
       <text x="255" y="100" text-anchor="middle" class="diagram-label">Y</text>
     </svg>
   </div>
 
   <article>
-    <p>Hai già incontrato il sistema binario in prima. Ora scopri come, con solo 0 e 1 (che possiamo anche chiamare "falso" e "vero"), si costruiscono le decisioni logiche che stanno alla base di ogni computer. Le <strong>porte logiche</strong> sono i mattoncini di questa logica. Prova a cliccare sui due ingressi A e B nello schema, e osserva come cambia l'uscita Y a seconda della porta scelta.</p>
+    <p>Hai già incontrato il sistema binario in prima. Ora scopri come, con solo 0 e 1 (che possiamo anche chiamare "falso" e "vero"), si costruiscono le decisioni logiche che stanno alla base di ogni computer. Le <strong>porte logiche</strong> sono i mattoncini di questa logica. Nello schema, ogni porta è disegnata secondo la norma CEI/IEC 60617: un rettangolo con dentro un simbolo che ne indica la funzione ("&amp;" per AND, "≥1" per OR), e un piccolo pallino sull'uscita quando la funzione è negata, come nella NAND. Prova a cliccare sui due ingressi A e B nello schema, e osserva come cambia l'uscita Y a seconda della porta scelta.</p>
 
     <p>La porta <strong>AND</strong> dà 1 solo se <em>entrambi</em> gli ingressi sono 1 — come dire "esco solo se ho finito i compiti E smesso di piovere". La porta <strong>OR</strong> dà 1 se <em>almeno uno</em> dei due ingressi è 1. La porta <strong>NAND</strong> è semplicemente un AND seguito da un NOT: dà l'esatto contrario di quello che darebbe una normale AND.</p>
 
@@ -185,6 +186,7 @@
   const fOut = document.getElementById('fOut');
   const ledOut = document.getElementById('ledOut');
   const negBubble = document.getElementById('negBubble');
+  const gateQualifier = document.getElementById('gateQualifier');
   const gateBtns = document.querySelectorAll('.gate-btn');
 
   function compute(){
@@ -201,8 +203,9 @@
     const y = compute();
     fOut.classList.toggle('on', y===1);
     ledOut.classList.toggle('on', y===1);
+    gateQualifier.textContent = gate === 'OR' ? '≥1' : gate === 'NAND' ? '&' : '&';
     negBubble.style.display = gate === 'NAND' ? 'block' : 'none';
-    if(gate === 'NAND'){ negBubble.setAttribute('cx',204); negBubble.setAttribute('cy',75); negBubble.setAttribute('r',6); }
+    if(gate === 'NAND'){ negBubble.setAttribute('cx',176); negBubble.setAttribute('cy',75); negBubble.setAttribute('r',6); }
   }
   btnA.addEventListener('click', () => { a = a ? 0 : 1; render(); });
   btnB.addEventListener('click', () => { b = b ? 0 : 1; render(); });
