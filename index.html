@@ -61,7 +61,8 @@
   .mono{font-family:'Space Grotesk',sans-serif;}
 
   /* ---- Header: minimal, hamburger + wordmark only ---- */
-  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:28px 36px;display:flex;justify-content:space-between;align-items:flex-start;}
+  header{position:fixed;top:0;left:0;right:0;z-index:80;padding:28px 36px;display:flex;justify-content:space-between;align-items:flex-start;background:transparent;border-bottom:1px solid transparent;transition:background .25s ease, border-color .25s ease, padding .25s ease;}
+  header.scrolled{background:var(--black);border-bottom:1px solid #232426;padding:20px 36px;}
   .burger{background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px;}
   .burger span{display:block;width:24px;height:2px;background:var(--white);}
   .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--white);text-align:right;line-height:1.4;}
@@ -255,6 +256,13 @@
   burger.addEventListener('click', openNav);
   navClose.addEventListener('click', closeNav);
   scrim.addEventListener('click', closeNav);
+
+  const siteHeader = document.querySelector('header');
+  function updateHeaderOnScroll(){
+    siteHeader.classList.toggle('scrolled', window.scrollY > 60);
+  }
+  window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+  updateHeaderOnScroll();
 </script>
 
 </body>
