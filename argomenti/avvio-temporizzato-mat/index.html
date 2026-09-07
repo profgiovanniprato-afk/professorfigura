@@ -59,6 +59,7 @@
   .coil.timing{fill:var(--orange-pale);stroke:var(--orange-dark);}
   .node{fill:var(--white);stroke:var(--black);stroke-width:1.8;}
   .fuse{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .fuse-diag{stroke:var(--black);stroke-width:1.4;}
   .motor-circle{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:fill .2s ease, stroke .2s ease;}
   .motor-circle.running{fill:var(--green-pale);stroke:var(--green-dark);}
   .thermal-zigzag{fill:none;stroke:var(--black);stroke-width:1.6;}
@@ -126,7 +127,7 @@
       <text x="170" y="48" class="diagram-label">QS — sezionatore</text>
 
       <path class="wire" d="M40,52 V70"/><path class="wire" d="M90,52 V70"/><path class="wire" d="M140,52 V70"/>
-      <rect class="fuse" x="33" y="70" width="14" height="20" rx="2"/><rect class="fuse" x="83" y="70" width="14" height="20" rx="2"/><rect class="fuse" x="133" y="70" width="14" height="20" rx="2"/>
+      <rect class="fuse" x="33" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="36.0" y1="73.0" x2="44.0" y2="87.0"/><rect class="fuse" x="83" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="86.0" y1="73.0" x2="94.0" y2="87.0"/><rect class="fuse" x="133" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="136.0" y1="73.0" x2="144.0" y2="87.0"/>
       <text x="170" y="84" class="diagram-label">F — fusibili</text>
 
       <path class="wire" d="M40,90 V108"/><path class="wire" d="M90,90 V108"/><path class="wire" d="M140,90 V108"/>
@@ -174,11 +175,10 @@
       </g>
       <path class="wire" d="M150,50 H190"/><path class="flow" id="cf3" d="M150,50 H190"/>
 
-      <path class="coil" id="ktCoilL" d="M194,36 Q184,50 194,64" fill="none"/>
-      <path class="coil" id="ktCoilR" d="M206,36 Q216,50 206,64" fill="none"/>
-      <path class="delay-arc" d="M200,26 a6,6 0 1 1 -0.1,0"/>
-      <path class="wire" d="M210,50 H270"/><path class="flow" id="cf4" d="M210,50 H270"/>
-      <text x="200" y="78" text-anchor="middle" class="io-label">KT</text>
+      <rect class="coil" id="ktCoil" x="190" y="36" width="24" height="28" rx="3"/>
+      <path class="delay-arc" d="M202,26 a6,6 0 1 1 -0.1,0"/>
+      <path class="wire" d="M214,50 H270"/><path class="flow" id="cf4" d="M214,50 H270"/>
+      <text x="202" y="78" text-anchor="middle" class="io-label">KT</text>
 
       <path class="wire" d="M130,60 V90 H150 V60"/><path class="flow" id="cf5" d="M130,60 V90 H150 V60"/>
       <line class="contact" x1="132" y1="83" x2="132" y2="97"/><line class="contact" x1="148" y1="83" x2="148" y2="97"/>
@@ -191,10 +191,9 @@
       <text x="140" y="115" class="io-label">KT — ritardato</text>
       <path class="wire" d="M150,132 H240"/><path class="flow" id="cf7" d="M150,132 H240"/>
 
-      <path class="coil" id="kmCoilL" d="M244,120 Q234,132 244,144" fill="none"/>
-      <path class="coil" id="kmCoilR" d="M256,120 Q266,132 256,144" fill="none"/>
-      <path class="wire" d="M260,132 H270"/><path class="flow" id="cf8" d="M260,132 H270"/>
-      <text x="250" y="158" text-anchor="middle" class="io-label">KM</text>
+      <rect class="coil" id="kmCoil" x="240" y="120" width="24" height="24" rx="3"/>
+      <path class="wire" d="M264,132 H270"/><path class="flow" id="cf8" d="M264,132 H270"/>
+      <text x="252" y="158" text-anchor="middle" class="io-label">KM</text>
     </svg>
   </div>
 
@@ -251,8 +250,8 @@
 
   const motorCircle = document.getElementById('motorCircle');
   const countdown = document.getElementById('countdown');
-  const ktCoilL = document.getElementById('ktCoilL'), ktCoilR = document.getElementById('ktCoilR');
-  const kmCoilL = document.getElementById('kmCoilL'), kmCoilR = document.getElementById('kmCoilR');
+  const ktCoil = document.getElementById('ktCoil');
+  const kmCoil = document.getElementById('kmCoil');
   const powerFlows = ['pf7','pf8','pf9','pf10','pf11','pf12','pf13','pf14','pf15'].map(id => document.getElementById(id));
   const controlFlowsKT = ['cf1','cf2','cf3','cf4','cf5','cf6'].map(id => document.getElementById(id));
   const controlFlowsKM = ['cf7','cf8'].map(id => document.getElementById(id));
@@ -261,10 +260,8 @@
     const running = phase === 'running';
     const timing = phase === 'timing';
     motorCircle.classList.toggle('running', running);
-    ktCoilL.classList.toggle('energized', timing || running);
-    ktCoilR.classList.toggle('energized', timing || running);
-    kmCoilL.classList.toggle('energized', running);
-    kmCoilR.classList.toggle('energized', running);
+    ktCoil.classList.toggle('energized', timing || running);
+    kmCoil.classList.toggle('energized', running);
     controlFlowsKT.forEach(f => f.classList.toggle('on', timing || running));
     controlFlowsKM.forEach(f => f.classList.toggle('on', running));
     powerFlows.forEach(f => f.classList.toggle('on', running));

@@ -58,6 +58,7 @@
   .node{fill:var(--white);stroke:var(--black);stroke-width:1.8;}
   .comp-box{fill:var(--white);stroke:var(--black);stroke-width:2;}
   .fuse{fill:var(--white);stroke:var(--black);stroke-width:2;}
+  .fuse-diag{stroke:var(--black);stroke-width:1.4;}
   .motor-circle{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:fill .2s ease, stroke .2s ease;}
   .motor-circle.running{fill:var(--green-pale);stroke:var(--green-dark);}
   .thermal-zigzag{fill:none;stroke:var(--black);stroke-width:1.6;}
@@ -128,7 +129,7 @@
       <path class="wire" d="M40,52 V70"/><path class="wire" d="M90,52 V70"/><path class="wire" d="M140,52 V70"/>
       <path class="flow" id="pf4" d="M40,52 V70"/><path class="flow" id="pf5" d="M90,52 V70"/><path class="flow" id="pf6" d="M140,52 V70"/>
 
-      <rect class="fuse" x="33" y="70" width="14" height="20" rx="2"/><rect class="fuse" x="83" y="70" width="14" height="20" rx="2"/><rect class="fuse" x="133" y="70" width="14" height="20" rx="2"/>
+      <rect class="fuse" x="33" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="36.0" y1="73.0" x2="44.0" y2="87.0"/><rect class="fuse" x="83" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="86.0" y1="73.0" x2="94.0" y2="87.0"/><rect class="fuse" x="133" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="136.0" y1="73.0" x2="144.0" y2="87.0"/>
       <text x="170" y="84" class="diagram-label">F — fusibili</text>
 
       <path class="wire" d="M40,90 V108"/><path class="wire" d="M90,90 V108"/><path class="wire" d="M140,90 V108"/>
@@ -187,11 +188,10 @@
       <path class="wire" d="M230,50 H230"/>
 
       <path class="wire" d="M240,50 H240"/>
-      <path class="wire" id="cf5wire" d="M240,50 H250"/><path class="flow" id="cf5" d="M240,50 H250"/>
-      <path class="coil" id="coilL" d="M254,36 Q244,50 254,64" fill="none"/>
-      <path class="coil" id="coilR" d="M266,36 Q276,50 266,64" fill="none"/>
-      <path class="wire" d="M270,50 H270"/>
-      <text x="260" y="80" text-anchor="middle" class="io-label">KM</text>
+      <path class="wire" id="cf5wire" d="M240,50 H245"/><path class="flow" id="cf5" d="M240,50 H245"/>
+      <rect class="coil" id="coil" x="245" y="36" width="24" height="28" rx="3"/>
+      <path class="wire" d="M269,50 H270"/>
+      <text x="257" y="80" text-anchor="middle" class="io-label">KM</text>
 
       <text x="150" y="140" text-anchor="middle" class="status-text off" id="statusText">Motore fermo</text>
     </svg>
@@ -246,8 +246,7 @@
   const powerFlows = Array.from({length:15}, (_,i) => document.getElementById('pf'+(i+1)));
   const controlFlows = ['cf1','cf2','cf3','cf4','cf5'].map(id => document.getElementById(id));
   const motorCircle = document.getElementById('motorCircle');
-  const coilL = document.getElementById('coilL');
-  const coilR = document.getElementById('coilR');
+  const coil = document.getElementById('coil');
   const statusText = document.getElementById('statusText');
   const pk1 = document.getElementById('pk1'), pk2 = document.getElementById('pk2'), pk3 = document.getElementById('pk3');
   const km1a = document.getElementById('km1a'), km1b = document.getElementById('km1b');
@@ -256,8 +255,7 @@
     powerFlows.forEach(f => f.classList.toggle('on', running));
     controlFlows.forEach(f => f.classList.toggle('on', running));
     motorCircle.classList.toggle('running', running);
-    coilL.classList.toggle('energized', running);
-    coilR.classList.toggle('energized', running);
+    coil.classList.toggle('energized', running);
     [pk1,pk2,pk3].forEach(c => c.setAttribute('transform', running ? 'translate(2,-3)' : ''));
     [km1a,km1b].forEach(c => c.setAttribute('transform', running ? 'translate(0,-4) scaleY(0.6)' : ''));
     statusText.textContent = running ? 'Motore in marcia — autoritenuta attiva' : 'Motore fermo';
