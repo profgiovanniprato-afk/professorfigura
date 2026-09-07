@@ -53,6 +53,8 @@
   .square-wave{fill:none;stroke:var(--green);stroke-width:2.2;}
   .led-dot{fill:var(--grey-300);transition:fill .1s linear;}
   .led-dot.on{fill:#F5C518;}
+  .led-bar{stroke:var(--black);stroke-width:1.8;}
+  .led-arrow{stroke:var(--grey-500);stroke-width:1.2;}
   .control{max-width:420px;margin:0 auto 56px;padding:0 8px;}
   .control-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
   .control-row label{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--grey-700);text-transform:uppercase;}
@@ -118,7 +120,12 @@
       <text x="20" y="145" text-anchor="end" class="diagram-label">C</text>
 
       <path class="wire" d="M210,80 H260" />
-      <circle class="led-dot" id="ledDot" cx="275" cy="80" r="9"/>
+      <g id="ledDot" class="led-dot" transform="translate(275,80)">
+        <polygon points="-8,-7 -8,7 5,0" stroke="var(--black)" stroke-width="1.4"/>
+        <line class="led-bar" x1="5" y1="-8" x2="5" y2="8"/>
+        <line class="led-arrow" x1="2" y1="-10" x2="8" y2="-17"/>
+        <line class="led-arrow" x1="6" y1="-6" x2="12" y2="-13"/>
+      </g>
       <text x="275" y="105" text-anchor="middle" class="diagram-label">LED</text>
 
       <path class="square-wave" id="squareWave" d="M20,190 H60 V175 H90 V190 H120 V175 H150 V190 H180" />

@@ -54,6 +54,8 @@
   .contact{stroke:var(--black);stroke-width:2.5;}
   .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
   .led-dot{fill:var(--grey-300);transition:fill .15s ease;}
+  .led-bar{stroke:var(--black);stroke-width:1.8;}
+  .led-arrow{stroke:var(--grey-500);stroke-width:1.2;}
   .control{max-width:460px;margin:0 auto 56px;padding:0 8px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
   .add-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;padding:11px 22px;background:var(--black);color:var(--white);border:none;cursor:pointer;}
   .add-btn:hover{background:var(--orange-dark);}
@@ -120,7 +122,12 @@
       <text x="197" y="105" text-anchor="middle" class="diagram-label">C</text>
 
       <path class="wire" d="M205,60 H260" /><path class="flow" id="f3" d="M205,60 H260" />
-      <circle class="led-dot" id="ledDot" cx="275" cy="60" r="9"/>
+      <g id="ledDot" class="led-dot" transform="translate(275,60)">
+        <polygon points="-8,-7 -8,7 5,0" stroke="var(--black)" stroke-width="1.4"/>
+        <line class="led-bar" x1="5" y1="-8" x2="5" y2="8"/>
+        <line class="led-arrow" x1="2" y1="-10" x2="8" y2="-17"/>
+        <line class="led-arrow" x1="6" y1="-6" x2="12" y2="-13"/>
+      </g>
       <text x="275" y="88" text-anchor="middle" class="diagram-label">LED</text>
     </svg>
   </div>
