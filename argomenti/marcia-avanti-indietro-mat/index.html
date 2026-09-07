@@ -120,57 +120,63 @@
 
   <div class="diagram-title">Schema di potenza</div>
   <div class="notebook">
-    <svg viewBox="0 0 360 270" id="powerSvg">
+    <svg viewBox="0 0 460 260" id="powerSvg">
       <text x="70" y="16" class="io-label">L1</text><text x="150" y="16" class="io-label">L2</text><text x="230" y="16" class="io-label">L3</text>
       <path class="wire" d="M70,22 V40"/><path class="wire" d="M150,22 V40"/><path class="wire" d="M230,22 V40"/>
 
-      <rect class="fuse" x="63" y="40" width="14" height="18" rx="2"/><line class="fuse-diag" x1="66" y1="43" x2="74" y2="55"/><rect class="fuse" x="143" y="40" width="14" height="18" rx="2"/><line class="fuse-diag" x1="146" y1="43" x2="154" y2="55"/><rect class="fuse" x="223" y="40" width="14" height="18" rx="2"/><line class="fuse-diag" x1="226" y1="43" x2="234" y2="55"/>
+      <rect class="fuse" x="63" y="40" width="14" height="18" rx="2"/><line class="fuse-diag" x1="66" y1="43" x2="74" y2="55"/>
+      <rect class="fuse" x="143" y="40" width="14" height="18" rx="2"/><line class="fuse-diag" x1="146" y1="43" x2="154" y2="55"/>
+      <rect class="fuse" x="223" y="40" width="14" height="18" rx="2"/><line class="fuse-diag" x1="226" y1="43" x2="234" y2="55"/>
       <text x="270" y="52" class="diagram-label">F — fusibili</text>
 
       <path class="wire" d="M70,58 V74"/><path class="wire" d="M150,58 V74"/><path class="wire" d="M230,58 V74"/>
       <circle class="node" cx="70" cy="74" r="2.5"/><circle class="node" cx="150" cy="74" r="2.5"/><circle class="node" cx="230" cy="74" r="2.5"/>
 
-      <!-- ramo KM1 — avanti: ordine diretto delle fasi -->
-      <line class="contact" id="km1_1" x1="65" y1="74" x2="75" y2="90"/>
-      <line class="contact" id="km1_2" x1="145" y1="74" x2="155" y2="90"/>
-      <line class="contact" id="km1_3" x1="225" y1="74" x2="235" y2="90"/>
-      <text x="270" y="86" class="diagram-label">KM1 — avanti</text>
-      <path class="wire" id="km1out1" d="M70,90 V160"/><path class="wire" id="km1out2" d="M150,90 V160"/><path class="wire" id="km1out3" d="M230,90 V160"/>
-      <path class="flow" id="pfA1" d="M70,74 V160"/><path class="flow" id="pfA2" d="M150,74 V160"/><path class="flow" id="pfA3" d="M230,74 V160"/>
+      <!-- ===== ramo KM1 — avanti (colonne originali, nessuna deviazione) ===== -->
+      <path class="wire" d="M70,74 V80"/><path class="wire" d="M150,74 V80"/><path class="wire" d="M230,74 V80"/>
+      <line class="contact" id="km1_1" x1="65" y1="80" x2="75" y2="92"/>
+      <line class="contact" id="km1_2" x1="145" y1="80" x2="155" y2="92"/>
+      <line class="contact" id="km1_3" x1="225" y1="80" x2="235" y2="92"/>
+      <text x="270" y="90" class="diagram-label">KM1 — avanti</text>
+      <path class="wire" d="M70,92 V150"/><path class="wire" d="M150,92 V150"/><path class="wire" d="M230,92 V150"/>
+      <path class="flow" id="pfA1" d="M70,74 V150"/><path class="flow" id="pfA2" d="M150,74 V150"/><path class="flow" id="pfA3" d="M230,74 V150"/>
+      <text x="70" y="164" text-anchor="middle" class="diagram-label">U</text>
+      <text x="150" y="164" text-anchor="middle" class="diagram-label">V</text>
+      <text x="230" y="164" text-anchor="middle" class="diagram-label">W</text>
 
-      <!-- ramo KM2 — indietro: colonne leggermente scostate, con scambio L1/L3 -->
-      <path class="wire" d="M70,74 L50,106"/><path class="wire" d="M150,74 V106"/><path class="wire" d="M230,74 L250,106"/>
-      <line class="contact" id="km2_1" x1="45" y1="106" x2="55" y2="122"/>
-      <line class="contact" id="km2_2" x1="145" y1="106" x2="155" y2="122"/>
-      <line class="contact" id="km2_3" x1="245" y1="106" x2="255" y2="122"/>
-      <text x="270" y="118" class="diagram-label">KM2 — indietro</text>
-      <text x="270" y="132" class="diagram-label">(L1↔L3 scambiate)</text>
-      <!-- uscite KM2, con L1 e L3 che si scambiano nel percorso verso il bus comune -->
-      <path class="wire" id="km2out1" d="M50,122 L230,160"/>
-      <path class="wire" id="km2out2" d="M150,122 V160"/>
-      <path class="wire" id="km2out3" d="M250,122 L70,160"/>
-      <path class="flow" id="pfB1" d="M50,106 L230,160"/>
-      <path class="flow" id="pfB2" d="M150,106 V160"/>
-      <path class="flow" id="pfB3" d="M250,106 L70,160"/>
+      <path class="thermal-zigzag" d="M65,168 q5,6 0,12 q-5,6 0,12 M145,168 q5,6 0,12 q-5,6 0,12 M225,168 q5,6 0,12 q-5,6 0,12"/>
+      <text x="270" y="182" class="diagram-label">F2 — relè termico</text>
 
-      <circle class="node" cx="70" cy="160" r="2.5"/><circle class="node" cx="150" cy="160" r="2.5"/><circle class="node" cx="230" cy="160" r="2.5"/>
+      <path class="wire" d="M70,192 V210"/><path class="wire" d="M150,192 V210"/><path class="wire" d="M230,192 V210"/>
+      <path class="flow" id="pf13" d="M70,192 V210"/><path class="flow" id="pf14" d="M150,192 V210"/><path class="flow" id="pf15" d="M230,192 V210"/>
 
-      <!-- bus comune verso protezione e motore -->
-      <path class="wire" d="M70,160 V178"/><path class="wire" d="M150,160 V178"/><path class="wire" d="M230,160 V178"/>
-      <path class="flow" id="pf10" d="M70,160 V178"/><path class="flow" id="pf11" d="M150,160 V178"/><path class="flow" id="pf12" d="M230,160 V178"/>
-
-      <path class="thermal-zigzag" d="M65,178 q5,6 0,12 q-5,6 0,12 M145,178 q5,6 0,12 q-5,6 0,12 M225,178 q5,6 0,12 q-5,6 0,12"/>
-      <text x="270" y="192" class="diagram-label">F2 — relè termico</text>
-
-      <path class="wire" d="M70,202 V220"/><path class="wire" d="M150,202 V220"/><path class="wire" d="M230,202 V220"/>
-      <path class="flow" id="pf13" d="M70,202 V220"/><path class="flow" id="pf14" d="M150,202 V220"/><path class="flow" id="pf15" d="M230,202 V220"/>
-
-      <circle class="motor-circle" id="motorCircle" cx="150" cy="240" r="20"/>
-      <text x="150" y="245" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="14">M</text>
-      <text x="150" y="255" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="9">3~</text>
-      <path class="rot-arrow" id="arrowCW" d="M170,228 A22,22 0 1 1 162,210" marker-end="url(#arwHead)"/>
-      <path class="rot-arrow" id="arrowCCW" d="M130,228 A22,22 0 1 0 138,210" marker-end="url(#arwHead)"/>
+      <circle class="motor-circle" id="motorCircle" cx="150" cy="230" r="20"/>
+      <text x="150" y="235" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="14">M</text>
+      <text x="150" y="245" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="9">3~</text>
+      <path class="rot-arrow" id="arrowCW" d="M170,218 A22,22 0 1 1 162,200" marker-end="url(#arwHead)"/>
+      <path class="rot-arrow" id="arrowCCW" d="M130,218 A22,22 0 1 0 138,200" marker-end="url(#arwHead)"/>
       <defs><marker id="arwHead" markerWidth="6" markerHeight="6" refX="4" refY="2" orient="auto"><path d="M0,0 L4,2 L0,4 Z" fill="var(--grey-300)"/></marker></defs>
+
+      <!-- ===== ramo KM2 — indietro: colonne indipendenti, nessun incrocio ===== -->
+      <path class="wire" d="M70,64 H320"/><path class="wire" d="M320,64 V80"/>
+      <path class="wire" d="M150,66 H400"/><path class="wire" d="M400,66 V80"/>
+      <path class="wire" d="M230,68 H480"/><path class="wire" d="M480,68 V80"/>
+      <circle class="node" cx="70" cy="64" r="2"/><circle class="node" cx="150" cy="66" r="2"/><circle class="node" cx="230" cy="68" r="2"/>
+
+      <line class="contact" id="km2_1" x1="315" y1="80" x2="325" y2="92"/>
+      <line class="contact" id="km2_2" x1="395" y1="80" x2="405" y2="92"/>
+      <line class="contact" id="km2_3" x1="475" y1="80" x2="485" y2="92"/>
+      <text x="320" y="42" text-anchor="middle" class="diagram-label">KM2 — indietro</text>
+      <path class="wire" d="M320,92 V150"/><path class="wire" d="M400,92 V150"/><path class="wire" d="M480,92 V150"/>
+      <path class="flow" id="pfB1" d="M70,64 H320 V150"/><path class="flow" id="pfB2" d="M150,66 H400 V150"/><path class="flow" id="pfB3" d="M230,68 H480 V150"/>
+
+      <!-- lo scambio L1↔L3 è mostrato dall'ordine delle etichette in uscita, non da fili incrociati -->
+      <text x="320" y="164" text-anchor="middle" class="diagram-label">W</text>
+      <text x="400" y="164" text-anchor="middle" class="diagram-label">V</text>
+      <text x="480" y="164" text-anchor="middle" class="diagram-label">U</text>
+      <text x="400" y="182" text-anchor="middle" class="diagram-label">verso gli stessi</text>
+      <text x="400" y="196" text-anchor="middle" class="diagram-label">morsetti del motore,</text>
+      <text x="400" y="210" text-anchor="middle" class="diagram-label">in ordine invertito</text>
     </svg>
   </div>
 
@@ -292,7 +298,7 @@
   const km2coil = document.getElementById('km2coil');
   const powerFlowsA = ['pfA1','pfA2','pfA3'].map(id => document.getElementById(id));
   const powerFlowsB = ['pfB1','pfB2','pfB3'].map(id => document.getElementById(id));
-  const powerFlowsCommon = ['pf10','pf11','pf12','pf13','pf14','pf15'].map(id => document.getElementById(id));
+  const powerFlowsCommon = ['pf13','pf14','pf15'].map(id => document.getElementById(id));
   const controlFlowsCommon = ['cf0','cf00'].map(id => document.getElementById(id));
   const controlFlowsA = ['cfA1','cfA2','cfA3','cfA4','cfA5'].map(id => document.getElementById(id));
   const controlFlowsB = ['cfB1','cfB2','cfB3','cfB4','cfB5'].map(id => document.getElementById(id));
