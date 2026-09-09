@@ -143,26 +143,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const ramBox = document.getElementById('ramBox');
-  const powerBtn = document.getElementById('powerBtn');
-  let off = false;
-  powerBtn.addEventListener('click', () => {
-    off = !off;
-    if(off){
-      ramBox.textContent = '(vuoto)';
-      ramBox.classList.add('empty');
-      powerBtn.textContent = 'Riaccendi il computer';
-    } else {
-      ramBox.textContent = 'documento.txt';
-      ramBox.classList.remove('empty');
-      powerBtn.textContent = 'Spegni il computer';
-    }
-  });
 </script>
 </body>
 </html>

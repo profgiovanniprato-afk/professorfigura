@@ -107,10 +107,6 @@
       <text x="170" y="170" text-anchor="middle" class="readout" id="bodeReadout">Zona stabile</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="freqSlider">Frequenza del segnale</label><span class="val" id="freqVal">basso</span></div>
-    <input type="range" id="freqSlider" min="0" max="100" value="20" step="1">
   </div>
 
   <article>
@@ -150,39 +146,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const slider = document.getElementById('freqSlider');
-  const freqVal = document.getElementById('freqVal');
-  const markerDot = document.getElementById('markerDot');
-  const bodeReadout = document.getElementById('bodeReadout');
-
-  function pointOnCurve(t){
-    // approssimazione del percorso: 30->150 piatto, poi curva fino a 260, poi piatto
-    const x = 30 + t*2.9;
-    let y;
-    if(x < 150) y = 50;
-    else if(x < 260) y = 50 + (x-150)/(260-150)*100;
-    else y = 150;
-    return {x,y};
-  }
-  function update(){
-    const t = parseInt(slider.value,10);
-    const p = pointOnCurve(t);
-    markerDot.setAttribute('cx', p.x);
-    markerDot.setAttribute('cy', p.y);
-    let label, zone;
-    if(t < 40){ label='basso'; zone='Zona stabile — guadagno costante'; }
-    else if(t < 75){ label='medio'; zone='Zona di transizione — attenzione al margine'; }
-    else { label='alto'; zone='Zona critica — vicino all\'instabilità'; }
-    freqVal.textContent = label;
-    bodeReadout.textContent = zone;
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 </body>
 </html>

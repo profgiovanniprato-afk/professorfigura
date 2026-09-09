@@ -46,8 +46,8 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;animation:flowDash 1s linear infinite;}
-  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;}
+  }
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--grey-700);}
@@ -118,10 +118,6 @@
       <text x="100" y="145" text-anchor="middle" class="balance ok" id="balanceText">6 = 4 + 2 ✓</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="i1Slider">Corrente nel ramo 1 (I1)</label><span class="val" id="i1Val">4 A</span></div>
-    <input type="range" id="i1Slider" min="0" max="6" value="4" step="1">
   </div>
 
   <article>
@@ -161,27 +157,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const ITOT = 6;
-  const slider = document.getElementById('i1Slider');
-  const i1Val = document.getElementById('i1Val');
-  const i1Label = document.getElementById('i1Label');
-  const i2Label = document.getElementById('i2Label');
-  const balanceText = document.getElementById('balanceText');
-  function update(){
-    const I1 = parseInt(slider.value,10);
-    const I2 = ITOT - I1;
-    i1Val.textContent = I1 + ' A';
-    i1Label.textContent = 'I1 = ' + I1 + 'A';
-    i2Label.textContent = 'I2 = ' + I2 + 'A';
-    balanceText.textContent = ITOT + ' = ' + I1 + ' + ' + I2 + ' ✓';
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 </body>
 </html>

@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .block{fill:var(--white);stroke:var(--black);stroke-width:2.2;cursor:pointer;}
   .block.active{fill:var(--orange-pale);stroke:var(--orange-dark);}
   .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11px;fill:var(--grey-700);text-anchor:middle;}
@@ -149,22 +149,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let on = false;
-  const meterBlock = document.getElementById('meterBlock');
-  const quadroBlock = document.getElementById('quadroBlock');
-  const line1 = document.getElementById('line1');
-  const line2 = document.getElementById('line2');
-  const flows = ['f1','f2','f3'].map(id => document.getElementById(id));
-  document.getElementById('meterGroup').addEventListener('click', () => {
-    on = !on;
-    [meterBlock,quadroBlock,line1,line2].forEach(b => b.classList.toggle('active', on));
-    flows.forEach(f => f.classList.toggle('on', on));
-  });
 </script>
 </body>
 </html>

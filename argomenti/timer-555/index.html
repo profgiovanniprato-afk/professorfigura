@@ -131,10 +131,6 @@
       <path class="square-wave" id="squareWave" d="M20,190 H60 V175 H90 V190 H120 V175 H150 V190 H180" />
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="freqSlider">Velocità di lampeggio</label><span class="val" id="freqVal">1 Hz</span></div>
-    <input type="range" id="freqSlider" min="1" max="10" value="1" step="1">
   </div>
 
   <article>
@@ -172,29 +168,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const slider = document.getElementById('freqSlider');
-  const freqVal = document.getElementById('freqVal');
-  const ledDot = document.getElementById('ledDot');
-  let timer = null;
-  let on = false;
-
-  function tick(){
-    on = !on;
-    ledDot.classList.toggle('on', on);
-  }
-  function restart(){
-    if(timer) clearInterval(timer);
-    const hz = parseInt(slider.value,10);
-    freqVal.textContent = hz + ' Hz';
-    timer = setInterval(tick, 1000 / (hz*2));
-  }
-  slider.addEventListener('input', restart);
-  restart();
 </script>
 </body>
 </html>

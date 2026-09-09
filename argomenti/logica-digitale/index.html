@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:420px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  }
   .gate{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .in-btn{cursor:pointer;}
   .in-face{fill:var(--grey-100);stroke:var(--black);stroke-width:2;}
@@ -100,12 +100,6 @@
   <div class="badges"><span class="badge badge-classe">Classi quarte</span><span class="badge badge-tag">Teoria</span></div>
   <h1>La logica digitale: il mondo del vero e del falso</h1>
   <p class="lead">Scegli una porta logica, clicca sui due ingressi per impostarli a 0 o 1, e osserva l'uscita cambiare in tempo reale.</p>
-
-  <div class="gate-select">
-    <button class="gate-btn active" data-gate="AND">AND</button>
-    <button class="gate-btn" data-gate="OR">OR</button>
-    <button class="gate-btn" data-gate="NAND">NAND</button>
-  </div>
 
   <div class="notebook">
     <svg viewBox="0 0 300 160" id="circuitSvg">
@@ -170,51 +164,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let a = 0, b = 0, gate = 'AND';
-  const labelA = document.getElementById('labelA');
-  const labelB = document.getElementById('labelB');
-  const btnA = document.getElementById('btnA');
-  const btnB = document.getElementById('btnB');
-  const fA = document.getElementById('fA');
-  const fB = document.getElementById('fB');
-  const fOut = document.getElementById('fOut');
-  const ledOut = document.getElementById('ledOut');
-  const negBubble = document.getElementById('negBubble');
-  const gateQualifier = document.getElementById('gateQualifier');
-  const gateBtns = document.querySelectorAll('.gate-btn');
-
-  function compute(){
-    if(gate === 'AND') return a && b ? 1 : 0;
-    if(gate === 'OR') return a || b ? 1 : 0;
-    if(gate === 'NAND') return (a && b) ? 0 : 1;
-  }
-  function render(){
-    labelA.textContent = a; labelB.textContent = b;
-    btnA.querySelector('.in-face').classList.toggle('hi', a===1);
-    btnB.querySelector('.in-face').classList.toggle('hi', b===1);
-    fA.classList.toggle('on', a===1);
-    fB.classList.toggle('on', b===1);
-    const y = compute();
-    fOut.classList.toggle('on', y===1);
-    ledOut.classList.toggle('on', y===1);
-    gateQualifier.textContent = gate === 'OR' ? '≥1' : gate === 'NAND' ? '&' : '&';
-    negBubble.style.display = gate === 'NAND' ? 'block' : 'none';
-    if(gate === 'NAND'){ negBubble.setAttribute('cx',176); negBubble.setAttribute('cy',75); negBubble.setAttribute('r',6); }
-  }
-  btnA.addEventListener('click', () => { a = a ? 0 : 1; render(); });
-  btnB.addEventListener('click', () => { b = b ? 0 : 1; render(); });
-  gateBtns.forEach(btn => btn.addEventListener('click', () => {
-    gateBtns.forEach(b2 => b2.classList.remove('active'));
-    btn.classList.add('active');
-    gate = btn.dataset.gate;
-    render();
-  }));
-  render();
 </script>
 </body>
 </html>

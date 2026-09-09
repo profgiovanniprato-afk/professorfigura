@@ -46,10 +46,10 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
   .notebook svg{max-width:520px;width:100%;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
   .flow.surge{stroke:var(--orange-dark);animation-duration:.3s;}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .spd-symbol{fill:none;stroke:var(--black);stroke-width:2.2;}
   .ground-line{stroke:var(--black);stroke-width:2;}
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
@@ -108,11 +108,6 @@
   <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Lo scaricatore SPD: proteggere dai fulmini</h1>
   <p class="lead">Un fulmine caduto lontano può comunque mandare un picco di tensione lungo la linea elettrica. Confronta cosa succede con e senza uno scaricatore SPD.</p>
-
-  <div class="gate-select">
-    <button class="gate-btn active" data-mode="con">Con SPD</button>
-    <button class="gate-btn" data-mode="senza">Senza SPD</button>
-  </div>
 
   <div class="notebook">
     <svg viewBox="0 0 340 200" id="circuitSvg">
@@ -177,39 +172,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let hasSpd = true;
-  const f2 = document.getElementById('f2');
-  const fGround = document.getElementById('fGround');
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-  const btns = document.querySelectorAll('.gate-btn');
-
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    hasSpd = btn.dataset.mode === 'con';
-  }));
-
-  document.getElementById('lightningGroup').addEventListener('click', () => {
-    if(hasSpd){
-      fGround.classList.add('on');
-      setTimeout(() => fGround.classList.remove('on'), 500);
-      bulbGlow.classList.remove('burnt'); bulbGlass.classList.remove('burnt');
-      bulbGlow.classList.add('lit'); bulbGlass.classList.add('lit');
-    } else {
-      f2.classList.add('surge','on');
-      setTimeout(() => {
-        f2.classList.remove('surge','on');
-        bulbGlow.classList.remove('lit'); bulbGlass.classList.remove('lit');
-        bulbGlow.classList.add('burnt'); bulbGlass.classList.add('burnt');
-      }, 300);
-    }
-  });
 </script>
 </body>
 </html>

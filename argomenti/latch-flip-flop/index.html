@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .gate{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .bubble{fill:var(--white);stroke:var(--black);stroke-width:2;}
   .in-btn{cursor:pointer;}
@@ -168,32 +168,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let q = false;
-  const ledQ = document.getElementById('ledQ');
-  const flows = ['fSet','fReset','fCross1','fCross2','fOutQ'].map(id => document.getElementById(id));
-  function render(){
-    ledQ.classList.toggle('on', q);
-    document.getElementById('fOutQ').classList.toggle('on', q);
-    document.getElementById('fCross1').classList.toggle('on', q);
-  }
-  document.getElementById('setBtn').addEventListener('click', () => {
-    q = true;
-    document.getElementById('fSet').classList.add('on');
-    setTimeout(() => document.getElementById('fSet').classList.remove('on'), 400);
-    render();
-  });
-  document.getElementById('resetBtn').addEventListener('click', () => {
-    q = false;
-    document.getElementById('fReset').classList.add('on');
-    setTimeout(() => document.getElementById('fReset').classList.remove('on'), 400);
-    render();
-  });
-  render();
 </script>
 </body>
 </html>

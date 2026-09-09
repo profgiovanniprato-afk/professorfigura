@@ -124,10 +124,6 @@
       <text x="180" y="119" text-anchor="middle" class="readout" id="analogReadout">Valore letto: 512</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="analogSlider">Simula un sensore su A0</label><span class="val" id="analogVal">512</span></div>
-    <input type="range" id="analogSlider" min="0" max="1023" value="512" step="1">
   </div>
 
   <article>
@@ -167,28 +163,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let digitalOn = false;
-  const pinDigital = document.getElementById('pinDigital');
-  const pinDigitalDot = document.getElementById('pinDigitalDot');
-  const ledDot = document.getElementById('ledDot');
-  pinDigital.addEventListener('click', () => {
-    digitalOn = !digitalOn;
-    pinDigitalDot.classList.toggle('hi', digitalOn);
-    ledDot.classList.toggle('on', digitalOn);
-  });
-
-  const analogSlider = document.getElementById('analogSlider');
-  const analogVal = document.getElementById('analogVal');
-  const analogReadout = document.getElementById('analogReadout');
-  analogSlider.addEventListener('input', () => {
-    analogVal.textContent = analogSlider.value;
-    analogReadout.textContent = 'Valore letto: ' + analogSlider.value;
-  });
 </script>
 </body>
 </html>

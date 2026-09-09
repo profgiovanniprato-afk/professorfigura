@@ -49,10 +49,10 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
   .flow.fault{stroke:var(--orange-dark);}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .appliance{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:stroke .2s ease, fill .2s ease;}
   .appliance.live{stroke:var(--orange-dark);fill:var(--orange-pale);}
   .ground-line{stroke:var(--black);stroke-width:2;}
@@ -103,11 +103,6 @@
   <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
   <h1>L'impianto di messa a terra: il filo che salva la vita</h1>
   <p class="lead">Confronta un elettrodomestico con e senza collegamento a terra: stessa avaria interna, conseguenze completamente diverse. Clicca sulla persona per vedere cosa succede toccandolo.</p>
-
-  <div class="gate-select">
-    <button class="gate-btn active" data-mode="con">Con messa a terra</button>
-    <button class="gate-btn" data-mode="senza">Senza messa a terra</button>
-  </div>
 
   <div class="notebook">
     <svg viewBox="0 0 340 210" id="circuitSvg">
@@ -177,50 +172,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let hasGround = true;
-  const groundWireGroup = document.getElementById('groundWireGroup');
-  const fGround = document.getElementById('fGround');
-  const fTouch = document.getElementById('fTouch');
-  const applianceBody = document.getElementById('applianceBody');
-  const faultLabel = document.getElementById('faultLabel');
-  const statusText = document.getElementById('statusText');
-  const btns = document.querySelectorAll('.gate-btn');
-
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    hasGround = btn.dataset.mode === 'con';
-    groundWireGroup.style.opacity = hasGround ? 1 : 0.25;
-    reset();
-  }));
-
-  function reset(){
-    applianceBody.classList.remove('live');
-    faultLabel.style.display = 'none';
-    fGround.classList.remove('on');
-    fTouch.classList.remove('on');
-    statusText.textContent = 'Nessun guasto attivo';
-    statusText.classList.add('ok'); statusText.classList.remove('danger');
-  }
-
-  document.getElementById('personGroup').addEventListener('click', () => {
-    applianceBody.classList.add('live');
-    faultLabel.style.display = 'block';
-    if(hasGround){
-      fGround.classList.add('on');
-      statusText.textContent = 'Guasto scaricato a terra — il differenziale interviene, nessun pericolo per la persona';
-    } else {
-      fTouch.classList.add('on');
-      statusText.textContent = 'PERICOLO — senza terra la corrente passa attraverso la persona!';
-    }
-    statusText.classList.remove('ok'); statusText.classList.add('danger');
-  });
-  reset();
 </script>
 </body>
 </html>

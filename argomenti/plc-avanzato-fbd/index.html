@@ -97,11 +97,6 @@
   <h1>PLC avanzato: Ladder, FBD e logica programmabile</h1>
   <p class="lead">Stessa identica logica — un AND tra due sensori — scritta in due linguaggi diversi. Passa da uno all'altro e confronta.</p>
 
-  <div class="gate-select">
-    <button class="gate-btn active" data-view="ladder">Ladder</button>
-    <button class="gate-btn" data-view="fbd">FBD</button>
-  </div>
-
   <div class="notebook">
     <svg viewBox="0 0 340 140" id="viewSvg">
       <g class="view show" id="ladderView">
@@ -167,21 +162,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const ladderView = document.getElementById('ladderView');
-  const fbdView = document.getElementById('fbdView');
-  const btns = document.querySelectorAll('.gate-btn');
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const isLadder = btn.dataset.view === 'ladder';
-    ladderView.classList.toggle('show', isLadder);
-    fbdView.classList.toggle('show', !isLadder);
-  }));
 </script>
 </body>
 </html>

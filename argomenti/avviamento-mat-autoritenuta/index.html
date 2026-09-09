@@ -48,9 +48,9 @@
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;}
   .rail{stroke:var(--black);stroke-width:2.5;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-34px;}}
+  }
   .contact{stroke:var(--black);stroke-width:2;}
   .contact-slash{stroke:var(--black);stroke-width:1.6;}
   .coil{fill:var(--white);stroke:var(--black);stroke-width:2;}
@@ -196,11 +196,6 @@
     </svg>
   </div>
 
-  <div class="control">
-    <button class="add-btn" id="marciaBtn">Premi S1 — MARCIA</button>
-    <button class="add-btn stop" id="arrestoBtn">Premi S0 — ARRESTO</button>
-  </div>
-
   <article>
     <p>Questo è lo schema più classico dell'automazione industriale, ed è composto sempre da due parti distinte disegnate separatamente: il <strong>circuito di potenza</strong>, che porta l'energia vera e propria al motore, e il <strong>circuito di comando</strong>, a bassa potenza, che decide quando quell'energia deve passare. Tutti i simboli seguono la norma CEI/IEC: il <strong>sezionatore QS</strong> isola manualmente l'impianto per la manutenzione, i <strong>fusibili F</strong> proteggono dai cortocircuiti, il <strong>teleruttore KM</strong> (i tre contatti principali comandati dalla bobina) inserisce e disinserisce l'alimentazione, il <strong>relè termico F2</strong> (simbolo a zigzag) protegge il motore dai sovraccarichi prolungati.</p>
 
@@ -236,35 +231,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let running = false;
-  const powerFlows = Array.from({length:15}, (_,i) => document.getElementById('pf'+(i+1)));
-  const controlFlows = ['cf1','cf2','cf3','cf4','cf5'].map(id => document.getElementById(id));
-  const motorCircle = document.getElementById('motorCircle');
-  const coil = document.getElementById('coil');
-  const statusText = document.getElementById('statusText');
-  const pk1 = document.getElementById('pk1'), pk2 = document.getElementById('pk2'), pk3 = document.getElementById('pk3');
-  const km1a = document.getElementById('km1a');
-
-  function render(){
-    powerFlows.forEach(f => f.classList.toggle('on', running));
-    controlFlows.forEach(f => f.classList.toggle('on', running));
-    motorCircle.classList.toggle('running', running);
-    coil.classList.toggle('energized', running);
-    [pk1,pk2,pk3].forEach(c => c.setAttribute('transform', running ? 'translate(2,-3)' : ''));
-    km1a.setAttribute('x2', running ? 148 : 146);
-    km1a.setAttribute('y2', running ? 95 : 82);
-    statusText.textContent = running ? 'Motore in marcia — autoritenuta attiva' : 'Motore fermo';
-    statusText.classList.toggle('on', running);
-    statusText.classList.toggle('off', !running);
-  }
-  document.getElementById('marciaBtn').addEventListener('click', () => { running = true; render(); });
-  document.getElementById('arrestoBtn').addEventListener('click', () => { running = false; render(); });
-  render();
 </script>
 </body>
 </html>

@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .push-group{cursor:pointer;}
   .push-face{fill:var(--grey-100);stroke:var(--black);stroke-width:2;transition:fill .12s ease;}
@@ -191,45 +191,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let lampOn = false;
-  const coil = document.getElementById('coil');
-  const powerBlade = document.getElementById('powerBlade');
-  const fCmd = document.getElementById('fCmd');
-  const fPow1 = document.getElementById('fPow1');
-  const fPow2 = document.getElementById('fPow2');
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-  const statusText = document.getElementById('statusText');
-
-  function pulse(faceId){
-    const face = document.querySelector('#' + faceId + ' .push-face');
-    face.classList.add('pressed');
-    fCmd.classList.add('on');
-    coil.classList.add('energized');
-    setTimeout(() => {
-      face.classList.remove('pressed');
-      fCmd.classList.remove('on');
-      coil.classList.remove('energized');
-    }, 300);
-
-    lampOn = !lampOn;
-    powerBlade.setAttribute('transform', lampOn ? 'rotate(0 320 150)' : 'rotate(-20 320 150)');
-    fPow1.classList.toggle('on', lampOn);
-    fPow2.classList.toggle('on', lampOn);
-    bulbGlow.classList.toggle('lit', lampOn);
-    bulbGlass.classList.toggle('lit', lampOn);
-    statusText.textContent = lampOn ? 'Lampada accesa!' : 'Lampada spenta';
-    statusText.classList.toggle('on', lampOn);
-    statusText.classList.toggle('off', !lampOn);
-  }
-  document.getElementById('p1').addEventListener('click', () => pulse('p1'));
-  document.getElementById('p2').addEventListener('click', () => pulse('p2'));
-  document.getElementById('p3').addEventListener('click', () => pulse('p3'));
 </script>
 </body>
 </html>

@@ -125,10 +125,6 @@
       <text x="330" y="30" text-anchor="middle" class="readout" id="gainReadout">Guadagno = −6</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="rfSlider">Resistenza di reazione (Rf)</label><span class="val" id="rfVal">6 kΩ</span></div>
-    <input type="range" id="rfSlider" min="1" max="15" value="6" step="1">
   </div>
 
   <article>
@@ -168,27 +164,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const Rin = 1;
-  const slider = document.getElementById('rfSlider');
-  const rfVal = document.getElementById('rfVal');
-  const gainReadout = document.getElementById('gainReadout');
-  const waveOut = document.getElementById('waveOut');
-
-  function update(){
-    const Rf = parseInt(slider.value,10);
-    const gain = Rf / Rin;
-    rfVal.textContent = Rf + ' kΩ';
-    gainReadout.textContent = 'Guadagno = −' + gain;
-    const amp = Math.min(38, 6 + gain*2);
-    waveOut.setAttribute('d', `M220,180 q10,${-amp} 20,0 t20,0 t20,0 t20,0`);
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 </body>
 </html>

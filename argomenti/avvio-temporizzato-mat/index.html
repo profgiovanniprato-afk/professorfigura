@@ -48,10 +48,10 @@
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;}
   .rail{stroke:var(--black);stroke-width:2.5;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
   .flow.timing{stroke:var(--orange-dark);}
-  @keyframes flowDash{to{stroke-dashoffset:-34px;}}
+  }
   .contact{stroke:var(--black);stroke-width:2;}
   .contact-slash{stroke:var(--black);stroke-width:1.6;}
   .coil{fill:var(--white);stroke:var(--black);stroke-width:2;}
@@ -198,12 +198,6 @@
     </svg>
   </div>
 
-  <div class="control">
-    <button class="add-btn" id="marciaBtn">Premi S1 — MARCIA</button>
-    <button class="add-btn stop" id="arrestoBtn">Premi S0 — ARRESTO</button>
-  </div>
-  <p class="countdown" id="countdown">Pronto — ritardo impostato: 3 secondi</p>
-
   <article>
     <p>A volte non basta avviare un motore: serve farlo partire dopo un <strong>tempo prestabilito</strong>, per esempio per lasciare che altri macchinari a monte si avviino prima, in sequenza. Lo strumento giusto è il <strong>relè temporizzatore KT</strong>: una bobina che, una volta eccitata, non chiude subito il proprio contatto come farebbe un relè normale, ma aspetta un intervallo di tempo regolabile prima di farlo. Il simbolo CEI/IEC per un contatto a chiusura ritardata è lo stesso contatto normalmente aperto, con in più un piccolo arco che indica il ritardo.</p>
 
@@ -239,64 +233,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const DELAY = 3;
-  let phase = 'stop'; // stop | timing | running
-  let timer = null;
-  let secondsLeft = DELAY;
-
-  const motorCircle = document.getElementById('motorCircle');
-  const countdown = document.getElementById('countdown');
-  const ktCoil = document.getElementById('ktCoil');
-  const kmCoil = document.getElementById('kmCoil');
-  const powerFlows = ['pf7','pf8','pf9','pf10','pf11','pf12','pf13','pf14','pf15'].map(id => document.getElementById(id));
-  const controlFlowsKT = ['cf1','cf2','cf3','cf4','cf5','cf6'].map(id => document.getElementById(id));
-  const controlFlowsKM = ['cf7','cf8'].map(id => document.getElementById(id));
-
-  function render(){
-    const running = phase === 'running';
-    const timing = phase === 'timing';
-    motorCircle.classList.toggle('running', running);
-    ktCoil.classList.toggle('energized', timing || running);
-    kmCoil.classList.toggle('energized', running);
-    controlFlowsKT.forEach(f => f.classList.toggle('on', timing || running));
-    controlFlowsKM.forEach(f => f.classList.toggle('on', running));
-    powerFlows.forEach(f => f.classList.toggle('on', running));
-
-    if(phase === 'stop'){ countdown.textContent = 'Pronto — ritardo impostato: ' + DELAY + ' secondi'; }
-    else if(phase === 'timing'){ countdown.textContent = 'KT in conteggio... avvio tra ' + secondsLeft + ' s'; }
-    else { countdown.textContent = 'Tempo scaduto — KM eccitato, motore in marcia'; }
-  }
-
-  function startTiming(){
-    clearInterval(timer);
-    phase = 'timing';
-    secondsLeft = DELAY;
-    render();
-    timer = setInterval(() => {
-      secondsLeft -= 1;
-      if(secondsLeft <= 0){
-        clearInterval(timer);
-        phase = 'running';
-        render();
-      } else {
-        render();
-      }
-    }, 1000);
-  }
-  function stopAll(){
-    clearInterval(timer);
-    phase = 'stop';
-    secondsLeft = DELAY;
-    render();
-  }
-  document.getElementById('marciaBtn').addEventListener('click', startTiming);
-  document.getElementById('arrestoBtn').addEventListener('click', stopAll);
-  render();
 </script>
 </body>
 </html>

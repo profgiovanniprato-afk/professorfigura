@@ -92,11 +92,6 @@
   <h1>I filtri: separare le frequenze</h1>
   <p class="lead">Un circuito che lascia passare solo certe frequenze e ne blocca altre. Scegli il tipo di filtro e osserva quale zona dello spettro lascia passare.</p>
 
-  <div class="gate-select">
-    <button class="gate-btn active" data-filter="basso">Passa-basso</button>
-    <button class="gate-btn" data-filter="alto">Passa-alto</button>
-  </div>
-
   <div class="notebook">
     <svg viewBox="0 0 340 180" id="chartSvg">
       <line class="axis" x1="30" y1="150" x2="320" y2="150" />
@@ -143,29 +138,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const curve = document.getElementById('responseCurve');
-  const caption = document.getElementById('filterCaption');
-  const btns = document.querySelectorAll('.gate-btn');
-  function draw(type){
-    if(type === 'basso'){
-      curve.setAttribute('d', 'M30,30 H170 C200,30 200,150 240,150 H320');
-      caption.textContent = 'Lascia passare le frequenze basse (grave)';
-    } else {
-      curve.setAttribute('d', 'M30,150 H110 C150,150 150,30 180,30 H320');
-      caption.textContent = 'Lascia passare le frequenze alte (acuto)';
-    }
-  }
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    draw(btn.dataset.filter);
-  }));
-  draw('basso');
 </script>
 </body>
 </html>

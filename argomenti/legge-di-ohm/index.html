@@ -109,8 +109,8 @@
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
 
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;animation:flowDash 1s linear infinite;}
-  @keyframes flowDash{ to{ stroke-dashoffset:-48px; } }
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;}
+  }
   .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:12px;fill:var(--grey-700);}
@@ -225,13 +225,6 @@
         <text x="60" y="30" class="readout i" id="readoutI">I = 1.50 A</text>
       </svg>
     </div>
-
-    <div class="control">
-      <div class="control-row">
-        <label for="rSlider">Resistenza (R)</label>
-        <span class="val" id="rVal">6 Ω</span>
-      </div>
-      <input type="range" id="rSlider" min="1" max="18" value="6" step="1">
     </div>
 
     <article>

@@ -92,11 +92,6 @@
   <h1>Distribuzione dell'energia: monofase e trifase</h1>
   <p class="lead">La presa di casa tua e la spina di un grande motore industriale non parlano la stessa lingua elettrica. Confronta i due sistemi.</p>
 
-  <div class="gate-select">
-    <button class="gate-btn active" data-mode="mono">Monofase</button>
-    <button class="gate-btn" data-mode="tri">Trifase</button>
-  </div>
-
   <div class="notebook">
     <svg viewBox="0 0 340 160" id="phaseSvg">
       <line x1="20" y1="80" x2="320" y2="80" stroke="var(--grey-300)" stroke-width="1.5"/>
@@ -144,42 +139,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  function wavePath(shift){
-    let d = `M20,${80}`;
-    for(let x=0;x<=300;x+=4){
-      const y = 80 - 34*Math.sin((x/300)*Math.PI*4 + shift);
-      d += ` L${20+x},${y}`;
-    }
-    return d;
-  }
-  const p1 = document.getElementById('phase1');
-  const p2 = document.getElementById('phase2');
-  const p3 = document.getElementById('phase3');
-  const caption = document.getElementById('phaseCaption');
-  const btns = document.querySelectorAll('.gate-btn');
-  function draw(mode){
-    p1.setAttribute('d', wavePath(0));
-    if(mode === 'mono'){
-      p2.style.display = 'none'; p3.style.display = 'none';
-      caption.textContent = 'Una sola tensione alternata';
-    } else {
-      p2.style.display = 'block'; p3.style.display = 'block';
-      p2.setAttribute('d', wavePath(2.094));
-      p3.setAttribute('d', wavePath(4.188));
-      caption.textContent = 'Tre tensioni sfasate di un terzo di periodo';
-    }
-  }
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    draw(btn.dataset.mode);
-  }));
-  draw('mono');
 </script>
 </body>
 </html>

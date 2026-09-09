@@ -46,10 +46,10 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
   .flow.fault{stroke:var(--orange-dark);}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .toroid{fill:none;stroke:var(--black);stroke-width:2.2;}
   .contact{stroke:var(--black);stroke-width:2.2;transition:transform .2s ease;}
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
@@ -185,45 +185,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const blade1 = document.getElementById('blade1');
-  const blade2 = document.getElementById('blade2');
-  const personGroup = document.getElementById('personGroup');
-  const fFault = document.getElementById('fFault');
-  const statusText = document.getElementById('statusText');
-  const flows = ['fIn','fInN','fOut','fOutN'].map(id => document.getElementById(id));
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-
-  function setNormal(){
-    blade1.setAttribute('x2',167); blade1.setAttribute('y2',80);
-    blade2.setAttribute('x2',167); blade2.setAttribute('y2',120);
-    personGroup.style.opacity = 0;
-    fFault.classList.remove('on');
-    flows.forEach(f => f.classList.add('on'));
-    bulbGlow.classList.add('lit'); bulbGlass.classList.add('lit');
-    statusText.textContent = 'Nessuna dispersione — circuito normale';
-    statusText.classList.add('ok'); statusText.classList.remove('tripped');
-  }
-  function trip(){
-    personGroup.style.opacity = 1;
-    fFault.classList.add('on');
-    setTimeout(() => {
-      blade1.setAttribute('x2',140); blade1.setAttribute('y2',65);
-      blade2.setAttribute('x2',140); blade2.setAttribute('y2',105);
-      flows.forEach(f => f.classList.remove('on'));
-      bulbGlow.classList.remove('lit'); bulbGlass.classList.remove('lit');
-      statusText.textContent = 'DIFFERENZIALE SCATTATO — dispersione rilevata!';
-      statusText.classList.remove('ok'); statusText.classList.add('tripped');
-    }, 500);
-  }
-  document.getElementById('faultBtn').addEventListener('click', trip);
-  document.getElementById('resetBtn').addEventListener('click', setNormal);
-  setNormal();
 </script>
 </body>
 </html>

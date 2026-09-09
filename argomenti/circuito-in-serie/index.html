@@ -81,8 +81,8 @@
   .notebook{position:relative;padding:40px 24px 30px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;animation:flowDash 1s linear infinite;}
-  @keyframes flowDash{ to{ stroke-dashoffset:-48px; } }
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;}
+  }
   .resistor{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .diagram-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;fill:var(--grey-700);}
@@ -170,11 +170,6 @@
 
         <text x="190" y="30" text-anchor="middle" class="readout" id="readoutTot">R totale = 6 Ω</text>
       </svg>
-    </div>
-
-    <div class="control">
-      <button class="add-btn" id="addBtn">+ Aggiungi resistore</button>
-      <button class="add-btn secondary" id="removeBtn">− Rimuovi</button>
     </div>
 
     <article>

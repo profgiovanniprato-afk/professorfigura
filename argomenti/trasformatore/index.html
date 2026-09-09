@@ -119,10 +119,6 @@
       <text x="170" y="20" text-anchor="middle" class="readout" id="voutReadout">Vout = 9 V</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="turnsSlider">Spire secondario (N2) — primario fisso a 10</label><span class="val" id="turnsVal">10</span></div>
-    <input type="range" id="turnsSlider" min="2" max="30" value="10" step="1">
   </div>
 
   <article>
@@ -162,28 +158,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const N1 = 10, VIN = 9;
-  const slider = document.getElementById('turnsSlider');
-  const turnsVal = document.getElementById('turnsVal');
-  const n2Label = document.getElementById('n2Label');
-  const voutReadout = document.getElementById('voutReadout');
-  const waveOut = document.getElementById('waveOut');
-  function update(){
-    const N2 = parseInt(slider.value,10);
-    const Vout = (VIN * N2 / N1).toFixed(1);
-    turnsVal.textContent = N2;
-    n2Label.textContent = 'N2';
-    voutReadout.textContent = 'Vout = ' + Vout + ' V';
-    const amp = Math.min(30, Math.max(4, Vout*1.3));
-    waveOut.setAttribute('d', `M280,175 q8,${-amp} 16,0 t16,0`);
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 </body>
 </html>

@@ -111,9 +111,9 @@
   .diagram-hint span{color:var(--green);}
 
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .25s ease;animation:flowDash .8s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .25s ease;}
   .flow.live{opacity:1;}
-  @keyframes flowDash{ to{ stroke-dashoffset:-48px; } }
+  }
   .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .35s ease;}
   .bulb-glow.lit{opacity:.35;}
   .bulb-glass{fill:none;stroke:var(--black);stroke-width:2.2;transition:stroke .25s ease;}
@@ -207,15 +207,15 @@
         <svg viewBox="0 0 340 260" id="circuitSvg">
           <!-- loop: filo neutro + overlay animato che simula il flusso di corrente -->
           <path class="wire" d="M60,60 H280" />
-          <path class="flow" id="flowTop" d="M60,60 H280" />
+          <path class="flow live" id="flowTop" d="M60,60 H280" />
           <path class="wire" d="M280,60 V190" />
-          <path class="flow" id="flowRight" d="M280,60 V190" />
+          <path class="flow live" id="flowRight" d="M280,60 V190" />
           <path class="wire" d="M280,190 H210" />
-          <path class="flow" id="flowBottomR" d="M280,190 H210" />
+          <path class="flow live" id="flowBottomR" d="M280,190 H210" />
           <path class="wire" d="M130,190 H60" />
-          <path class="flow" id="flowBottomL" d="M130,190 H60" />
+          <path class="flow live" id="flowBottomL" d="M130,190 H60" />
           <path class="wire" d="M60,190 V60" />
-          <path class="flow" id="flowLeft" d="M60,190 V60" />
+          <path class="flow live" id="flowLeft" d="M60,190 V60" />
 
           <!-- battery symbol (left side) -->
           <line x1="50" y1="112" x2="70" y2="112" stroke="#3A3B3D" stroke-width="1.5"/>
@@ -227,10 +227,10 @@
           <circle class="node" cx="210" cy="190" r="5"/>
 
           <!-- lampada: simbolo corretto, cerchio con X -->
-          <circle class="bulb-glow" id="bulbGlow" cx="170" cy="60" r="36"/>
-          <circle class="bulb-glass" id="bulbGlass" cx="170" cy="60" r="22"/>
-          <line class="bulb-filament" id="bulbF1" x1="154.4" y1="44.4" x2="185.6" y2="75.6"/>
-          <line class="bulb-filament" id="bulbF2" x1="185.6" y1="44.4" x2="154.4" y2="75.6"/>
+          <circle class="bulb-glow lit" id="bulbGlow" cx="170" cy="60" r="36"/>
+          <circle class="bulb-glass lit" id="bulbGlass" cx="170" cy="60" r="22"/>
+          <line class="bulb-filament lit" id="bulbF1" x1="154.4" y1="44.4" x2="185.6" y2="75.6"/>
+          <line class="bulb-filament lit" id="bulbF2" x1="185.6" y1="44.4" x2="154.4" y2="75.6"/>
           <!-- switch: simbolo schematico corretto — lama imperniata su un contatto fisso -->
           <g class="switch-group" id="switchGroup">
             <circle class="switch-pivot" cx="130" cy="190" r="3"/>
@@ -308,27 +308,6 @@
   burger.addEventListener('click', openNav);
   navClose.addEventListener('click', closeNav);
   scrim.addEventListener('click', closeNav);
-
-  // Circuito interattivo: click sull'interruttore apre/chiude il circuito
-  let closed = true;
-  const switchGroup = document.getElementById('switchGroup');
-  const blade = document.getElementById('blade');
-  const flowPaths = ['flowTop','flowRight','flowBottomR','flowBottomL','flowLeft'].map(id => document.getElementById(id));
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-  const bulbF1 = document.getElementById('bulbF1');
-  const bulbF2 = document.getElementById('bulbF2');
-
-  function render(){
-    blade.setAttribute('transform', closed ? 'rotate(0 130 190)' : 'rotate(-27 130 190)');
-    flowPaths.forEach(f => f.classList.toggle('live', closed));
-    bulbGlow.classList.toggle('lit', closed);
-    bulbGlass.classList.toggle('lit', closed);
-    bulbF1.classList.toggle('lit', closed);
-    bulbF2.classList.toggle('lit', closed);
-  }
-  switchGroup.addEventListener('click', () => { closed = !closed; render(); });
-  render();
 </script>
 
 </body>

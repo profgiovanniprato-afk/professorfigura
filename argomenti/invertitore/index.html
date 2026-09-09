@@ -147,27 +147,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let crossed = false;
-  const lineA = document.getElementById('lineA');
-  const lineB = document.getElementById('lineB');
-  const lineC = document.getElementById('lineC');
-  const lineD = document.getElementById('lineD');
-  const caption = document.getElementById('invCaption');
-  document.getElementById('invSvg').addEventListener('click', () => {
-    crossed = !crossed;
-    lineA.style.opacity = crossed ? 0 : 1;
-    lineB.style.opacity = crossed ? 0 : 1;
-    lineC.style.opacity = crossed ? 1 : 0;
-    lineD.style.opacity = crossed ? 1 : 0;
-    caption.textContent = crossed
-      ? 'Posizione incrociata: i due viaggiatori si scambiano.'
-      : 'Posizione diritta: i due viaggiatori proseguono senza incrociarsi. Clicca per invertire.';
-  });
 </script>
 </body>
 </html>

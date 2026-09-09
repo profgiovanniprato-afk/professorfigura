@@ -119,12 +119,6 @@
     </svg>
   </div>
 
-  <div class="control">
-    <button class="add-btn" id="btnApri">Comando APRI</button>
-    <button class="add-btn" id="btnChiudi">Comando CHIUDI</button>
-    <button class="add-btn" id="btnFinecorsa">Finecorsa raggiunto</button>
-  </div>
-
   <article>
     <p>Progettare un impianto elettrico reale significa mettere insieme tutto ciò che hai studiato in questi cinque anni: calcolare le sezioni dei cavi in base alla corrente prevista, scegliere le giuste protezioni nel quadro elettrico, e rispettare la <strong>normativa di settore</strong> — norme tecniche e leggi che regolano la sicurezza degli impianti elettrici — che esiste per garantire che l'impianto sia sicuro per chi lo userà, non solo funzionante.</p>
 
@@ -162,35 +156,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let state = 'chiuso';
-  const states = {
-    chiuso: document.getElementById('stChiuso'),
-    aprendo: document.getElementById('stAprendo'),
-    aperto: document.getElementById('stAperto'),
-    chiudendo: document.getElementById('stChiudendo'),
-  };
-  function render(){
-    Object.keys(states).forEach(k => states[k].classList.toggle('active', k === state));
-  }
-  document.getElementById('btnApri').addEventListener('click', () => {
-    if(state === 'chiuso') state = 'aprendo';
-    render();
-  });
-  document.getElementById('btnChiudi').addEventListener('click', () => {
-    if(state === 'aperto') state = 'chiudendo';
-    render();
-  });
-  document.getElementById('btnFinecorsa').addEventListener('click', () => {
-    if(state === 'aprendo') state = 'aperto';
-    else if(state === 'chiudendo') state = 'chiuso';
-    render();
-  });
-  render();
 </script>
 </body>
 </html>

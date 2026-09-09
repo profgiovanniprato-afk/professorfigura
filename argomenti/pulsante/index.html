@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
   .notebook svg{max-width:340px;width:100%;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .15s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .15s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  }
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .push-bar{stroke:var(--black);stroke-width:3;transition:transform .12s ease;cursor:pointer;}
   .spring{fill:none;stroke:var(--grey-500);stroke-width:1.6;}
@@ -161,36 +161,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const pushGroup = document.getElementById('pushGroup');
-  const pushBar = document.getElementById('pushBar');
-  const f1 = document.getElementById('f1');
-  const f2 = document.getElementById('f2');
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-  const f1b = document.getElementById('f1b');
-  const f2b = document.getElementById('f2b');
-  const pressHint = document.getElementById('pressHint');
-
-  function setOn(on){
-    pushBar.setAttribute('transform', on ? 'translate(0,25)' : 'translate(0,0)');
-    f1.classList.toggle('on', on);
-    f2.classList.toggle('on', on);
-    bulbGlow.classList.toggle('lit', on);
-    bulbGlass.classList.toggle('lit', on);
-    f1b.classList.toggle('lit', on);
-    f2b.classList.toggle('lit', on);
-    pressHint.textContent = on ? 'Acceso! Rilascia per spegnere' : 'Tieni premuto (mouse giù) per accendere';
-  }
-  pushGroup.addEventListener('mousedown', () => setOn(true));
-  pushGroup.addEventListener('mouseup', () => setOn(false));
-  pushGroup.addEventListener('mouseleave', () => setOn(false));
-  pushGroup.addEventListener('touchstart', (e) => { e.preventDefault(); setOn(true); });
-  pushGroup.addEventListener('touchend', () => setOn(false));
 </script>
 </body>
 </html>

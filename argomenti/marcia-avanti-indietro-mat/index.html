@@ -48,10 +48,10 @@
   .notebook svg{position:relative;width:100%;max-width:560px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;}
   .rail{stroke:var(--black);stroke-width:2.5;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 10;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
   .flow.reverse{stroke:var(--orange-dark);}
-  @keyframes flowDash{to{stroke-dashoffset:-34px;}}
+  }
   .contact{stroke:var(--black);stroke-width:2;}
   .contact-slash{stroke:var(--black);stroke-width:1.6;}
   .coil{fill:var(--white);stroke:var(--black);stroke-width:2;}
@@ -243,12 +243,6 @@
       <text x="125" y="262" text-anchor="middle" class="diagram-label">KM2 (autoritenuta)</text>
     </svg>
   </div>
-
-  <div class="control">
-    <button class="add-btn" id="avantiBtn">Premi S1 — AVANTI</button>
-    <button class="add-btn" id="indietroBtn">Premi S2 — INDIETRO</button>
-    <button class="add-btn stop" id="arrestoBtn">Premi S0 — ARRESTO</button>
-  </div>
   <p class="status-text off" id="statusText" style="text-align:center;">Motore fermo</p>
 
   <article>
@@ -286,54 +280,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let state = 'stop'; // 'stop' | 'forward' | 'reverse'
-  const motorCircle = document.getElementById('motorCircle');
-  const arrowCW = document.getElementById('arrowCW');
-  const arrowCCW = document.getElementById('arrowCCW');
-  const statusText = document.getElementById('statusText');
-  const km1coil = document.getElementById('km1coil');
-  const km2coil = document.getElementById('km2coil');
-  const powerFlowsA = ['pfA1','pfA2','pfA3'].map(id => document.getElementById(id));
-  const powerFlowsB = ['pfB1','pfB2','pfB3'].map(id => document.getElementById(id));
-  const powerFlowsCommon = ['pf13','pf14','pf15'].map(id => document.getElementById(id));
-  const controlFlowsCommon = ['cf0','cf00'].map(id => document.getElementById(id));
-  const controlFlowsA = ['cfA1','cfA2','cfA3','cfA4','cfA5'].map(id => document.getElementById(id));
-  const controlFlowsB = ['cfB1','cfB2','cfB3','cfB4','cfB5'].map(id => document.getElementById(id));
-
-  function render(){
-    const running = state !== 'stop';
-    const forward = state === 'forward';
-    const reverse = state === 'reverse';
-    motorCircle.classList.toggle('running', running);
-    motorCircle.classList.toggle('reverse', reverse);
-    arrowCW.classList.toggle('show', forward);
-    arrowCCW.classList.toggle('show', reverse);
-
-    km1coil.classList.toggle('energized', forward);
-    km2coil.classList.toggle('energized', reverse);
-    km2coil.classList.toggle('reverse', reverse);
-
-    controlFlowsCommon.forEach(f => f.classList.toggle('on', running));
-    controlFlowsA.forEach(f => f.classList.toggle('on', forward));
-    controlFlowsB.forEach(f => f.classList.toggle('on', reverse));
-    powerFlowsA.forEach(f => f.classList.toggle('on', forward));
-    powerFlowsB.forEach(f => { f.classList.toggle('on', reverse); f.classList.toggle('reverse', reverse); });
-    powerFlowsCommon.forEach(f => f.classList.toggle('on', running));
-    powerFlowsCommon.forEach(f => f.classList.toggle('reverse', reverse));
-
-    if(state === 'stop'){ statusText.textContent = 'Motore fermo'; statusText.className = 'status-text off'; }
-    else if(forward){ statusText.textContent = 'Marcia AVANTI — KM1 eccitato'; statusText.className = 'status-text on'; }
-    else { statusText.textContent = 'Marcia INDIETRO — KM2 eccitato (fasi scambiate)'; statusText.className = 'status-text rev'; }
-  }
-  document.getElementById('avantiBtn').addEventListener('click', () => { if(state !== 'reverse') state = 'forward'; render(); });
-  document.getElementById('indietroBtn').addEventListener('click', () => { if(state !== 'forward') state = 'reverse'; render(); });
-  document.getElementById('arrestoBtn').addEventListener('click', () => { state = 'stop'; render(); });
-  render();
 </script>
 </body>
 </html>

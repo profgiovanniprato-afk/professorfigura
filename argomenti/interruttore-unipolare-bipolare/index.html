@@ -49,9 +49,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  }
   .contact{stroke:var(--black);stroke-width:2.5;}
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .3s ease;}
@@ -101,11 +101,6 @@
   <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Interruttore unipolare e bipolare: la differenza</h1>
   <p class="lead">Lo stesso identico compito — accendere e spegnere — ma con una differenza di sicurezza importante. Confronta i due schemi.</p>
-
-  <div class="gate-select">
-    <button class="gate-btn active" data-mode="uni">Unipolare</button>
-    <button class="gate-btn" data-mode="bi">Bipolare</button>
-  </div>
 
   <div class="notebook">
     <svg viewBox="0 0 340 190" id="circuitSvg">
@@ -181,21 +176,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const poleBottom = document.getElementById('poleBottom');
-  const modeCaption = document.getElementById('modeCaption');
-  const btns = document.querySelectorAll('.gate-btn');
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const bi = btn.dataset.mode === 'bi';
-    poleBottom.style.display = bi ? 'block' : 'none';
-    modeCaption.textContent = bi ? '2 contatti collegati: interrompe fase e neutro insieme' : '1 solo contatto: interrompe la fase';
-  }));
 </script>
 </body>
 </html>

@@ -104,10 +104,6 @@
       <text x="14" y="18" class="diagram-label" text-anchor="end">V</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="freqSlider">Frequenza</label><span class="val" id="freqVal">1 Hz</span></div>
-    <input type="range" id="freqSlider" min="1" max="8" value="1" step="1">
   </div>
 
   <article>
@@ -147,31 +143,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const slider = document.getElementById('freqSlider');
-  const freqVal = document.getElementById('freqVal');
-  const scopeWave = document.getElementById('scopeWave');
-  let phase = 0;
-  function buildPath(freq, ph){
-    let d = 'M20,80';
-    for(let x=0; x<=300; x+=4){
-      const y = 80 - 40*Math.sin((x/300)*Math.PI*2*freq + ph);
-      d += ` L${20+x},${y}`;
-    }
-    return d;
-  }
-  function loop(){
-    const freq = parseInt(slider.value,10);
-    freqVal.textContent = freq + ' Hz';
-    phase += 0.06 + freq*0.01;
-    scopeWave.setAttribute('d', buildPath(freq, phase));
-    requestAnimationFrame(loop);
-  }
-  loop();
 </script>
 </body>
 </html>

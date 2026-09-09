@@ -118,10 +118,6 @@
       <circle class="marker-dot" id="markerDot" cx="75" cy="170" r="6"/>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="currentSlider">Corrente assorbita dal circuito</label><span class="val" id="currentVal">Normale</span></div>
-    <input type="range" id="currentSlider" min="0" max="100" value="15" step="1">
   </div>
   <p class="result-text" id="resultText">Nessun intervento — il circuito lavora entro i limiti previsti.</p>
 
@@ -162,35 +158,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const slider = document.getElementById('currentSlider');
-  const currentVal = document.getElementById('currentVal');
-  const markerLine = document.getElementById('markerLine');
-  const markerDot = document.getElementById('markerDot');
-  const resultText = document.getElementById('resultText');
-
-  function update(){
-    const v = parseInt(slider.value,10);
-    const x = 30 + (v/100)*270;
-    markerLine.setAttribute('x1', x); markerLine.setAttribute('x2', x);
-    markerDot.setAttribute('cx', x);
-    if(v < 40){
-      currentVal.textContent = "Normale";
-      resultText.textContent = "Nessun intervento — il circuito lavora entro i limiti previsti.";
-    } else if(v < 70){
-      currentVal.textContent = "Sovraccarico";
-      resultText.textContent = "L'elemento termico si scalda: intervento con qualche secondo di ritardo.";
-    } else {
-      currentVal.textContent = "Cortocircuito";
-      resultText.textContent = "L'elemento magnetico scatta all'istante!";
-    }
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 </body>
 </html>

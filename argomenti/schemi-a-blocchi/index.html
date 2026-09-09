@@ -120,10 +120,6 @@
       <text x="200" y="165" class="sublabel">retroazione: la temperatura misurata torna al confronto</text>
     </svg>
   </div>
-
-  <div class="control">
-    <div class="control-row"><label for="tempSlider">Temperatura ambiente</label><span class="val" id="tempVal">18°C</span></div>
-    <input type="range" id="tempSlider" min="14" max="24" value="18" step="1">
   </div>
 
   <article>
@@ -163,31 +159,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const slider = document.getElementById('tempSlider');
-  const tempVal = document.getElementById('tempVal');
-  const heaterDot = document.getElementById('heaterDot');
-  const heaterBlock = document.getElementById('heaterBlock');
-  const compareBlock = document.getElementById('compareBlock');
-  const arrow1 = document.getElementById('arrow1');
-  const arrow2 = document.getElementById('arrow2');
-  const TARGET = 20;
-  function update(){
-    const t = parseInt(slider.value,10);
-    tempVal.textContent = t + '°C';
-    const heating = t < TARGET;
-    heaterDot.classList.toggle('on', heating);
-    heaterBlock.classList.toggle('active', heating);
-    compareBlock.classList.toggle('active', heating);
-    arrow1.classList.toggle('live', heating);
-    arrow2.classList.toggle('live', heating);
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 </body>
 </html>

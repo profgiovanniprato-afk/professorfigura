@@ -158,25 +158,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const sensorBtn = document.getElementById('sensorBtn');
-  const plcBlock = document.getElementById('plcBlock');
-  const ledOut = document.getElementById('ledOut');
-  const arrow1 = document.getElementById('arrow1');
-  const arrow2 = document.getElementById('arrow2');
-  let active = false;
-  sensorBtn.addEventListener('click', () => {
-    active = !active;
-    sensorBtn.classList.toggle('active', active);
-    plcBlock.classList.toggle('active', active);
-    ledOut.classList.toggle('on', active);
-    arrow1.classList.toggle('live', active);
-    arrow2.classList.toggle('live', active);
-  });
 </script>
 </body>
 </html>

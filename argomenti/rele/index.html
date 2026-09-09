@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
   .notebook svg{max-width:480px;width:100%;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .coil{fill:var(--white);stroke:var(--black);stroke-width:2.2;transition:fill .2s ease, stroke .2s ease;}
   .coil.energized{fill:var(--orange-pale);stroke:var(--orange-dark);}
   .contact{stroke:var(--black);stroke-width:2.2;transition:transform .2s ease;}
@@ -177,34 +177,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let energized = false;
-  const pushGroup = document.getElementById('pushGroup');
-  const coil = document.getElementById('coil');
-  const powerBlade = document.getElementById('powerBlade');
-  const fCmd = ['fCmd1','fCmd2','fCmd3'].map(id => document.getElementById(id));
-  const fPow = ['fPow1','fPow2'].map(id => document.getElementById(id));
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-  const f1b = document.getElementById('f1b');
-  const f2b = document.getElementById('f2b');
-
-  function render(){
-    coil.classList.toggle('energized', energized);
-    fCmd.forEach(f => f.classList.toggle('on', energized));
-    fPow.forEach(f => f.classList.toggle('on', energized));
-    powerBlade.setAttribute('transform', energized ? 'rotate(0 260 120)' : 'rotate(-22 260 120)');
-    bulbGlow.classList.toggle('lit', energized);
-    bulbGlass.classList.toggle('lit', energized);
-    f1b.classList.toggle('lit', energized);
-    f2b.classList.toggle('lit', energized);
-  }
-  pushGroup.addEventListener('click', () => { energized = !energized; render(); });
-  render();
 </script>
 </body>
 </html>

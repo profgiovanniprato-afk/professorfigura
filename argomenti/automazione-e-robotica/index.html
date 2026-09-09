@@ -150,23 +150,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let active = false;
-  const sensorBlock = document.getElementById('sensorBlock');
-  const controlBlock = document.getElementById('controlBlock');
-  const actuatorBlock = document.getElementById('actuatorBlock');
-  const a1 = document.getElementById('a1');
-  const a2 = document.getElementById('a2');
-  document.getElementById('sensorGroup').addEventListener('click', () => {
-    active = !active;
-    [sensorBlock,controlBlock,actuatorBlock].forEach(b => b.classList.toggle('active', active));
-    a1.classList.toggle('live', active);
-    a2.classList.toggle('live', active);
-  });
 </script>
 </body>
 </html>

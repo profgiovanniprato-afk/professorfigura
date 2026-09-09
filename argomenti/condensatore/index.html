@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:480px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.5;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 15;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-48px;}}
+  }
   .plate{stroke:var(--black);stroke-width:3.5;}
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .contact{stroke:var(--black);stroke-width:2.5;}
@@ -132,11 +132,6 @@
     </svg>
   </div>
 
-  <div class="control">
-    <button class="add-btn" id="chargeBtn">Carica il condensatore</button>
-    <button class="add-btn stop" id="dischargeBtn">Scarica sul LED</button>
-  </div>
-
   <article>
     <p>Il <strong>condensatore</strong> è un componente che accumula energia elettrica sotto forma di carica, un po' come una piccola batteria — ma con una differenza enorme: si carica e si scarica quasi istantaneamente, mentre una batteria chimica ci mette molto più tempo. Il suo simbolo, che vedi nello schema, è fatto da due semplici linee parallele: rappresentano le due <strong>armature</strong>, superfici conduttrici separate da un materiale isolante (il dielettrico).</p>
 
@@ -172,40 +167,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  const fCharge = document.getElementById('fCharge');
-  const f2 = document.getElementById('f2');
-  const f3 = document.getElementById('f3');
-  const ledDot = document.getElementById('ledDot');
-  let dischargeTimer = null;
-
-  document.getElementById('chargeBtn').addEventListener('click', () => {
-    if(dischargeTimer) clearInterval(dischargeTimer);
-    fCharge.classList.add('on'); f2.classList.add('on'); f3.classList.remove('on');
-    ledDot.style.fill = 'var(--grey-300)';
-    setTimeout(() => { fCharge.classList.remove('on'); f2.classList.remove('on'); }, 700);
-  });
-
-  document.getElementById('dischargeBtn').addEventListener('click', () => {
-    if(dischargeTimer) clearInterval(dischargeTimer);
-    f3.classList.add('on');
-    let brightness = 1;
-    ledDot.style.fill = '#F5C518';
-    dischargeTimer = setInterval(() => {
-      brightness -= 0.08;
-      if(brightness <= 0){
-        brightness = 0;
-        f3.classList.remove('on');
-        clearInterval(dischargeTimer);
-      }
-      const grey = Math.round(211 - brightness*30);
-      ledDot.style.fill = brightness > 0.05 ? `rgba(245,197,24,${brightness})` : 'var(--grey-300)';
-    }, 150);
-  });
 </script>
 </body>
 </html>

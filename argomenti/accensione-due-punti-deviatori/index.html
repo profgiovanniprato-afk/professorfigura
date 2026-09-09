@@ -46,9 +46,9 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);}
   .notebook svg{position:relative;width:100%;max-width:520px;display:block;margin:0 auto;}
   .wire{fill:none;stroke:var(--black);stroke-width:2.2;stroke-linecap:round;}
-  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;animation:flowDash 1s linear infinite;}
+  .flow{fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:8 12;opacity:0;transition:opacity .2s ease;}
   .flow.on{opacity:1;}
-  @keyframes flowDash{to{stroke-dashoffset:-40px;}}
+  }
   .node{fill:var(--white);stroke:var(--black);stroke-width:2.2;}
   .contact{stroke:var(--black);stroke-width:2.2;cursor:pointer;}
   .bulb-glow{fill:#F5C518;opacity:0;transition:opacity .3s ease;}
@@ -186,43 +186,10 @@
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
-  const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
+const burger=document.getElementById('burgerBtn'),navPanel=document.getElementById('navPanel'),navClose=document.getElementById('navClose'),scrim=document.getElementById('scrim');
   function openNav(){navPanel.classList.add('open');scrim.classList.add('show');}
   function closeNav(){navPanel.classList.remove('open');scrim.classList.remove('show');}
   burger.addEventListener('click',openNav);navClose.addEventListener('click',closeNav);scrim.addEventListener('click',closeNav);
-
-  let s1 = 0, s2 = 0;
-  const blade1 = document.getElementById('blade1');
-  const blade2 = document.getElementById('blade2');
-  const fTrav1 = document.getElementById('fTrav1');
-  const fTrav2 = document.getElementById('fTrav2');
-  const f1 = document.getElementById('f1');
-  const f2 = document.getElementById('f2');
-  const bulbGlow = document.getElementById('bulbGlow');
-  const bulbGlass = document.getElementById('bulbGlass');
-  const f1b = document.getElementById('f1b');
-  const f2b = document.getElementById('f2b');
-  const statusText = document.getElementById('statusText');
-
-  function render(){
-    blade1.setAttribute('y2', s1===0?63:137);
-    blade2.setAttribute('y2', s2===0?63:137);
-    const on = s1 === s2;
-    fTrav1.classList.toggle('on', on && s1===0);
-    fTrav2.classList.toggle('on', on && s1===1);
-    f1.classList.toggle('on', on);
-    f2.classList.toggle('on', on);
-    bulbGlow.classList.toggle('lit', on);
-    bulbGlass.classList.toggle('lit', on);
-    f1b.classList.toggle('lit', on);
-    f2b.classList.toggle('lit', on);
-    statusText.textContent = on ? 'Lampada accesa!' : 'Lampada spenta — clicca i deviatori';
-    statusText.classList.toggle('on', on);
-    statusText.classList.toggle('off', !on);
-  }
-  document.getElementById('dev1').addEventListener('click', () => { s1 = s1 ? 0 : 1; render(); });
-  document.getElementById('dev2').addEventListener('click', () => { s2 = s2 ? 0 : 1; render(); });
-  render();
 </script>
 </body>
 </html>
