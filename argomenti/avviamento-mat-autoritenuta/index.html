@@ -161,37 +161,36 @@
       <text x="30" y="14" text-anchor="middle" class="io-label">L</text>
       <text x="270" y="14" text-anchor="middle" class="io-label">N</text>
 
-      <path class="wire" d="M30,50 H70"/><path class="flow" id="cf1" d="M30,50 H70"/>
+      <path class="wire" d="M30,50 H60"/><path class="flow" id="cf1" d="M30,50 H60"/>
       <g class="btn-group" id="s0Btn">
-        <line class="contact" x1="70" y1="40" x2="70" y2="60"/>
-        <line class="contact-slash" x1="64" y1="62" x2="76" y2="38"/>
-        <line class="contact" x1="90" y1="40" x2="90" y2="60"/>
-        <text x="80" y="30" class="io-label">S0</text>
+        <circle class="node" cx="60" cy="50" r="3"/><circle class="node" cx="80" cy="50" r="3"/>
+        <line class="contact" x1="60" y1="50" x2="77" y2="34"/>
+        <line class="contact-slash" x1="66" y1="46" x2="76" y2="30"/>
+        <text x="70" y="24" class="io-label">S0</text>
       </g>
-      <path class="wire" d="M90,50 H130"/><path class="flow" id="cf2" d="M90,50 H130"/>
+      <path class="wire" d="M80,50 H130"/><path class="flow" id="cf2" d="M80,50 H130"/>
 
       <g class="btn-group" id="s1Btn">
-        <line class="contact" x1="130" y1="40" x2="130" y2="60"/>
-        <line class="contact" x1="150" y1="40" x2="150" y2="60"/>
-        <text x="140" y="30" class="io-label">S1</text>
+        <circle class="node" cx="130" cy="50" r="3"/><circle class="node" cx="150" cy="50" r="3"/>
+        <line class="contact" x1="130" y1="50" x2="147" y2="34"/>
+        <text x="140" y="24" class="io-label">S1</text>
       </g>
       <path class="wire" d="M150,50 H230"/><path class="flow" id="cf3" d="M150,50 H230"/>
 
       <path class="wire" d="M130,60 V95 H150 V60"/><path class="flow" id="cf4" d="M130,60 V95 H150 V60"/>
-      <line class="contact" id="km1a" x1="132" y1="88" x2="132" y2="102"/>
-      <line class="contact" id="km1b" x1="148" y1="88" x2="148" y2="102"/>
-      <text x="140" y="118" class="diagram-label" text-anchor="middle">KM (autoritenuta)</text>
+      <circle class="node" cx="132" cy="95" r="3"/><circle class="node" cx="148" cy="95" r="3"/>
+      <line class="contact" id="km1a" x1="132" y1="95" x2="146" y2="82"/>
+      <text x="140" y="112" class="diagram-label" text-anchor="middle">KM (autoritenuta)</text>
 
-      <line class="contact" x1="230" y1="40" x2="230" y2="60"/>
-      <line class="contact-slash" x1="224" y1="62" x2="236" y2="38"/>
-      <text x="230" y="30" class="io-label">F2</text>
-      <path class="wire" d="M230,50 H230"/>
+      <circle class="node" cx="230" cy="50" r="3"/><circle class="node" cx="250" cy="50" r="3"/>
+      <line class="contact" x1="230" y1="50" x2="247" y2="34"/>
+      <line class="contact-slash" x1="236" y1="46" x2="246" y2="30"/>
+      <text x="240" y="24" class="io-label">F2</text>
 
-      <path class="wire" d="M240,50 H240"/>
-      <path class="wire" id="cf5wire" d="M240,50 H245"/><path class="flow" id="cf5" d="M240,50 H245"/>
-      <rect class="coil" id="coil" x="245" y="36" width="24" height="28" rx="3"/>
-      <path class="wire" d="M269,50 H270"/>
-      <text x="257" y="80" text-anchor="middle" class="io-label">KM</text>
+      <path class="wire" id="cf5wire" d="M250,50 H255"/><path class="flow" id="cf5" d="M250,50 H255"/>
+      <rect class="coil" id="coil" x="255" y="36" width="24" height="28" rx="3"/>
+      <path class="wire" d="M279,50 H290"/>
+      <text x="267" y="80" text-anchor="middle" class="io-label">KM</text>
 
       <text x="150" y="140" text-anchor="middle" class="status-text off" id="statusText">Motore fermo</text>
     </svg>
@@ -249,7 +248,7 @@
   const coil = document.getElementById('coil');
   const statusText = document.getElementById('statusText');
   const pk1 = document.getElementById('pk1'), pk2 = document.getElementById('pk2'), pk3 = document.getElementById('pk3');
-  const km1a = document.getElementById('km1a'), km1b = document.getElementById('km1b');
+  const km1a = document.getElementById('km1a');
 
   function render(){
     powerFlows.forEach(f => f.classList.toggle('on', running));
@@ -257,7 +256,8 @@
     motorCircle.classList.toggle('running', running);
     coil.classList.toggle('energized', running);
     [pk1,pk2,pk3].forEach(c => c.setAttribute('transform', running ? 'translate(2,-3)' : ''));
-    [km1a,km1b].forEach(c => c.setAttribute('transform', running ? 'translate(0,-4) scaleY(0.6)' : ''));
+    km1a.setAttribute('x2', running ? 148 : 146);
+    km1a.setAttribute('y2', running ? 95 : 82);
     statusText.textContent = running ? 'Motore in marcia — autoritenuta attiva' : 'Motore fermo';
     statusText.classList.toggle('on', running);
     statusText.classList.toggle('off', !running);

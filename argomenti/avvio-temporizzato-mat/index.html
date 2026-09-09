@@ -159,19 +159,19 @@
       <text x="30" y="14" text-anchor="middle" class="io-label">L</text>
       <text x="270" y="14" text-anchor="middle" class="io-label">N</text>
 
-      <path class="wire" d="M30,50 H70"/><path class="flow" id="cf1" d="M30,50 H70"/>
+      <path class="wire" d="M30,50 H60"/><path class="flow" id="cf1" d="M30,50 H60"/>
       <g id="s0Btn">
-        <line class="contact" x1="70" y1="40" x2="70" y2="60"/>
-        <line class="contact-slash" x1="64" y1="62" x2="76" y2="38"/>
-        <line class="contact" x1="90" y1="40" x2="90" y2="60"/>
-        <text x="80" y="30" class="io-label">S0</text>
+        <circle class="node" cx="60" cy="50" r="3"/><circle class="node" cx="80" cy="50" r="3"/>
+        <line class="contact" x1="60" y1="50" x2="77" y2="34"/>
+        <line class="contact-slash" x1="66" y1="46" x2="76" y2="30"/>
+        <text x="70" y="24" class="io-label">S0</text>
       </g>
-      <path class="wire" d="M90,50 H130"/><path class="flow" id="cf2" d="M90,50 H130"/>
+      <path class="wire" d="M80,50 H130"/><path class="flow" id="cf2" d="M80,50 H130"/>
 
       <g class="btn-group" id="s1Btn">
-        <line class="contact" x1="130" y1="40" x2="130" y2="60"/>
-        <line class="contact" x1="150" y1="40" x2="150" y2="60"/>
-        <text x="140" y="30" class="io-label">S1</text>
+        <circle class="node" cx="130" cy="50" r="3"/><circle class="node" cx="150" cy="50" r="3"/>
+        <line class="contact" x1="130" y1="50" x2="147" y2="34"/>
+        <text x="140" y="24" class="io-label">S1</text>
       </g>
       <path class="wire" d="M150,50 H190"/><path class="flow" id="cf3" d="M150,50 H190"/>
 
@@ -181,14 +181,15 @@
       <text x="202" y="78" text-anchor="middle" class="io-label">KT</text>
 
       <path class="wire" d="M130,60 V90 H150 V60"/><path class="flow" id="cf5" d="M130,60 V90 H150 V60"/>
-      <line class="contact" x1="132" y1="83" x2="132" y2="97"/><line class="contact" x1="148" y1="83" x2="148" y2="97"/>
+      <circle class="node" cx="132" cy="90" r="3"/><circle class="node" cx="148" cy="90" r="3"/>
+      <line class="contact" x1="132" y1="90" x2="146" y2="77"/>
       <text x="140" y="112" class="diagram-label" text-anchor="middle">KT (autoritenuta)</text>
 
-      <path class="wire" d="M90,50 V132 H130"/><path class="flow" id="cf6" d="M90,50 V132 H130"/>
-      <line class="contact" id="ktDelayed" x1="130" y1="122" x2="130" y2="142"/>
-      <path class="delay-arc" id="delayMark" d="M118,120 q6,12 0,24"/>
-      <line class="contact" x1="150" y1="122" x2="150" y2="142"/>
-      <text x="140" y="115" class="io-label">KT — ritardato</text>
+      <path class="wire" d="M80,50 V132 H130"/><path class="flow" id="cf6" d="M80,50 V132 H130"/>
+      <circle class="node" cx="130" cy="132" r="3"/><circle class="node" cx="150" cy="132" r="3"/>
+      <line class="contact" id="ktDelayed" x1="130" y1="132" x2="147" y2="116"/>
+      <path class="delay-arc" id="delayMark" d="M150,108 q10,10 0,20"/>
+      <text x="140" y="106" text-anchor="middle" class="io-label">KT — ritardato</text>
       <path class="wire" d="M150,132 H240"/><path class="flow" id="cf7" d="M150,132 H240"/>
 
       <rect class="coil" id="kmCoil" x="240" y="120" width="24" height="24" rx="3"/>

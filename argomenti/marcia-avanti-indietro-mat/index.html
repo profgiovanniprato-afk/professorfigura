@@ -190,10 +190,10 @@
 
       <path class="wire" d="M30,45 H60"/><path class="flow" id="cf0" d="M30,45 H60"/>
       <g id="s0Btn">
-        <line class="contact" x1="60" y1="35" x2="60" y2="55"/>
-        <line class="contact-slash" x1="54" y1="57" x2="66" y2="33"/>
-        <line class="contact" x1="80" y1="35" x2="80" y2="55"/>
-        <text x="70" y="26" class="io-label">S0</text>
+        <circle class="node" cx="60" cy="45" r="3"/><circle class="node" cx="80" cy="45" r="3"/>
+        <line class="contact" x1="60" y1="45" x2="77" y2="29"/>
+        <line class="contact-slash" x1="66" y1="41" x2="76" y2="25"/>
+        <text x="70" y="19" class="io-label">S0</text>
       </g>
       <path class="wire" d="M80,45 H100"/><path class="flow" id="cf00" d="M80,45 H100"/>
       <circle class="node" cx="100" cy="45" r="2.5"/>
@@ -201,44 +201,46 @@
       <!-- ===== ramo AVANTI ===== -->
       <path class="wire" d="M100,45 V100 H115"/><path class="flow" id="cfA1" d="M100,45 V100 H115"/>
       <g class="btn-group" id="s1Btn">
-        <line class="contact" x1="115" y1="90" x2="115" y2="110"/>
-        <line class="contact" x1="135" y1="90" x2="135" y2="110"/>
-        <text x="125" y="80" class="io-label">S1</text>
+        <circle class="node" cx="115" cy="100" r="3"/><circle class="node" cx="135" cy="100" r="3"/>
+        <line class="contact" x1="115" y1="100" x2="132" y2="84"/>
+        <text x="125" y="74" class="io-label">S1</text>
       </g>
       <path class="wire" d="M135,100 H160"/><path class="flow" id="cfA2" d="M135,100 H160"/>
-      <line class="contact" id="km2nc" x1="160" y1="90" x2="160" y2="110"/>
-      <line class="contact-slash" x1="154" y1="112" x2="166" y2="88"/>
-      <line class="contact" x1="180" y1="90" x2="180" y2="110"/>
-      <text x="170" y="80" class="io-label">KM2</text>
+      <circle class="node" cx="160" cy="100" r="3"/><circle class="node" cx="180" cy="100" r="3"/>
+      <line class="contact" id="km2nc" x1="160" y1="100" x2="177" y2="84"/>
+      <line class="contact-slash" x1="166" y1="96" x2="176" y2="80"/>
+      <text x="170" y="74" class="io-label">KM2</text>
       <path class="wire" d="M180,100 H235"/><path class="flow" id="cfA3" d="M180,100 H235"/>
       <rect class="coil" id="km1coil" x="235" y="88" width="24" height="24" rx="3"/>
       <path class="wire" d="M259,100 H290"/><path class="flow" id="cfA4" d="M259,100 H290"/>
       <text x="247" y="126" text-anchor="middle" class="io-label">KM1</text>
 
       <path class="wire" d="M115,110 V145 H135 V110"/><path class="flow" id="cfA5" d="M115,110 V145 H135 V110"/>
-      <line class="contact" x1="117" y1="140" x2="117" y2="152"/><line class="contact" x1="133" y1="140" x2="133" y2="152"/>
-      <text x="125" y="166" class="diagram-label" text-anchor="middle">KM1 (autoritenuta)</text>
+      <circle class="node" cx="117" cy="145" r="3"/><circle class="node" cx="133" cy="145" r="3"/>
+      <line class="contact" id="km1auto" x1="117" y1="145" x2="131" y2="132"/>
+      <text x="125" y="162" class="diagram-label" text-anchor="middle">KM1 (autoritenuta)</text>
 
       <!-- ===== ramo INDIETRO ===== -->
       <path class="wire" d="M100,45 V200 H115"/><path class="flow" id="cfB1" d="M100,45 V200 H115"/>
       <g class="btn-group" id="s2Btn">
-        <line class="contact" x1="115" y1="190" x2="115" y2="210"/>
-        <line class="contact" x1="135" y1="190" x2="135" y2="210"/>
-        <text x="125" y="180" class="io-label">S2</text>
+        <circle class="node" cx="115" cy="200" r="3"/><circle class="node" cx="135" cy="200" r="3"/>
+        <line class="contact" x1="115" y1="200" x2="132" y2="184"/>
+        <text x="125" y="174" class="io-label">S2</text>
       </g>
       <path class="wire" d="M135,200 H160"/><path class="flow" id="cfB2" d="M135,200 H160"/>
-      <line class="contact" id="km1nc" x1="160" y1="190" x2="160" y2="210"/>
-      <line class="contact-slash" x1="154" y1="212" x2="166" y2="188"/>
-      <line class="contact" x1="180" y1="190" x2="180" y2="210"/>
-      <text x="170" y="180" class="io-label">KM1</text>
+      <circle class="node" cx="160" cy="200" r="3"/><circle class="node" cx="180" cy="200" r="3"/>
+      <line class="contact" id="km1nc" x1="160" y1="200" x2="177" y2="184"/>
+      <line class="contact-slash" x1="166" y1="196" x2="176" y2="180"/>
+      <text x="170" y="174" class="io-label">KM1</text>
       <path class="wire" d="M180,200 H235"/><path class="flow" id="cfB3" d="M180,200 H235"/>
       <rect class="coil" id="km2coil" x="235" y="188" width="24" height="24" rx="3"/>
       <path class="wire" d="M259,200 H290"/><path class="flow" id="cfB4" d="M259,200 H290"/>
       <text x="247" y="226" text-anchor="middle" class="io-label">KM2</text>
 
       <path class="wire" d="M115,210 V245 H135 V210"/><path class="flow" id="cfB5" d="M115,210 V245 H135 V210"/>
-      <line class="contact" x1="117" y1="240" x2="117" y2="252"/><line class="contact" x1="133" y1="240" x2="133" y2="252"/>
-      <text x="125" y="266" text-anchor="middle" class="diagram-label">KM2 (autoritenuta)</text>
+      <circle class="node" cx="117" cy="245" r="3"/><circle class="node" cx="133" cy="245" r="3"/>
+      <line class="contact" id="km2auto" x1="117" y1="245" x2="131" y2="232"/>
+      <text x="125" y="262" text-anchor="middle" class="diagram-label">KM2 (autoritenuta)</text>
     </svg>
   </div>
 
