@@ -118,82 +118,12 @@
 
   <div class="diagram-title">Schema di potenza</div>
   <div class="notebook">
-    <svg viewBox="0 0 300 220" id="powerSvg">
-      <text x="40" y="16" class="io-label">L1</text><text x="90" y="16" class="io-label">L2</text><text x="140" y="16" class="io-label">L3</text>
-      <path class="wire" d="M40,22 V40"/><path class="wire" d="M90,22 V40"/><path class="wire" d="M140,22 V40"/>
-      <path class="flow" id="pf1" d="M40,22 V40"/><path class="flow" id="pf2" d="M90,22 V40"/><path class="flow" id="pf3" d="M140,22 V40"/>
-
-      <line class="contact" x1="35" y1="40" x2="45" y2="52"/><line class="contact" x1="85" y1="40" x2="95" y2="52"/><line class="contact" x1="135" y1="40" x2="145" y2="52"/>
-      <text x="170" y="48" class="diagram-label">QS — sezionatore</text>
-
-      <path class="wire" d="M40,52 V70"/><path class="wire" d="M90,52 V70"/><path class="wire" d="M140,52 V70"/>
-      <path class="flow" id="pf4" d="M40,52 V70"/><path class="flow" id="pf5" d="M90,52 V70"/><path class="flow" id="pf6" d="M140,52 V70"/>
-
-      <rect class="fuse" x="33" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="36.0" y1="73.0" x2="44.0" y2="87.0"/><rect class="fuse" x="83" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="86.0" y1="73.0" x2="94.0" y2="87.0"/><rect class="fuse" x="133" y="70" width="14" height="20" rx="2"/><line class="fuse-diag" x1="136.0" y1="73.0" x2="144.0" y2="87.0"/>
-      <text x="170" y="84" class="diagram-label">F — fusibili</text>
-
-      <path class="wire" d="M40,90 V108"/><path class="wire" d="M90,90 V108"/><path class="wire" d="M140,90 V108"/>
-      <path class="flow" id="pf7" d="M40,90 V108"/><path class="flow" id="pf8" d="M90,90 V108"/><path class="flow" id="pf9" d="M140,90 V108"/>
-
-      <line class="contact" id="pk1" x1="35" y1="108" x2="45" y2="120"/><line class="contact" id="pk2" x1="85" y1="108" x2="95" y2="120"/><line class="contact" id="pk3" x1="135" y1="108" x2="145" y2="120"/>
-      <text x="170" y="118" class="diagram-label">KM — teleruttore</text>
-
-      <path class="wire" d="M40,120 V138"/><path class="wire" d="M90,120 V138"/><path class="wire" d="M140,120 V138"/>
-      <path class="flow" id="pf10" d="M40,120 V138"/><path class="flow" id="pf11" d="M90,120 V138"/><path class="flow" id="pf12" d="M140,120 V138"/>
-
-      <path class="thermal-zigzag" d="M35,138 q5,6 0,12 q-5,6 0,12 M85,138 q5,6 0,12 q-5,6 0,12 M135,138 q5,6 0,12 q-5,6 0,12"/>
-      <text x="170" y="152" class="diagram-label">F2 — relè termico</text>
-
-      <path class="wire" d="M40,162 V178"/><path class="wire" d="M90,162 V178"/><path class="wire" d="M140,162 V178"/>
-      <path class="flow" id="pf13" d="M40,162 V178"/><path class="flow" id="pf14" d="M90,162 V178"/><path class="flow" id="pf15" d="M140,162 V178"/>
-
-      <circle class="motor-circle" id="motorCircle" cx="90" cy="200" r="20"/>
-      <text x="90" y="205" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="14">M</text>
-      <text x="90" y="215" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="9">3~</text>
-    </svg>
+    <svg viewBox="0 0 360 265" id="powerSvg"><text x="70" y="24" text-anchor="middle" class="io-label">L1</text><text x="150" y="24" text-anchor="middle" class="io-label">L2</text><text x="230" y="24" text-anchor="middle" class="io-label">L3</text><path class="wire" d="M70,34 V54"/><path class="wire" d="M150,34 V54"/><path class="wire" d="M230,34 V54"/><path d="M70.00,57.84 L70.00,78.16" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M73.81,68.00 L73.81,57.84 L66.19,57.84 L66.19,78.16 L73.81,78.16 L73.81,68.00" fill="var(--white)" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,57.84 L150.00,78.16" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M153.81,68.00 L153.81,57.84 L146.19,57.84 L146.19,78.16 L153.81,78.16 L153.81,68.00" fill="var(--white)" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M230.00,57.84 L230.00,78.16" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M233.81,68.00 L233.81,57.84 L226.19,57.84 L226.19,78.16 L233.81,78.16 L233.81,68.00" fill="var(--white)" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><text x="272" y="72" class="diagram-label">F — fusibili</text><path class="wire" d="M70,78 V104"/><path class="wire" d="M150,78 V104"/><path class="wire" d="M230,78 V104"/><path d="M70.00,107.84 L70.00,110.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.00,128.16 L64.92,107.84" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,107.84 L150.00,110.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,128.16 L144.92,107.84" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M230.00,107.84 L230.00,110.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M230.00,128.16 L224.92,107.84" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><text x="272" y="122" class="diagram-label">KM — teleruttore</text><path class="wire" d="M70,128 V154"/><path class="wire" d="M150,128 V154"/><path class="wire" d="M230,128 V154"/><path d="M70.00,157.84 L70.00,160.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.00,160.38 L80.16,160.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M70.00,178.16 L77.62,157.84" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M73.81,168.00 L66.83,168.00 L66.83,162.92 L62.38,162.92 L62.38,168.00 L56.03,168.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,157.84 L150.00,160.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,160.38 L160.16,160.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,178.16 L157.62,157.84" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M153.81,168.00 L146.83,168.00 L146.83,162.92 L142.38,162.92 L142.38,168.00 L136.03,168.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M230.00,157.84 L230.00,160.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M230.00,160.38 L240.16,160.38" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M230.00,178.16 L237.62,157.84" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M233.81,168.00 L226.83,168.00 L226.83,162.92 L222.38,162.92 L222.38,168.00 L216.03,168.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><text x="272" y="172" class="diagram-label">F2 — relè termico</text><path class="wire" d="M70,178 V200"/><path class="wire" d="M150,178 V200"/><path class="wire" d="M230,178 V200"/><path class="wire" d="M70,200 L150,210"/><path class="wire" d="M150,200 V210"/><path class="wire" d="M230,200 L150,210"/><circle cx="150.00" cy="230.00" r="20.32" fill="var(--white)" stroke="var(--black)" stroke-width="2.0"/><text x="150.00" y="238.00" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="12.8">M</text><text x="150.00" y="246.80" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="7.2">3~</text></svg>
   </div>
 
   <div class="diagram-title">Schema di comando</div>
   <div class="notebook">
-    <svg viewBox="0 0 300 160" id="controlSvg">
-      <line class="rail" x1="30" y1="20" x2="30" y2="140"/>
-      <line class="rail" x1="270" y1="20" x2="270" y2="140"/>
-      <text x="30" y="14" text-anchor="middle" class="io-label">L</text>
-      <text x="270" y="14" text-anchor="middle" class="io-label">N</text>
-
-      <path class="wire" d="M30,50 H60"/><path class="flow" id="cf1" d="M30,50 H60"/>
-      <g class="btn-group" id="s0Btn">
-        <circle class="node" cx="60" cy="50" r="3"/><circle class="node" cx="80" cy="50" r="3"/>
-        <line class="contact" x1="60" y1="50" x2="77" y2="34"/>
-        <line class="contact-slash" x1="66" y1="46" x2="76" y2="30"/>
-        <text x="70" y="24" class="io-label">S0</text>
-      </g>
-      <path class="wire" d="M80,50 H130"/><path class="flow" id="cf2" d="M80,50 H130"/>
-
-      <g class="btn-group" id="s1Btn">
-        <circle class="node" cx="130" cy="50" r="3"/><circle class="node" cx="150" cy="50" r="3"/>
-        <line class="contact" x1="130" y1="50" x2="147" y2="34"/>
-        <text x="140" y="24" class="io-label">S1</text>
-      </g>
-      <path class="wire" d="M150,50 H230"/><path class="flow" id="cf3" d="M150,50 H230"/>
-
-      <path class="wire" d="M130,60 V95 H150 V60"/><path class="flow" id="cf4" d="M130,60 V95 H150 V60"/>
-      <circle class="node" cx="132" cy="95" r="3"/><circle class="node" cx="148" cy="95" r="3"/>
-      <line class="contact" id="km1a" x1="132" y1="95" x2="146" y2="82"/>
-      <text x="140" y="112" class="diagram-label" text-anchor="middle">KM (autoritenuta)</text>
-
-      <circle class="node" cx="230" cy="50" r="3"/><circle class="node" cx="250" cy="50" r="3"/>
-      <line class="contact" x1="230" y1="50" x2="247" y2="34"/>
-      <line class="contact-slash" x1="236" y1="46" x2="246" y2="30"/>
-      <text x="240" y="24" class="io-label">F2</text>
-
-      <path class="wire" id="cf5wire" d="M250,50 H255"/><path class="flow" id="cf5" d="M250,50 H255"/>
-      <rect class="coil" id="coil" x="255" y="36" width="24" height="28" rx="3"/>
-      <path class="wire" d="M279,50 H290"/>
-      <text x="267" y="80" text-anchor="middle" class="io-label">KM</text>
-
-      <text x="150" y="140" text-anchor="middle" class="status-text off" id="statusText">Motore fermo</text>
-    </svg>
+    <svg viewBox="0 0 340 155" id="controlSvg"><path class="rail" d="M40,20 V150"/><path class="rail" d="M300,20 V150"/><text x="40" y="14" text-anchor="middle" class="io-label">L</text><text x="300" y="14" text-anchor="middle" class="io-label">N</text><path class="wire" d="M40,70 H65"/><path d="M64.84,70.00 L67.38,70.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M67.38,70.00 L67.38,64.92" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M85.16,70.00 L64.84,64.92" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M71.40,63.60 L78.60,63.60" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M75.00,63.60 L75.00,65.80" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><text x="75" y="40" text-anchor="middle" class="io-label">S0</text><path class="wire" d="M85,70 H120"/><circle cx="120.00" cy="70.00" r="2.2" fill="var(--white)" stroke="var(--black)" stroke-width="1.6"/><path d="M139.84,70.00 L142.38,70.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M160.16,70.00 L139.84,64.92" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M146.40,63.60 L153.60,63.60" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M150.00,63.60 L150.00,67.48" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><text x="150" y="40" text-anchor="middle" class="io-label">S1</text><path class="wire" d="M120,70 H140"/><path class="wire" d="M160,70 H180"/><circle cx="180.00" cy="70.00" r="2.2" fill="var(--white)" stroke="var(--black)" stroke-width="1.6"/><path d="M199.84,70.00 L202.38,70.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M202.38,70.00 L202.38,64.92" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M220.16,70.00 L199.84,64.92" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><text x="210" y="40" text-anchor="middle" class="io-label">F2</text><path class="wire" d="M180,70 H200"/><path class="wire" d="M220,70 H240"/><path d="M251.84,70.00 H251.84" stroke="none"/><rect x="251.84" y="64.92" width="20.32" height="10.16" fill="#ffffff" stroke="var(--black)" stroke-width="2.0"/><text x="262" y="40" text-anchor="middle" class="io-label">KM</text><path class="wire" d="M240,70 H252"/><path class="wire" d="M272,70 H300"/><path class="wire" d="M120,70 V115"/><path class="wire" d="M120,115 H140"/><path d="M139.84,115.00 L142.38,115.00" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path d="M160.16,115.00 L139.84,109.92" fill="none" stroke="var(--black)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/><path class="wire" d="M160,115 H180"/><path class="wire" d="M180,115 V70"/><text x="150" y="135" text-anchor="middle" class="diagram-label">KM (autoritenuta)</text></svg>
   </div>
 
   <article>
