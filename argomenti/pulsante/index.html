@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Il pulsante: contatto momentaneo | professorfigura.it</title>
-<meta name="description" content="La differenza tra un interruttore, che resta nella posizione scelta, e un pulsante, che torna sempre a riposo da solo. Schema interattivo per le classi prime.">
+<meta name="description" content="La differenza tra un interruttore, che resta nella posizione scelta, e un pulsante, che torna sempre a riposo da solo. Schema per le classi prime.">
 <link rel="canonical" href="https://www.professorfigura.it/argomenti/pulsante/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Il pulsante: contatto momentaneo">
@@ -99,35 +99,34 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Il pulsante</p>
   <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Il pulsante: acceso solo finché lo tieni premuto</h1>
-  <p class="lead">Tieni premuto il pulsante nello schema e osserva la lampada. Rilascialo. Nota la differenza rispetto a un normale interruttore.</p>
+  <p class="lead">Lo schema mostra la lampada accesa finché il pulsante resta premuto. Nota la differenza rispetto a un normale interruttore.</p>
 
   <div class="notebook">
     <svg viewBox="0 0 300 160" id="circuitSvg">
-      <path class="wire" d="M30,80 H90" /><path class="flow" id="f1" d="M30,80 H90" />
+      <path class="wire" d="M30,80 H90" /><path class="flow live" id="f1" d="M30,80 H90" />
       <line x1="40" y1="80" x2="60" y2="80" stroke="var(--black)" stroke-width="1.5"/>
       <line x1="45" y1="70" x2="55" y2="70" stroke="var(--black)" stroke-width="3"/>
       <text x="20" y="70" class="diagram-label">PILA</text>
 
-      <g id="pushGroup" style="cursor:pointer;">
+      <g id="pushGroup">
         <circle class="node" cx="90" cy="80" r="4"/>
         <circle class="node" cx="130" cy="80" r="4"/>
-        <path class="spring" d="M108,80 q3,-10 6,0 q3,-10 6,0"/>
-        <line class="push-bar" id="pushBar" x1="88" y1="55" x2="132" y2="55"/>
-        <line x1="110" y1="55" x2="110" y2="65" stroke="var(--black)" stroke-width="2.5"/>
-        <text x="110" y="40" text-anchor="middle" class="diagram-label">PREMI QUI</text>
+        <line class="push-bar" id="pushBar" x1="88" y1="72" x2="132" y2="72"/>
+        <line x1="110" y1="72" x2="110" y2="62" stroke="var(--black)" stroke-width="2.5"/>
+        <text x="110" y="52" text-anchor="middle" class="diagram-label">premuto</text>
       </g>
 
-      <path class="wire" d="M130,80 H210" /><path class="flow" id="f2" d="M130,80 H210" />
-      <circle class="bulb-glow" id="bulbGlow" cx="225" cy="80" r="24"/>
-      <circle class="bulb-glass" id="bulbGlass" cx="225" cy="80" r="15"/>
-      <line class="bulb-filament" id="f1b" x1="214.4" y1="69.4" x2="235.6" y2="90.6"/>
-      <line class="bulb-filament" id="f2b" x1="235.6" y1="69.4" x2="214.4" y2="90.6"/>
+      <path class="wire" d="M130,80 H210" /><path class="flow live" id="f2" d="M130,80 H210" />
+      <circle class="bulb-glow lit" id="bulbGlow" cx="225" cy="80" r="24"/>
+      <circle class="bulb-glass lit" id="bulbGlass" cx="225" cy="80" r="15"/>
+      <line class="bulb-filament lit" id="f1b" x1="214.4" y1="69.4" x2="235.6" y2="90.6"/>
+      <line class="bulb-filament lit" id="f2b" x1="235.6" y1="69.4" x2="214.4" y2="90.6"/>
     </svg>
-    <div class="press-hint" id="pressHint">Tieni premuto (mouse giù) per accendere</div>
+    <div class="press-hint" id="pressHint">Il pulsante è premuto: la lampada è accesa</div>
   </div>
 
   <article>
-    <p>Il <strong>pulsante</strong> assomiglia molto a un interruttore, ma con una differenza fondamentale: mentre un interruttore <strong>resta</strong> nella posizione in cui lo metti — aperto o chiuso, finché non lo tocchi di nuovo — un pulsante torna sempre da solo alla sua posizione di riposo, grazie a una molla interna (rappresentata nello schema sopra). Tieni premuto il pulsante nello schema: la lampada si accende solo finché mantieni la pressione, e si spegne da sola appena rilasci.</p>
+    <p>Il <strong>pulsante</strong> assomiglia molto a un interruttore, ma con una differenza fondamentale: mentre un interruttore <strong>resta</strong> nella posizione in cui lo metti — aperto o chiuso, finché non lo tocchi di nuovo — un pulsante torna sempre da solo alla sua posizione di riposo, grazie a una molla interna (rappresentata nello schema sopra). Finché il pulsante resta premuto la lampada è accesa; appena viene rilasciato, si spegne da sola.</p>
 
     <p>Questo comportamento si chiama <strong>contatto momentaneo</strong>, ed è esattamente quello che serve in tutte le situazioni dove vuoi un'azione solo per il tempo in cui la richiedi attivamente — un citofono, un clacson, il pulsante per chiamare l'ascensore (che "ricorda" la richiesta grazie a un circuito di memoria collegato dopo di lui, non grazie al pulsante stesso).</p>
 
@@ -157,7 +156,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

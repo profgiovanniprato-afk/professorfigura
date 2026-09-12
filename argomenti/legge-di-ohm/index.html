@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>La legge di Ohm: cos'è e come si applica | professorfigura.it</title>
-<meta name="description" content="La legge di Ohm spiegata in modo semplice, con uno schema interattivo: cambia la resistenza e osserva come varia la corrente. Per le classi prime.">
+<meta name="description" content="La legge di Ohm spiegata in modo semplice,: cambia la resistenza e osserva come varia la corrente. Per le classi prime.">
 <link rel="canonical" href="https://www.professorfigura.it/argomenti/legge-di-ohm/">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="La legge di Ohm: cos'è e come si applica">
-<meta property="og:description" content="La regola che lega tensione, corrente e resistenza, spiegata con uno schema interattivo.">
+<meta property="og:description" content="La regola che lega tensione, corrente e resistenza, spiegata.">
 <meta property="og:url" content="https://www.professorfigura.it/argomenti/legge-di-ohm/">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary">
@@ -20,7 +20,7 @@
   "@context": "https://schema.org",
   "@type": "LearningResource",
   "name": "La legge di Ohm: cos'è e come si applica",
-  "description": "La legge di Ohm spiegata in modo semplice, con uno schema interattivo che mostra come tensione, corrente e resistenza sono legate tra loro.",
+  "description": "La legge di Ohm spiegata in modo semplice, che mostra come tensione, corrente e resistenza sono legate tra loro.",
   "url": "https://www.professorfigura.it/argomenti/legge-di-ohm/",
   "author": { "@type": "Person", "name": "Giovanni Figura", "url": "https://www.professorfigura.it/chi-sono/" },
   "educationalLevel": "Scuola secondaria di secondo grado — Classe prima",
@@ -191,7 +191,7 @@
     </div>
 
     <h1>La legge di Ohm: cos'è e come si applica</h1>
-    <p class="lead">Tre grandezze, una sola formula, e un legame che regola ogni circuito elettrico che incontrerai da qui in avanti. Prova a muovere lo slider sotto lo schema e osserva cosa succede alla corrente.</p>
+    <p class="lead">Tre grandezze, una sola formula, e un legame che regola ogni circuito elettrico che incontrerai da qui in avanti. Lo schema mostra un esempio concreto: 9 volt su 6 ohm danno 1,5 ampere.</p>
 
     <div class="notebook">
       <svg viewBox="0 0 340 220" id="circuitSvg">
@@ -230,7 +230,7 @@
     <article>
       <p>Hai già incontrato tensione, corrente e resistenza come tre grandezze separate. La <strong>legge di Ohm</strong> è la formula che le lega insieme in un'unica equazione: la tensione è uguale alla corrente moltiplicata per la resistenza, cioè <strong>V = R × I</strong>. Conoscendo due di questi valori, puoi sempre calcolare il terzo.</p>
 
-      <p>Pensa di nuovo al tubo dell'acqua che hai già incontrato parlando di corrente: se aumenti la spinta della pompa — cioè la tensione — a parità di tubo, l'acqua scorre più velocemente, cioè aumenta la corrente. Se invece stringi il tubo — cioè aumenti la resistenza — a parità di spinta, l'acqua rallenta. La legge di Ohm mette questi tre effetti in un'unica equazione precisa, che puoi verificare tu stesso muovendo lo slider sopra: a parità di tensione, più resistenza significa meno corrente.</p>
+      <p>Pensa di nuovo al tubo dell'acqua che hai già incontrato parlando di corrente: se aumenti la spinta della pompa — cioè la tensione — a parità di tubo, l'acqua scorre più velocemente, cioè aumenta la corrente. Se invece stringi il tubo — cioè aumenti la resistenza — a parità di spinta, l'acqua rallenta. La legge di Ohm mette questi tre effetti in un'unica equazione precisa: a parità di tensione, più resistenza significa meno corrente.</p>
 
       <h2>Perché conviene impararla bene, e subito</h2>
 
@@ -241,7 +241,7 @@
         <p>Georg Ohm pubblicò questa legge nel 1827, ma fu accolta con scetticismo dalla comunità scientifica tedesca dell'epoca. Oggi è una delle formule più famose e più usate di tutta la fisica.</p>
       </div>
 
-      <p>Un dettaglio da tenere a mente: la resistenza si misura in <strong>ohm</strong> (simbolo Ω), la tensione in <strong>volt</strong> (V), la corrente in <strong>ampere</strong> (A). Se conosci tensione e resistenza puoi ricavare la corrente dividendo la prima per la seconda: <strong>I = V / R</strong>. È esattamente il calcolo che lo schema sopra sta facendo in tempo reale ogni volta che sposti lo slider.</p>
+      <p>Un dettaglio da tenere a mente: la resistenza si misura in <strong>ohm</strong> (simbolo Ω), la tensione in <strong>volt</strong> (V), la corrente in <strong>ampere</strong> (A). Se conosci tensione e resistenza puoi ricavare la corrente dividendo la prima per la seconda: <strong>I = V / R</strong>. È esattamente il calcolo che lo schema sopra rappresenta: 9 V diviso 6 Ω dà 1,5 A.</p>
 
       <div class="activity">
         <span class="c-label">Mettiti alla prova</span>
@@ -269,7 +269,7 @@
 </main>
 
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal">
     <div class="links">
       <a href="../../privacy/">Privacy Policy</a>
@@ -289,27 +289,6 @@
   burger.addEventListener('click', openNav);
   navClose.addEventListener('click', closeNav);
   scrim.addEventListener('click', closeNav);
-
-  // Legge di Ohm interattiva: I = V / R
-  const V = 9;
-  const slider = document.getElementById('rSlider');
-  const rVal = document.getElementById('rVal');
-  const readoutR = document.getElementById('readoutR');
-  const readoutI = document.getElementById('readoutI');
-  const flows = document.querySelectorAll('.flow');
-
-  function update(){
-    const R = parseInt(slider.value, 10);
-    const I = V / R;
-    rVal.textContent = R + ' Ω';
-    readoutR.textContent = 'R = ' + R + ' Ω';
-    readoutI.textContent = 'I = ' + I.toFixed(2) + ' A';
-    // più corrente = flusso più veloce (durata minore dell'animazione)
-    const duration = Math.max(0.25, 1.6 / I).toFixed(2);
-    flows.forEach(f => f.style.animationDuration = duration + 's');
-  }
-  slider.addEventListener('input', update);
-  update();
 </script>
 
 </body>

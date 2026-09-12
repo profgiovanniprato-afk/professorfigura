@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prova pratica: programmazione Ladder | professorfigura.it</title>
-<meta name="description" content="Programma un circuito di avviamento motore con autoritenuta in linguaggio Ladder: marcia, arresto, contatti e bobina. Schema interattivo per le classi quinte.">
+<meta name="description" content="Programma un circuito di avviamento motore con autoritenuta in linguaggio Ladder: marcia, arresto, contatti e bobina. Schema per le classi quinte.">
 <link rel="canonical" href="https://www.professorfigura.it/argomenti/programmazione-ladder/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Prova pratica: programmazione Ladder">
-<meta property="og:description" content="Un circuito di avviamento motore con autoritenuta, programmato in linguaggio Ladder, interattivo.">
+<meta property="og:description" content="Un circuito di avviamento motore con autoritenuta, programmato in linguaggio Ladder.">
 <meta property="og:url" content="https://www.professorfigura.it/argomenti/programmazione-ladder/">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary">
@@ -108,7 +108,7 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/quinte/">Classi quinte</a> / Prova pratica: programmazione Ladder</p>
   <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-lab">Laboratorio</span></div>
   <h1>Prova pratica: programmazione Ladder</h1>
-  <p class="lead">Il circuito più classico dell'automazione industriale: avviare un motore con un pulsante e fermarlo con un altro, facendo in modo che il circuito "si ricordi" da solo di restare acceso. Prova tu stesso i pulsanti nello schema.</p>
+  <p class="lead">Il circuito più classico dell'automazione industriale: avviare un motore con un pulsante e fermarlo con un altro, facendo in modo che il circuito "si ricordi" da solo di restare acceso. Lo schema mostra il circuito che "si ricorda" da solo di restare acceso.</p>
 
   <div class="notebook">
     <svg viewBox="0 0 380 180" id="circuitSvg">
@@ -155,14 +155,14 @@
 
     <h2>Il segreto dell'autoritenuta</h2>
 
-    <p>Premi il pulsante "MARCIA" nello schema: il motore (K1) si accende. Ma c'è un dettaglio importante da notare — il circuito resta acceso anche se, nella realtà, rilasciassi il pulsante subito dopo averlo premuto. Questo succede grazie al ramo aggiuntivo in basso, con il contatto <strong>K1</strong>: quando la bobina si eccita, chiude anche questo contatto ausiliario, che "tiene aperta" la strada per la corrente anche senza più bisogno del pulsante di marcia. Questo principio si chiama <strong>autoritenuta</strong>.</p>
+    <p>Quando si dà il comando "MARCIA" nello schema, il motore (K1) si accende. Ma c'è un dettaglio importante da notare — il circuito resta acceso anche se, nella realtà, il pulsante venisse rilasciato subito dopo. Questo succede grazie al ramo aggiuntivo in basso, con il contatto <strong>K1</strong>: quando la bobina si eccita, chiude anche questo contatto ausiliario, che "tiene aperta" la strada per la corrente anche senza più bisogno del pulsante di marcia. Questo principio si chiama <strong>autoritenuta</strong>.</p>
 
     <div class="callout">
       <span class="c-label">Curiosità</span>
       <p>Il pulsante per chiamare l'ascensore funziona con la stessa identica logica: lo premi un istante e lo rilasci subito, ma la lucina resta accesa finché l'ascensore non arriva — il sistema "si ricorda" della tua richiesta anche dopo che hai tolto il dito dal pulsante.</p>
     </div>
 
-    <p>Premi ora "ARRESTO": il circuito si apre, la bobina si diseccita, e con essa si apre anche il contatto ausiliario K1 — l'autoritenuta si "rompe", e il motore resta spento anche rilasciando il pulsante di arresto. Nota che il pulsante di arresto è collegato come contatto <strong>normalmente chiuso</strong>: è una scelta di sicurezza precisa, non casuale.</p>
+    <p>Con il comando "ARRESTO": il circuito si apre, la bobina si diseccita, e con essa si apre anche il contatto ausiliario K1 — l'autoritenuta si "rompe", e il motore resta spento anche rilasciando il pulsante di arresto. Nota che il pulsante di arresto è collegato come contatto <strong>normalmente chiuso</strong>: è una scelta di sicurezza precisa, non casuale.</p>
 
     <h2>Come montarlo davvero su un PLC</h2>
 
@@ -190,7 +190,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

@@ -115,7 +115,7 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/terze/">Classi terze</a> / Avvio temporizzato di un MAT</p>
   <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Avvio temporizzato di un MAT</h1>
-  <p class="lead">Premi marcia: non succede nulla subito. Un relè temporizzatore conta un tempo prestabilito, e solo alla fine il motore parte davvero.</p>
+  <p class="lead">Dato il comando di marcia, non succede nulla subito. Un relè temporizzatore conta un tempo prestabilito, e solo alla fine il motore parte davvero.</p>
 
   <div class="diagram-title">Schema di potenza</div>
   <div class="notebook">
@@ -201,7 +201,7 @@
   <article>
     <p>A volte non basta avviare un motore: serve farlo partire dopo un <strong>tempo prestabilito</strong>, per esempio per lasciare che altri macchinari a monte si avviino prima, in sequenza. Lo strumento giusto è il <strong>relè temporizzatore KT</strong>: una bobina che, una volta eccitata, non chiude subito il proprio contatto come farebbe un relè normale, ma aspetta un intervallo di tempo regolabile prima di farlo. Il simbolo CEI/IEC per un contatto a chiusura ritardata è lo stesso contatto normalmente aperto, con in più un piccolo arco che indica il ritardo.</p>
 
-    <p>Premi "S1 — MARCIA": nello schema di comando, il pulsante alimenta subito la bobina <strong>KT</strong>, che si autoalimenta tramite il proprio contatto istantaneo (esattamente come l'autoritenuta che già conosci). Osserva il conto alla rovescia: solo al termine del tempo impostato, il contatto <strong>ritardato di KT</strong> si chiude, alimentando finalmente la bobina del teleruttore <strong>KM</strong> — ed è solo a questo punto che il circuito di potenza si chiude e il motore parte davvero.</p>
+    <p>Con il comando "S1 — MARCIA": nello schema di comando, il pulsante alimenta subito la bobina <strong>KT</strong>, che si autoalimenta tramite il proprio contatto istantaneo (esattamente come l'autoritenuta che già conosci). Solo al termine del tempo impostato, il contatto <strong>ritardato di KT</strong> si chiude, alimentando finalmente la bobina del teleruttore <strong>KM</strong> — ed è solo a questo punto che il circuito di potenza si chiude e il motore parte davvero.</p>
 
     <h2>Un ritardo "programmato", non improvvisato</h2>
 
@@ -210,7 +210,7 @@
       <p>I relè temporizzatori industriali possono essere <strong>pneumatici</strong> (un piccolo soffietto d'aria regola il tempo), <strong>elettronici</strong> (un circuito RC o un microcontrollore) o <strong>a motorino sincrono</strong> (un piccolo motore che aziona una camma meccanica). Il simbolo elettrico è identico per tutti e tre — quello che cambia è solo la tecnologia usata internamente per "contare" il tempo.</p>
     </div>
 
-    <p>Premi "S0 — ARRESTO" in qualsiasi momento, anche durante il conto alla rovescia: il circuito si apre subito, KT si diseccita, e se il motore era già partito anche KM si disecciterà, fermandolo. Nota che se interrompi durante l'attesa, il motore non parte affatto — il timer viene semplicemente resettato.</p>
+    <p>Con il comando "S0 — ARRESTO", in qualsiasi momento, anche durante il conteggio: il circuito si apre subito, KT si diseccita, e se il motore era già partito anche KM si disecciterà, fermandolo. Se l'arresto arriva durante l'attesa, il motore non parte affatto — il timer viene semplicemente resettato.</p>
 
     <div class="activity">
       <span class="c-label">Mettiti alla prova</span>
@@ -229,7 +229,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

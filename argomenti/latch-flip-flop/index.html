@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Latch e flip-flop: la memoria di un bit | professorfigura.it</title>
-<meta name="description" content="Come un circuito digitale può ricordare uno stato: il latch S-R, costruito con due porte NOR incrociate. Schema interattivo per le classi quinte.">
+<meta name="description" content="Come un circuito digitale può ricordare uno stato: il latch S-R, costruito con due porte NOR incrociate. Schema per le classi quinte.">
 <link rel="canonical" href="https://www.professorfigura.it/argomenti/latch-flip-flop/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Latch e flip-flop: la memoria di un bit">
-<meta property="og:description" content="Come un latch S-R ricorda uno stato anche dopo che l'ingresso è tornato a riposo, con uno schema interattivo.">
+<meta property="og:description" content="Come un latch S-R ricorda uno stato anche dopo che l'ingresso è tornato a riposo,.">
 <meta property="og:url" content="https://www.professorfigura.it/argomenti/latch-flip-flop/">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary">
@@ -97,7 +97,7 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/quinte/">Classi quinte</a> / Latch e flip-flop</p>
   <div class="badges"><span class="badge badge-classe">Classi quinte</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Latch e flip-flop: la memoria di un bit</h1>
-  <p class="lead">Premi SET: l'uscita si accende. Rilascia il pulsante: resta accesa comunque. È la prima forma di memoria digitale che incontrerai — un circuito capace di "ricordare".</p>
+  <p class="lead">Un impulso su SET accende l'uscita, che resta accesa anche dopo che l'impulso è terminato. È la prima forma di memoria digitale che incontrerai — un circuito capace di "ricordare".</p>
 
   <div class="notebook">
     <svg viewBox="0 0 340 200" id="circuitSvg">
@@ -136,13 +136,13 @@
   <article>
     <p>Le porte logiche che conosci decidono un'uscita basandosi solo sull'ingresso presente in quel momento. Ma un computer deve anche <strong>ricordare</strong> informazioni. Il <strong>latch S-R</strong> che vedi nello schema — costruito con due porte <strong>NOR</strong> incrociate, dove l'uscita di ciascuna torna in ingresso all'altra — è il primo circuito capace di farlo. Ogni porta è disegnata secondo la norma CEI/IEC 60617: un rettangolo con il simbolo "≥1" (la funzione OR) e un pallino sull'uscita che ne indica la negazione — insieme, rettangolo più pallino, formano il simbolo standard della NOR.</p>
 
-    <p>Premi "SET": l'uscita Q si accende. Ora prova a immaginare di rilasciare il pulsante (nel circuito reale l'ingresso torna a riposo) — l'uscita resta accesa comunque, perché il collegamento incrociato tra le due porte "tiene aperta" la strada anche senza più bisogno del pulsante. Premi "RESET" per riportare l'uscita a zero. È la più semplice forma di memoria elettronica che esista: un solo bit, ricordato per sempre finché non arriva un comando che lo cambia.</p>
+    <p>Con un impulso su <strong>SET</strong>, l'uscita Q si accende. Anche quando l'ingresso torna a riposo, l'uscita resta accesa comunque, perché il collegamento incrociato tra le due porte "tiene aperta" la strada anche senza più bisogno dell'impulso. Un impulso su <strong>RESET</strong> riporta l'uscita a zero. È la più semplice forma di memoria elettronica che esista: un solo bit, ricordato per sempre finché non arriva un comando che lo cambia.</p>
 
     <h2>Il tasto Bloc Maiuscole è un latch</h2>
 
     <div class="callout">
       <span class="c-label">Curiosità</span>
-      <p>Il tasto "Bloc Maiusc" della tastiera è un ottimo esempio di memoria a un bit: lo premi una volta e resta "impostato" (le lettere restano maiuscole) anche dopo che hai tolto il dito dal tasto, esattamente come il latch che hai appena provato. Lo premi una seconda volta e torna allo stato opposto.</p>
+      <p>Il tasto "Bloc Maiusc" della tastiera è un ottimo esempio di memoria a un bit: lo premi una volta e resta "impostato" (le lettere restano maiuscole) anche dopo che hai tolto il dito dal tasto, esattamente come il latch di questa lezione. Lo premi una seconda volta e torna allo stato opposto.</p>
     </div>
 
     <p>Un problema pratico: un pulsante meccanico, quando viene premuto, genera spesso una rapida serie di piccoli "rimbalzi" elettrici invece di un singolo segnale netto. Un <strong>circuito antirimbalzo</strong>, spesso costruito proprio con un latch S-R, ripulisce il segnale, garantendo che ogni pressione venga letta una sola volta.</p>
@@ -164,7 +164,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

@@ -114,7 +114,7 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/terze/">Classi terze</a> / Avviamento MAT con autoritenuta</p>
   <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Avviamento diretto di un MAT con autoritenuta</h1>
-  <p class="lead">Un teleruttore comandato da due pulsanti: uno per avviare, uno per fermare. Il contatto di autoritenuta fa il resto. Premi marcia e arresto e osserva sia il circuito di potenza sia quello di comando reagire insieme.</p>
+  <p class="lead">Un teleruttore comandato da due pulsanti: uno per avviare, uno per fermare. Il contatto di autoritenuta fa il resto. Osserva come il circuito di potenza e quello di comando lavorano insieme.</p>
 
   <div class="diagram-title">Schema di potenza</div>
   <div class="notebook">
@@ -199,7 +199,7 @@
   <article>
     <p>Questo è lo schema più classico dell'automazione industriale, ed è composto sempre da due parti distinte disegnate separatamente: il <strong>circuito di potenza</strong>, che porta l'energia vera e propria al motore, e il <strong>circuito di comando</strong>, a bassa potenza, che decide quando quell'energia deve passare. Tutti i simboli seguono la norma CEI/IEC: il <strong>sezionatore QS</strong> isola manualmente l'impianto per la manutenzione, i <strong>fusibili F</strong> proteggono dai cortocircuiti, il <strong>teleruttore KM</strong> (i tre contatti principali comandati dalla bobina) inserisce e disinserisce l'alimentazione, il <strong>relè termico F2</strong> (simbolo a zigzag) protegge il motore dai sovraccarichi prolungati.</p>
 
-    <p>Premi "S1 — MARCIA": nel circuito di comando, il pulsante S1 (contatto normalmente aperto) alimenta la bobina KM, che chiude contemporaneamente i tre contatti principali nel circuito di potenza — il motore parte. Nota il <strong>contatto ausiliario KM</strong> collegato in parallelo a S1: si chiude insieme ai contatti di potenza e continua ad alimentare la bobina anche dopo che rilasci il pulsante. È l'<strong>autoritenuta</strong>, lo stesso principio del relè passo-passo che hai già incontrato, applicato qui a un contattore industriale.</p>
+    <p>Quando si dà il comando "S1 — MARCIA": nel circuito di comando, il pulsante S1 (contatto normalmente aperto) alimenta la bobina KM, che chiude contemporaneamente i tre contatti principali nel circuito di potenza — il motore parte. Nota il <strong>contatto ausiliario KM</strong> collegato in parallelo a S1: si chiude insieme ai contatti di potenza e continua ad alimentare la bobina anche dopo che il pulsante viene rilasciato. È l'<strong>autoritenuta</strong>, lo stesso principio del relè passo-passo che hai già incontrato, applicato qui a un contattore industriale.</p>
 
     <h2>Perché l'arresto è un contatto normalmente chiuso</h2>
 
@@ -208,7 +208,7 @@
       <p>Il pulsante di arresto S0 e il contatto del relè termico F2 sono entrambi normalmente chiusi (NC), non a caso: se un filo si stacca o il pulsante si guasta, il circuito si apre comunque e il motore si ferma in sicurezza — un guasto porta sempre verso lo stato più sicuro, mai verso un avviamento incontrollato.</p>
     </div>
 
-    <p>Premi "S0 — ARRESTO": il contatto normalmente chiuso si apre, la bobina KM si diseccita, tutti i contatti (di potenza e ausiliario) si riaprono insieme, e il motore si ferma. L'autoritenuta si "rompe" esattamente come nel latch S-R che hai già studiato in elettronica digitale — stesso principio logico, applicato qui con componenti elettromeccanici di potenza.</p>
+    <p>Con il comando "S0 — ARRESTO": il contatto normalmente chiuso si apre, la bobina KM si diseccita, tutti i contatti (di potenza e ausiliario) si riaprono insieme, e il motore si ferma. L'autoritenuta si "rompe" esattamente come nel latch S-R che hai già studiato in elettronica digitale — stesso principio logico, applicato qui con componenti elettromeccanici di potenza.</p>
 
     <div class="activity">
       <span class="c-label">Mettiti alla prova</span>
@@ -227,7 +227,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

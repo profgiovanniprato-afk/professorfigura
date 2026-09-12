@@ -107,7 +107,7 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/prime/">Classi prime</a> / Lo scaricatore SPD</p>
   <div class="badges"><span class="badge badge-classe">Classi prime</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Lo scaricatore SPD: proteggere dai fulmini</h1>
-  <p class="lead">Un fulmine caduto lontano può comunque mandare un picco di tensione lungo la linea elettrica. Confronta cosa succede con e senza uno scaricatore SPD.</p>
+  <p class="lead">Un fulmine caduto lontano può comunque mandare un picco di tensione lungo la linea elettrica. Lo scaricatore SPD lo devia verso terra prima che raggiunga gli apparecchi collegati.</p>
 
   <div class="notebook">
     <svg viewBox="0 0 340 200" id="circuitSvg">
@@ -116,7 +116,7 @@
 
       <g id="lightningGroup" class="lightning">
         <path d="M170,20 L160,45 L172,45 L158,75" stroke="var(--orange-dark)" stroke-width="2.5" fill="none"/>
-        <text x="185" y="45" class="diagram-label">clicca: sovratensione</text>
+        <text x="185" y="45" class="diagram-label">sovratensione</text>
       </g>
 
       <g id="spdGroup">
@@ -127,12 +127,12 @@
         <line class="ground-line" x1="150" y1="130" x2="180" y2="130"/>
         <line class="ground-line" x1="156" y1="136" x2="174" y2="136"/>
         <line class="ground-line" x1="161" y1="142" x2="169" y2="142"/>
-        <path class="flow surge" id="fGround" d="M165,95 V130" />
+        <path class="flow surge on" id="fGround" d="M165,95 V130" />
       </g>
 
       <path class="wire" d="M180,80 H260" /><path class="flow" id="f2" d="M180,80 H260" />
-      <circle class="bulb-glow" id="bulbGlow" cx="280" cy="80" r="22"/>
-      <circle class="bulb-glass" id="bulbGlass" cx="280" cy="80" r="14"/>
+      <circle class="bulb-glow lit" id="bulbGlow" cx="280" cy="80" r="22"/>
+      <circle class="bulb-glass lit" id="bulbGlass" cx="280" cy="80" r="14"/>
       <text x="280" y="115" text-anchor="middle" class="diagram-label">apparecchio protetto</text>
     </svg>
   </div>
@@ -140,7 +140,7 @@
   <article>
     <p>Lo <strong>scaricatore SPD</strong> (Surge Protection Device, "dispositivo di protezione dalle sovratensioni") ha un compito molto specifico: proteggere gli apparecchi collegati da picchi di tensione improvvisi e brevissimi — dovuti, per esempio, a un fulmine caduto anche a chilometri di distanza, che induce una sovratensione lungo la linea elettrica, o a manovre improvvise sulla rete di distribuzione.</p>
 
-    <p>In condizioni normali, lo SPD si comporta come un componente quasi invisibile al circuito: lascia passare la corrente senza interferire. Ma se la tensione supera una soglia di sicurezza, anche solo per una frazione di millisecondo, lo SPD diventa immediatamente conduttivo e devia l'eccesso di energia verso <strong>terra</strong>, invece di lasciarlo proseguire verso gli apparecchi a valle. Clicca sul fulmine nello schema, poi confronta cosa succede con SPD attivo e senza.</p>
+    <p>In condizioni normali, lo SPD si comporta come un componente quasi invisibile al circuito: lascia passare la corrente senza interferire. Ma se la tensione supera una soglia di sicurezza, anche solo per una frazione di millisecondo, lo SPD diventa immediatamente conduttivo e devia l'eccesso di energia verso <strong>terra</strong>, invece di lasciarlo proseguire verso gli apparecchi a valle. È esattamente ciò che mostra lo schema sopra.</p>
 
     <h2>Perché il differenziale e il magnetotermico non bastano</h2>
 
@@ -168,7 +168,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

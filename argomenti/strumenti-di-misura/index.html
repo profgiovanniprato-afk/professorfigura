@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Multimetro e oscilloscopio | professorfigura.it</title>
-<meta name="description" content="Come funziona un multimetro: misurare tensione, corrente e resistenza. Simulatore interattivo per le classi seconde.">
+<meta name="description" content="Come funziona un multimetro: misurare tensione, corrente e resistenza. Simulatore per le classi seconde.">
 <link rel="canonical" href="https://www.professorfigura.it/argomenti/strumenti-di-misura/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multimetro e oscilloscopio">
-<meta property="og:description" content="Come funziona un multimetro, con un simulatore interattivo per misurare una pila.">
+<meta property="og:description" content="Come funziona un multimetro, con un simulatore per misurare una pila.">
 <meta property="og:url" content="https://www.professorfigura.it/argomenti/strumenti-di-misura/">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   .notebook{position:relative;padding:36px 20px 26px;margin:0 0 20px;background-color:#FFFFFF;background-image:linear-gradient(#DCE6F0 1px, transparent 1px),linear-gradient(90deg, #DCE6F0 1px, transparent 1px);background-size:24px 24px;border:1px solid var(--grey-150);box-shadow:0 2px 0 var(--grey-150);text-align:center;}
   .meter-display{display:inline-block;background:var(--black);color:#8FE38F;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px;padding:16px 30px;margin-bottom:22px;letter-spacing:.05em;}
   .dial-select{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .gate-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);cursor:pointer;}
+  .gate-btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;background:var(--grey-100);color:var(--black);border:1.5px solid var(--grey-150);}
   .gate-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
   article p{font-size:16.5px;line-height:1.9;color:var(--grey-700);margin:0 0 26px;max-width:64ch;text-align:justify;text-justify:inter-word;hyphens:auto;}
   article p strong{color:var(--black);font-weight:600;}
@@ -90,16 +90,16 @@
   <p class="lead">Un multimetro virtuale collegato a una pila da 9V. Scegli cosa misurare e osserva il display cambiare.</p>
 
   <div class="notebook">
-    <div class="meter-display" id="meterDisplay">— . — —</div>
+    <div class="meter-display" id="meterDisplay">9.00 V</div>
     <div class="dial-select">
-      <button class="gate-btn active" data-mode="v">Volt</button>
-      <button class="gate-btn" data-mode="a">Ampere</button>
-      <button class="gate-btn" data-mode="ohm">Ohm</button>
+      <span class="gate-btn active">Volt</span>
+      <span class="gate-btn">Ampere</span>
+      <span class="gate-btn">Ohm</span>
     </div>
   </div>
 
   <article>
-    <p>Non si può migliorare (o riparare) ciò che non si può misurare. Il <strong>multimetro</strong> è lo strumento più versatile del tecnico elettrico: in un solo dispositivo misura tensione, corrente e resistenza, un po' come un coltellino svizzero delle misure elettriche. Prova a cambiare la modalità nello schermo sopra: stai simulando la manopola di selezione di un multimetro reale, collegato a una pila da 9V con in serie un resistore da 100 Ω.</p>
+    <p>Non si può migliorare (o riparare) ciò che non si può misurare. Il <strong>multimetro</strong> è lo strumento più versatile del tecnico elettrico: in un solo dispositivo misura tensione, corrente e resistenza, un po' come un coltellino svizzero delle misure elettriche. La manopola di selezione sceglie cosa misurare: nello schermo sopra è impostato in modalità Volt, collegato a una pila da 9V con in serie un resistore da 100 Ω.</p>
 
     <p>L'<strong>oscilloscopio</strong> fa un passo in più rispetto al multimetro: non ti dà solo un numero, ti mostra letteralmente "la forma" con cui una tensione cambia nel tempo, disegnandola su uno schermo — l'hai già visto in azione nella lezione sulle tensioni alternate. È come trasformare un suono invisibile in un'onda che puoi vedere e studiare.</p>
 
@@ -129,7 +129,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>

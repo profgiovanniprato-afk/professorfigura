@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Il diodo: la valvola a senso unico | professorfigura.it</title>
-<meta name="description" content="Come funziona un diodo: perché conduce la corrente in un verso e la blocca nell'altro. Schema interattivo per invertire la polarità, per le classi terze.">
+<meta name="description" content="Come funziona un diodo: perché conduce la corrente in un verso e la blocca nell'altro. Schema per invertire la polarità, per le classi terze.">
 <link rel="canonical" href="https://www.professorfigura.it/argomenti/diodo/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Il diodo: la valvola a senso unico">
-<meta property="og:description" content="Perché il diodo conduce la corrente in un verso e la blocca nell'altro, con uno schema interattivo.">
+<meta property="og:description" content="Perché il diodo conduce la corrente in un verso e la blocca nell'altro,.">
 <meta property="og:url" content="https://www.professorfigura.it/argomenti/diodo/">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LearningResource","name":"Il diodo e i semiconduttori: la valvola a senso unico","description":"Come funziona un diodo, perché conduce la corrente in un verso e la blocca nell'altro, con uno schema interattivo per invertire la polarità.","url":"https://www.professorfigura.it/argomenti/diodo/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe terza","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Diodo e semiconduttori"},"inLanguage":"it"}
+{"@context":"https://schema.org","@type":"LearningResource","name":"Il diodo e i semiconduttori: la valvola a senso unico","description":"Come funziona un diodo, perché conduce la corrente in un verso e la blocca nell'altro, per invertire la polarità.","url":"https://www.professorfigura.it/argomenti/diodo/","author":{"@type":"Person","name":"Giovanni Figura","url":"https://www.professorfigura.it/chi-sono/"},"educationalLevel":"Scuola secondaria di secondo grado — Classe terza","learningResourceType":"Lezione","about":{"@type":"Thing","name":"Diodo e semiconduttori"},"inLanguage":"it"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.professorfigura.it/"},{"@type":"ListItem","position":2,"name":"Classi terze","item":"https://www.professorfigura.it/classi/terze/"},{"@type":"ListItem","position":3,"name":"Il diodo e i semiconduttori","item":"https://www.professorfigura.it/argomenti/diodo/"}]}
@@ -98,36 +98,36 @@
   <p class="crumb"><a href="../../">Home</a> / <a href="../../classi/terze/">Classi terze</a> / Il diodo e i semiconduttori</p>
   <div class="badges"><span class="badge badge-classe">Classi terze</span><span class="badge badge-tag">Teoria</span></div>
   <h1>Il diodo e i semiconduttori: la valvola a senso unico</h1>
-  <p class="lead">Un componente piccolissimo che si comporta come una valvola per l'acqua: lascia passare la corrente in un verso, la blocca nell'altro. Clicca sul diodo per invertirlo e osserva cosa succede.</p>
+  <p class="lead">Un componente piccolissimo che si comporta come una valvola per l'acqua: lascia passare la corrente in un verso, la blocca nell'altro. Lo schema mostra cosa succede a seconda del verso in cui è collegato.</p>
 
   <div class="notebook">
     <svg viewBox="0 0 340 200" id="circuitSvg">
-      <path class="wire" d="M40,100 H120" /><path class="flow" id="f1" d="M40,100 H120" />
-      <path class="wire" d="M220,100 H300" /><path class="flow" id="f2" d="M220,100 H300" />
+      <path class="wire" d="M40,100 H120" /><path class="flow on" id="f1" d="M40,100 H120" />
+      <path class="wire" d="M220,100 H300" /><path class="flow on" id="f2" d="M220,100 H300" />
       <path class="wire" d="M40,60 V140" /><path class="wire" d="M40,60 H300" /><path class="wire" d="M300,60 V140" />
-      <path class="flow" id="f3" d="M40,60 H300" />
+      <path class="flow on" id="f3" d="M40,60 H300" />
 
       <line x1="30" y1="90" x2="50" y2="90" stroke="var(--black)" stroke-width="1.5"/>
       <line x1="35" y1="80" x2="45" y2="80" stroke="var(--black)" stroke-width="3"/>
       <text x="14" y="122" class="diagram-label">PILA</text>
 
-      <g id="diodeGroup" style="cursor:pointer;">
+      <g id="diodeGroup">
         <polygon class="diode-body" points="120,88 120,112 170,100"/>
         <line class="diode-bar" x1="170" y1="85" x2="170" y2="115"/>
         <circle class="node" cx="120" cy="100" r="4"/>
         <circle class="node" cx="220" cy="100" r="4"/>
         <line class="wire" x1="170" y1="100" x2="220" y2="100"/>
-        <text x="145" y="135" text-anchor="middle" class="diagram-label">clicca per invertire</text>
+        <text x="145" y="135" text-anchor="middle" class="diagram-label">verso di conduzione</text>
       </g>
 
-      <text x="170" y="25" text-anchor="middle" class="status" id="statusText">CONDUCE</text>
+      <text x="170" y="25" text-anchor="middle" class="status on" id="statusText">CONDUCE</text>
     </svg>
   </div>
 
   <article>
     <p>Il <strong>diodo</strong> è formato dall'unione di due pezzetti di silicio drogati in modo diverso — un tipo P e un tipo N, che hai già incontrato parlando di semiconduttori — e si comporta in un modo sorprendente: lascia passare la corrente quasi liberamente in un verso (si dice che è <strong>polarizzato direttamente</strong>), e la blocca quasi del tutto nel verso opposto (<strong>polarizzato inversamente</strong>).</p>
 
-    <p>Guarda il simbolo nello schema sopra: il triangolo indica il verso in cui il diodo lascia passare la corrente — dalla base larga verso la punta — mentre la barra sottile rappresenta il punto in cui, nel verso sbagliato, la corrente viene fermata. Clicca sul diodo per invertirne il verso, e osserva il flusso verde fermarsi: hai appena polarizzato inversamente il componente.</p>
+    <p>Guarda il simbolo nello schema sopra: il triangolo indica il verso in cui il diodo lascia passare la corrente — dalla base larga verso la punta — mentre la barra sottile rappresenta il punto in cui, nel verso sbagliato, la corrente viene fermata. Se il diodo venisse montato al contrario, il flusso verde si fermerebbe: la polarizzazione inversa blocca il componente.</p>
 
     <h2>A cosa serve, in pratica</h2>
 
@@ -157,7 +157,7 @@
   </div>
 </div></main>
 <footer>
-  <div class="foot-brand">PROFESSORFIGURA.IT</div>
+  <div class="foot-brand">PROFESSORFIGURA. IT</div>
   <div class="foot-legal"><div class="links"><a href="../../privacy/">Privacy Policy</a><a href="../../cookie/">Cookie Policy</a></div><p>© 2026 Giovanni Figura. Tutti i diritti riservati.</p></div>
 </footer>
 <script>
